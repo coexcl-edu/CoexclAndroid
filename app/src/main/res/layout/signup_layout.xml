@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="10"
+    android:background="@drawable/app_background_gradient"
+    >
+
+    <RelativeLayout
+        style="@style/MatchLayout"
+        android:layout_weight="7"
+        >
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:scaleType="fitXY"
+            android:alpha="0.1"
+            android:visibility="visible"
+            android:src="@drawable/one"/>
+
+        <RelativeLayout
+            style="@style/MatchLayout"
+            android:padding="20dp"
+            android:gravity="center"
+            >
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/welcome"
+                    style="@style/item_header"
+                    android:layout_width="match_parent"
+                    android:fontFamily="@font/architects_daughter"
+                    android:text="Coexcl"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:textSize="20sp" />
+
+                <TextView
+                    style="@style/header_action_bar"
+                    android:layout_width="match_parent"
+                    android:layout_below="@+id/welcome"
+                    android:text="Student Registration"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:textSize="24sp" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="3"
+        android:background="@drawable/top_cornor_radius"
+        android:orientation="vertical"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="-30dp">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/out_login_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_alignParentBottom="true"
+            android:weightSum="9">
+
+            <RelativeLayout
+                style="@style/MatchLayout">
+
+                <LinearLayout
+                    android:id="@+id/login_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginRight="50dp"
+                    android:layout_marginTop="50dp"
+                    >
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Name"
+                        android:textColorHint="@color/colorAccent">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:layout_width="match_parent"
+                            android:id="@+id/name"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/colorAccent"
+                            android:textColorHint="@color/colorAccent"
+                            android:background="@color/transparent"
+                            android:lines="1"
+                            android:singleLine="true"
+                            android:imeOptions="actionNext"
+                            android:maxLength="30"
+                            android:nextFocusDown="@+id/mobile"/>
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColorHint="@color/colorAccent"
+                        android:hint="Mobile">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:layout_width="match_parent"
+                            android:id="@+id/mobile"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/colorAccent"
+                            android:textColorHint="@color/colorAccent"
+                            android:inputType="phone"
+                            android:background="@color/transparent"
+                            android:lines="1"
+                            android:singleLine="true"
+                            android:imeOptions="actionNext"
+                            android:maxLength="10"
+                            android:nextFocusDown="@+id/password"/>
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColorHint="@color/colorAccent"
+                        android:hint="Password">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:layout_width="match_parent"
+                            android:id="@+id/password"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/colorAccent"
+                            android:textColorHint="@color/colorAccent"
+                            android:background="@color/transparent"
+                            android:inputType="textPassword"
+                            android:lines="1"
+                            android:singleLine="true"
+                            android:imeOptions="actionNext"
+                            android:maxLength="16"
+                            android:nextFocusDown="@+id/confirm_password"/>
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColorHint="@color/colorAccent"
+                        android:hint="Confirm Password">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:layout_width="match_parent"
+                            android:id="@+id/confirm_password"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/colorAccent"
+                            android:textColorHint="@color/colorAccent"
+                            android:background="@color/transparent"
+                            android:lines="1"
+                            android:singleLine="true"
+                            android:imeOptions="actionNext"
+                            android:maxLength="16"
+                            android:nextFocusDown="@+id/class_spinner"/>
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+
+                    <androidx.appcompat.widget.AppCompatSpinner
+                        android:id="@+id/class_spinner"
+                        style="@style/Spinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:paddingLeft="10dp"
+                        android:backgroundTint="@color/colorAccent"
+                        android:entries="@array/class_name"/>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/date_picker_text"/>
+
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColorHint="@color/colorAccent"
+                        android:hint="School ID (Optional)">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:layout_width="match_parent"
+                            android:id="@+id/school_id"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/colorAccent"
+                            android:textColorHint="@color/colorAccent"
+                            android:background="@color/transparent"/>
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+
+
+                    <TextView
+                        android:id="@+id/login"
+                        android:layout_marginTop="30dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Register"
+                        android:textColor="#fff"
+                        android:textSize="16sp"
+                        android:padding="10dp"
+                        android:background="@drawable/curve_shapr_login"/>
+
+                </LinearLayout>
+
+
+
+                <TextView
+                    android:id="@+id/create_account"
+                    android:layout_below="@+id/social_login"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:layout_marginTop="20dp"
+                    android:textSize="20sp"
+                    android:text="Not having account? Create yours"/>
+
+            </RelativeLayout>
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="56dp"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+    </LinearLayout>
+
+</LinearLayout>

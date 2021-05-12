@@ -1,0 +1,54 @@
+<resources>
+    <string name="app_name">Coexcl</string>
+    <string name="chat_app_id">204497eb-bf08-400c-b8a2-b540e825c56d</string>
+    <string name="chat_app_key">4f547293-bc24-4378-b2ee-745b29e14b86</string>
+    <string name="title_home">Home</string>
+    <string name="title_videos">Videos</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="title_profile">Profile</string>
+    <string name="title_settings">Settings</string>
+    <string name="freshchat_file_provider_authority">com.home.coexcleducation.provider</string>
+
+    <string name="what_you_would_like_to_do_it_today">What you would like to do today !</string>
+
+    <array name="class_name">
+        <item>Class 1</item>
+        <item>Class 2</item>
+        <item>Class 3</item>
+        <item>Class 4</item>
+        <item>Class 5</item>
+        <item>Class 6</item>
+        <item>Class 7</item>
+        <item>Class 8</item>
+        <item>Class 10</item>
+        <item>Class 10 +1</item>
+        <item>Class 10 +2</item>
+    </array>
+
+    <array name="school_name">
+        <item>RK Mission</item>
+        <item>RKVM</item>
+        <item>SVM</item>
+        <item>Awadoot Academy</item>
+        <item>Lamarts Academy</item>
+        <item>New Era Academy</item>
+        <item>Others</item>
+    </array>
+
+    <string name="feature1">Get 24x7 online tutor Faculty for all your Science and Maths doubts and get it solved by IITians.</string>
+    <string name="feature2">Virtual schooling made easy with COEXCL. Attend live classes , quizzes, get notes etc with just one touch.</string>
+    <string name="feature3">Get all learning contents like learning videos, Notes, quizzes and lots more with us.</string>
+
+<!--    Settings-->
+
+    <string name="subscribe">Upgrade Now</string>
+    <string name="progress">Progress Statistics</string>
+    <string name="school_settings">School Settings</string>
+    <string name="faq">FAQs</string>
+    <string name="contact_us">Contact Us</string>
+    <string name="terms">Terms &amp; Conditions</string>
+    <string name="about">About</string>
+    <string name="signout">SignOut</string>
+
+
+</resources>

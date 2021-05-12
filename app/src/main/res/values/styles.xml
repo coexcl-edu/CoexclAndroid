@@ -1,0 +1,1362 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowBackground">@color/white</item>
+        <item name="android:statusBarColor">@color/transparent</item>
+        <item name="android:colorEdgeEffect">@color/colorAccent</item>
+        <item name="android:colorControlHighlight">@color/colorAccent</item>
+
+
+    </style>
+
+    <style name="ChatTheme" parent="Theme.Freshchat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/colorAccent</item>
+        <item name="colorPrimaryDark">@color/colorAccent</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:statusBarColor">@color/colorAccent</item>
+    </style>
+
+    <style name="Spinner" parent="Widget.AppCompat.Light.DropDownItem.Spinner">
+        <item name="android:paddingEnd">0dp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:backgroundTint">@color/red</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+    </style>
+
+    <style name="splash_screen" parent="AppTheme">
+        <item name="android:statusBarColor">@color/white</item>
+        <item name="android:background">@drawable/coexcl_background</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="Base.ThemeOverlay.AppCompat.Dark" />
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="AppTheme.TransparentTheme">
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+    </style>
+
+    <style name="BottomDialogTheme" parent="@android:style/Theme.Dialog">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:backgroundDimEnabled">false</item>
+        <item name="android:windowAnimationStyle">@style/BottomDialogsAnimation</item>
+    </style>
+
+    <style name="BottomDialogsAnimation">
+        <item name="android:windowEnterAnimation">@anim/toast_show</item>
+        <item name="android:windowExitAnimation">@anim/toast_hide</item>
+    </style>
+
+    <style name="DialogAnimation">
+        <!--        <item name="android:windowEnterAnimation">@anim/alpha_in</item>-->
+        <!--        <item name="android:windowExitAnimation">@anim/alpha_out</item>-->
+    </style>
+
+    <style name="DialogCustomTheme" parent="Base.Theme.AppCompat.Dialog">
+        <item name="android:windowBackground">@drawable/black_border_r9</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+        <item name="android:windowEnterAnimation">@null</item>
+        <item name="android:windowExitAnimation">@null</item>
+        <item name="android:colorControlHighlight">@color/selector_color</item>
+    </style>
+
+
+
+    <style name="SettingOptionText">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">16.0sp</item>
+        <item name="android:textColor">@color/input_color</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:paddingLeft">9dp</item>
+    </style>
+
+    <style name="WrapLayout">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+    </style>
+
+    <style name="VerticalWrap" parent="WrapLayout">
+        <item name="android:orientation">vertical</item>
+
+    </style>
+
+    <style name="MatchLayout">
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_width">match_parent</item>
+    </style>
+
+    <style name="WrapHeightLayout" parent="MatchLayout">
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="WrapWidthMatchHeightLayout" parent="MatchLayout">
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+
+    <style name="timeoffelementlayout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">76dp</item>
+        <item name="android:paddingBottom">16dp</item>
+        <item name="android:paddingTop">16dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:paddingLeft">14dp</item>
+        <item name="android:paddingRight">14dp</item>
+    </style>
+
+      <style name="bookingpolicylayout" parent="timeoffelementlayout">
+        <item name="android:paddingLeft">24dp</item>
+    </style>
+
+    <style name="indexItem">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_marginRight">1dp</item>
+        <item name="android:layout_marginLeft">1dp</item>
+        <item name="android:layout_marginTop">-2dp</item>
+        <item name="android:paddingBottom">2dp</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:textColor">@color/colorAccent</item>
+    </style>
+
+
+
+    <style name="WrapContent16SP" parent="WrapLayout">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+
+    <style name="ToolBarSubTitleText" parent="@style/WrapLayout">
+        <item name="android:layout_gravity">center</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:maxLines">1</item>
+    </style>
+
+
+    <style name="premiumelementlayout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">70dp</item>
+        <item name="android:paddingBottom">12dp</item>
+        <item name="android:paddingTop">16dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:paddingLeft">14dp</item>
+        <item name="android:paddingRight">14dp</item>
+
+    </style>
+
+
+
+    <style name="item_layout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">76dp</item>
+    </style>
+
+    <style name="margin_layout" parent="WrapLayout">
+        <item name="android:layout_margin">15dp</item>
+    </style>
+
+
+
+
+    <style name="match_parent_layout" >
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_width">match_parent</item>
+    </style>
+
+    <style name="wrap_layout" parent="match_parent_layout">
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="social_buttons" parent="WrapHeightLayout" >
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:paddingTop">13dp</item>
+        <item name="android:paddingBottom">13dp</item>
+        <item name="android:fontFamily">@font/lato_regular</item>
+    </style>
+
+
+    <style name="BG">
+        <item name="android:orientation">vertical</item>
+        <item name="android:background">#2a363a</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">fill_parent</item>
+    </style>
+
+    <style name="BG1">
+        <item name="android:orientation">vertical</item>
+        <item name="android:background">@color/colorPrimary</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">fill_parent</item>
+    </style>
+
+    <style name="VerticalLayout">
+        <item name="android:orientation">vertical</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="VerticalLayoutWrap" parent="VerticalLayout">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+    </style>
+
+    <style name="HorizontalLayout" parent="WrapHeightLayout">
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <style name="VerticalLayoutFill" parent="MatchLayout">
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="HorizontalHtmlIconTableLayout">
+        <item name="android:orientation">horizontal</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">13dp</item>
+        <item name="android:paddingTop">10dp</item>
+        <item name="android:paddingBottom">10dp</item>
+        <item name="android:textColor">@color/text_color17</item>
+    </style>
+
+    <style name="HorizontalLayoutWrap" parent="HorizontalLayout">
+        <item name="android:layout_width">wrap_content</item>
+    </style>
+
+    <style name="HRline">
+        <item name="android:layout_height">0.1dp</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="MenuDropDown">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@null</item>
+    </style>
+
+    <style name="CalendarTodayButton">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:textColor">#666e71</item>
+        <item name="android:paddingTop">10dp</item>
+        <item name="android:paddingBottom">10dp</item>
+        <item name="android:paddingLeft">15dp</item>
+        <item name="android:paddingRight">15dp</item>
+        <item name="android:layout_alignParentTop">true</item>
+    </style>
+
+
+    <style name="ApptTimeContainer" parent="VerticalWrap">
+        <item name="android:paddingTop">0dp</item>
+    </style>
+
+    <style name="ApptDay">
+        <item name="android:layout_width">88dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">#666e71</item>
+        <item name="android:textSize">18.0sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:gravity">center_horizontal|center_vertical</item>
+        <item name="android:layout_gravity">center_horizontal|center_vertical</item>
+    </style>
+
+    <style name="CalcTimeAppt" parent="ApptDay">
+        <item name="android:layout_marginTop">0dp</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:textSize">18.0sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/date_picker_text</item>
+    </style>
+
+    <style name="CalendarToggleMenu">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">#aeb4b8</item>
+        <item name="android:paddingTop">12dp</item>
+        <item name="android:paddingBottom">12dp</item>
+        <item name="android:layout_alignParentTop">true</item>
+        <item name="android:layout_centerHorizontal">true</item>
+    </style>
+
+    <style name="CalendarToggleHeader">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">#aeb4b8</item>
+        <item name="android:paddingTop">8dp</item>
+        <item name="android:paddingBottom">12dp</item>
+        <item name="android:layout_alignParentTop">true</item>
+        <item name="android:layout_centerHorizontal">true</item>
+    </style>
+
+
+    <style name="CalcBoxContainerNew" parent="HorizontalLayout">
+        <item name="android:paddingTop">1dp</item>
+        <item name="android:paddingBottom">1dp</item>
+    </style>
+
+    <style name="CalcBox1" parent="ApptTimeContainer">
+        <item name="android:paddingTop">10dp</item>
+        <item name="android:paddingBottom">10dp</item>
+        <item name="android:paddingLeft">15dp</item>
+        <item name="android:paddingRight">15dp</item>
+    </style>
+
+
+    <style name="LeftMenuImage" >
+        <item name="android:layout_width">25dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:layout_marginLeft">20dp</item>
+    </style>
+
+    <style name="fabMenu" >
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="fontFamily">@font/lato_regular</item>
+        <item name="android:layout_gravity">left|center_vertical</item>
+        <item name="android:padding">15dp</item>
+        <item name="android:textSize">19.0sp</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+
+
+    <style name="ApptHeaderText3">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">left|center</item>
+        <item name="fontFamily">@font/lato_bold</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:textColor">@color/header1</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textStyle">normal</item>
+
+    </style>
+
+    <style name="ToastMessage">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:textSize">14.0sp</item>
+        <!-- <item name="android:textStyle">bold</item> -->
+        <item name="android:textColor">#ffffff</item>
+
+        <!-- <item name="android:gravity">center</item> -->
+    </style>
+
+
+
+    <style name="ApptDateHeader" parent="HorizontalLayout">
+        <item name="android:background">#f2f2f2</item>
+    </style>
+
+    <style name="ApptDay2">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">#666e71</item>
+        <item name="android:textSize">13.0sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:gravity">center_horizontal|center_vertical</item>
+
+    </style>
+
+    <style name="ApptDate2" parent="ApptDay2">
+        <item name="android:paddingLeft">6dp</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:gravity">left</item>
+        <item name="android:layout_gravity">left</item>
+    </style>
+
+
+    <style name="ServiceListContainer" parent="VerticalLayout">
+        <item name="android:paddingLeft">15dp</item>
+        <item name="android:paddingRight">0dp</item>
+    </style>
+
+
+    <style name="ApptServiceContainer" parent="WrapHeightLayout">
+        <item name="android:orientation">vertical</item>
+        <item name="android:paddingLeft">0dp</item>
+        <item name="android:paddingTop">5dp</item>
+    </style>
+
+    <style name="NamesLists" parent="ApptServiceContainer">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:paddingTop">0dp</item>
+        <item name="android:paddingBottom">0dp</item>
+        <item name="android:background">@null</item>
+
+    </style>
+
+    <style name="ApptServiceName" parent="WrapHeightLayout">
+        <item name="android:textSize">16.0sp</item>
+        <item name="android:paddingLeft">15dp</item>
+        <item name="android:paddingRight">15dp</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:gravity">left</item>
+        <item name="android:textColor">@color/darker_gray</item>
+        <item name="android:textColorHint">@color/darker_gray</item>
+        <item name="fontFamily">@font/lato_regular</item>
+    </style>
+
+
+    <style name="ApptServiceNameSecondary" parent="WrapHeightLayout">
+        <item name="android:textSize">13.0sp</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:textColor">@color/text_color19</item>
+        <item name="fontFamily">@font/lato_regular</item>
+    </style>
+    <style name="ApptDetailSubHeader" parent="WrapHeightLayout">
+        <item name="android:textSize">13.0sp</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:textColor">@color/header3</item>
+    </style>
+
+
+    <style name="Photo">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginRight">20dp</item>
+        <!--   <item name="android:background">@drawable/rd4</item> -->
+    </style>
+
+    <style name="ApptSlotBlockerScheduled2" parent="WrapLayout">
+        <item name="android:textSize">14.0sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">#949a9c</item>
+        <item name="android:paddingLeft">8dp</item>
+        <item name="android:paddingTop">18dp</item>
+        <item name="android:paddingBottom">18dp</item>
+        <item name="android:background">#fff</item>
+    </style>
+
+    <style name="ApptScheduledFooter" parent="WrapHeightLayout">
+        <item name="android:orientation">horizontal</item>
+        <item name="android:paddingRight">10dp</item>
+        <item name="android:paddingLeft">10dp</item>
+        <item name="android:paddingTop">18dp</item>
+        <item name="android:paddingBottom">18dp</item>
+        <item name="android:background">#f0f3f5</item>
+    </style>
+
+
+    <style name="ApptScheduledFooter2">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:paddingRight">10dp</item>
+        <item name="android:paddingLeft">10dp</item>
+        <item name="android:paddingTop">11dp</item>
+        <item name="android:paddingBottom">11dp</item>
+        <item name="android:background">#f0f3f5</item>
+    </style>
+
+
+
+    <style name="ApptFooterText" parent="WrapLayout">
+        <item name="android:textSize">15.0sp</item>
+        <item name="fontFamily">@font/lato_regular</item>
+        <item name="android:textColor">#666e71</item>
+    </style>
+
+    <style name="ApptStaffName" parent="WrapLayout">
+        <item name="android:textSize">14.0sp</item>
+        <!-- <item name="android:textStyle">bold</item> -->
+        <item name="android:textColor">#949a9c</item>
+        <item name="android:paddingLeft">15dp</item>
+        <item name="android:paddingRight">15dp</item>
+    </style>
+    <style name="ApptStatus" parent="WrapLayout">
+        <item name="android:textSize">11.0sp</item>
+        <item name="android:paddingRight">16dp</item>
+        <item name="android:textColor">@color/black_50_opacity</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_width">wrap_content</item>
+    </style>
+
+    <style name="ApptStaffNameForCustomer" parent="WrapLayout">
+        <item name="android:textSize">14.0sp</item>
+        <!-- <item name="android:textStyle">bold</item> -->
+        <item name="android:textColor">#949a9c</item>
+    </style>
+
+
+    <style name="ApptServicePrice" parent="ApptStaffName">
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:paddingLeft">0dp</item>
+        <item name="android:paddingRight">20dp</item>
+    </style>
+
+    <style name="TitleStyle" parent="WrapLayout">
+        <item name="android:textSize">20dp</item>
+        <item name="android:padding">5dp</item>
+        <item name="android:textColor">#222f38</item>
+
+    </style>
+
+    <style name="BigTextStyle" parent="WrapLayout">
+        <item name="android:textSize">30sp</item>
+        <item name="android:textColor">@color/full_black</item>
+        <item name="android:layout_gravity">center</item>
+
+
+    </style>
+
+    <style name="MediumText" parent="WrapLayout">
+        <item name="android:layout_gravity">center</item>
+        <item name="android:layout_marginBottom">20dp</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="TwoWayView">
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <style name="ServiceHours" parent="ApptStaffName">
+        <item name="android:paddingLeft">0dp</item>
+        <item name="android:layout_marginTop">-2dp</item>
+    </style>
+
+    <style name="contactEditText" parent="match_parent_layout">
+        <item name="android:paddingTop">20dp</item>
+        <item name="android:paddingBottom">20dp</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColorHint">@color/lightest_gray</item>
+        <item name="android:hint">@color/lightest_gray</item>
+        <item name="android:background">@null</item>
+        <item name="android:singleLine">true</item>
+    </style>
+
+    <style name="contactDetailtextView" parent="sub_header_one">
+        <item name="android:background">@null</item>
+        <item name="android:singleLine">true</item>
+    </style>
+
+    <style name="tabViewText" parent="sub_header_one">
+        <item name="android:textSize">16sp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:background">@null</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="workingHourHeaderTextStyle" parent="tabViewText">
+        <item name="android:textSize">17sp</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:fontFamily">@font/lato_regular</item>
+        <item name="android:textColor">@color/dark_gray_bg</item>
+    </style>
+
+
+    <style name="AlertDialog_ButtonText">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:textColor">#f5f5f5</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="AlertMessage">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:textSize">16.0sp</item>
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:paddingBottom">5dp</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="ListName" parent="ApptStaffName">
+        <item name="android:textColor">#818687</item>
+        <item name="android:paddingLeft">0dp</item>
+        <item name="android:textSize">16.0sp</item>
+    </style>
+
+    <style name="ListName2" parent="ListName">
+        <item name="android:textColor">#b4c4cc</item>
+    </style>
+
+    <style name="actionContactButton" parent="WrapLayout">
+        <item name="android:paddingBottom">10dp</item>
+        <item name="android:paddingTop">10dp</item>
+        <item name="android:paddingLeft">20dp</item>
+        <item name="android:paddingRight">20dp</item>
+        <item name="android:layout_gravity">center</item>
+    </style>
+
+    <style name="CollapsedAppBar" parent="@android:style/TextAppearance.Medium">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+    <style name="CollapsedAppBarSize30" parent="@android:style/TextAppearance.Medium">
+        <item name="android:textSize">30sp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="ActionBarTabStyle" parent="@android:style/Widget.ActionBar.TabView">
+        <item name="android:paddingLeft">0dp</item>
+        <item name="android:paddingRight">0dp</item>
+        <item name="android:layout_margin">0dp</item>
+    </style>
+
+    <style name="passcode_DialPad">
+        <item name="android:layout_height">60dp</item>
+        <item name="android:layout_width">60dp</item>
+        <item name="android:textSize">18.0sp</item>
+        <item name="android:textColor">#fff</item>
+        <item name="android:paddingTop">5dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_marginLeft">17dp</item>
+        <item name="android:layout_marginRight">17dp</item>
+        <item name="android:layout_marginTop">12dp</item>
+        <item name="android:layout_marginBottom">12dp</item>
+    </style>
+
+    <style name="ApptHeaderText5">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">left|center</item>
+        <item name="android:layout_gravity">center</item>
+        <!-- <item name="android:textColor">#ffffff</item> -->
+        <item name="android:textSize">20.0sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/header_color</item>
+    </style>
+
+    <style name="Remindertext">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">@color/input_color</item>
+        <item name="android:textSize">16.0sp</item>
+        <item name="android:paddingBottom">20dp</item>
+        <item name="android:paddingTop">20dp</item>
+        <item name="android:paddingLeft">20dp</item>
+    </style>
+
+
+    <style name="TimeFromTo">
+        <item name="android:orientation">horizontal</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="CalcDay" parent="ApptDay">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:textColor">#bfc2c4</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textSize">14sp</item>
+
+    </style>
+
+    <style name="CalcTime" parent="ApptDay">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:textSize">22.0sp</item>
+        <item name="android:layout_marginTop">-4dp</item>
+        <item name="android:textColor">#bfc2c4</item>
+    </style>
+
+    <style name="InputField">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">#ffffff</item>
+        <item name="android:textColor">#5a5e5f</item>
+        <item name="android:textColorHint">#b3b6b7</item>
+        <item name="android:layout_marginBottom">3dp</item>
+        <item name="android:drawablePadding">14dp</item>
+        <item name="android:paddingTop">17dp</item>
+        <item name="android:paddingBottom">10dp</item>
+        <item name="android:textSize">16.0sp</item>
+    </style>
+
+
+    <style name="StaffTimePickerInfoTextStyle">
+        <item name="android:textColor">@color/text_light_grey</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:textSize">13sp</item>
+    </style>
+
+    <style name="StaffTimePickerFromToStyle" parent="WrapContent16SP">
+        <item name="android:layout_width">158dp</item>
+        <item name="android:layout_height">35dp</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="PremiumPlanButtomStyle" parent="WrapContent16SP">
+        <item name="android:layout_width">180dp</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">16dp</item>
+    </style>
+
+
+    <style name="TimePickerDayStyle">
+        <item name="android:padding">5dp</item>
+        <item name="android:layout_height">29dp</item>
+        <item name="android:layout_width">29dp</item>
+        <item name="android:textColor">@color/text_light_grey</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="WorkDaysInfoStyle" parent="StaffTimePickerInfoTextStyle">
+        <item name="android:textColor">@color/half_transparent_light_grey</item>
+    </style>
+
+
+    <style name="ToolBarTitleText" parent="@style/WrapLayout" >
+        <item name="android:gravity">center</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:textColor">@color/header3</item>
+        <item name="fontFamily">@font/lato_bold</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+
+
+    <style name="navgationicon" parent="@style/WrapLayout">
+        <item name="android:layout_alignParentLeft">true</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:layout_gravity">center_vertical</item>
+
+    </style>
+
+    <style name="menubutton">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_gravity">right</item>
+        <item name="android:textColor">@color/buttondisablewhite</item>
+        <item name="android:layout_marginRight">15dp</item>
+        <item name="android:background">@null</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="secondarytext">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">16dp</item>
+        <item name="android:textColor">@color/textsecondcolor</item>
+    </style>
+
+    <style name="primarytext">
+        <item name="android:layout_width">81dp</item>
+        <item name="android:layout_height">19dp</item>
+        <item name="android:fontFamily">@font/lato_regular</item>
+        <item name="android:textColor">@color/input_color</item>
+    </style>
+
+    <style name="ToolBar" parent="match_parent_layout">
+        <item name="android:layout_height">56dp</item>
+        <item name="android:background">@drawable/toolbar_divider</item>
+    </style>
+    <style name="ToolBarWithoutElevation" parent="match_parent_layout">
+        <item name="android:layout_height">56dp</item>
+        <item name="android:background">@color/colorPrimary</item>
+    </style>
+
+    <style name="HorizontalWrap" parent="WrapLayout">
+        <item name="android:orientation">horizontal</item>
+    </style>android:gravity="center"android:gravity="center"
+
+    <style name="HeaderTextCreateStaff" parent="WrapHeightLayout">
+        <item name="android:background">@null</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:textColor">@color/header_color_50_transperency</item>
+        <item name="android:textSize">13sp</item>
+        <item name="fontFamily">@font/lato_regular</item>
+    </style>
+
+    <style name="EdittextCreateStaff" parent="WrapHeightLayout">
+        <item name="android:singleLine">true</item>
+        <item name="android:textColor">@color/input_color</item>
+        <item name="android:textColorHint">@color/input_hint_color</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:background">@null</item>
+        <item name="fontFamily">@font/lato_regular</item>
+    </style>
+
+
+    <style name="ApptHeaderText4" parent="WrapLayout">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:ellipsize">end</item>
+    </style>
+
+    <style name="TextviewPreviewActivity" parent="WrapHeightLayout">
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+
+
+    <style name="CreateStaffImageHeader" parent="icon_wrapper_style">
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:layout_marginLeft">21dp</item>
+        <item name="android:layout_marginRight">16dp</item>
+    </style>
+
+
+
+    <style name="BusinessDetailLayout" parent="WrapHeightLayout">
+        <item name="android:layout_height">70dp</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:paddingRight">15dp</item>
+        <item name="android:paddingLeft">15dp</item>
+        <item name="android:paddingTop">16dp</item>
+        <item name="android:paddingBottom">16dp</item>
+    </style>
+
+
+    <style name="createstaff" parent="AppTheme">
+        <item name="colorPrimaryDark">@color/white</item>
+    </style>
+
+    <style name="colorpicker" parent="WrapLayout">
+        <item name="android:layout_width">40dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:scaleType">center</item>
+    </style>
+
+
+    <style name="imageviewpadding" parent="WrapLayout">
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:layout_marginBottom">23dp</item>
+        <item name="android:layout_marginTop">23dp</item>
+        <item name="android:paddingLeft">15dp</item>
+        <item name="android:paddingRight">23dp</item>
+    </style>
+
+
+    <style name="HeaderAddressActivity" parent="WrapHeightLayout">
+        <item name="android:layout_marginTop">16dp</item>
+        <item name="android:background">@null</item>
+        <item name="android:textColor">@color/header_color_50_transperency</item>
+        <item name="android:textSize">13sp</item>
+        <item name="fontFamily">@font/lato_regular</item>
+    </style>
+
+    <style name="EdittextAddressActivity" parent="WrapHeightLayout">
+        <item name="android:layout_marginBottom">16dp</item>
+        <item name="android:layout_marginTop">3dp</item>
+        <item name="android:background">@null</item>
+        <item name="android:textColorHint">@color/input_hint_color</item>
+        <item name="android:textColor">@color/input_color</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:paddingRight">10dp</item>
+        <item name="android:inputType">text</item>
+        <item name="fontFamily">@font/lato_regular</item>
+    </style>
+
+
+    <style name="bottom_nav_image" parent="WrapHeightLayout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:colorControlHighlight">@color/colorAccent</item>
+    </style>
+
+    <style name="customerSpinner" parent="@android:style/Widget.Spinner">
+        <item name="android:background">@android:drawable/edit_text</item>
+    </style>
+
+
+
+
+
+    <style name="InAppCheckBoxStyle" parent="VerticalLayoutWrap">
+        <item name="android:layout_marginLeft">15dp</item>
+        <item name="android:clickable">false</item>
+    </style>
+
+
+
+    <style name="PaymentMenu" parent="VerticalLayout">
+        <item name="android:paddingTop">27dp</item>
+        <item name="android:paddingBottom">38dp</item>
+        <item name="android:paddingLeft">23dp</item>
+        <item name="android:paddingRight">15.5dp</item>
+    </style>
+
+    <style name="CenterAlignedWrapContent" parent="WrapLayout">
+        <item name="android:layout_gravity">center_horizontal</item>
+    </style>
+
+
+
+    <style name="Premium_features_list" parent="match_parent_layout">
+        <item name="android:layout_marginTop">30dp</item>
+        <item name="android:drawablePadding">12dp</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+
+    <style name="Premium_features_item_image" parent="WrapLayout">
+        <item name="android:gravity">center</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:layout_marginRight">5dp</item>
+        <item name="android:layout_width">16sp</item>
+    </style>
+
+
+    <style name="Premium_features_item_text" parent="WrapLayout">
+        <item name="android:gravity">center</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+
+    <style name="timeoffItemLayoutStyle" parent="WrapHeightLayout">
+        <item name="android:paddingLeft">15dp</item>
+        <item name="android:paddingRight">15dp</item>
+        <item name="android:paddingTop">15dp</item>
+        <item name="android:paddingBottom">15dp</item>
+    </style>
+    <style name="BottomSheetDialogTheme" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/BottomSheetStyle</item>
+    </style>
+
+    <style name="BottomSheetStyle" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@color/transparent</item>
+    </style>
+
+
+
+
+
+
+
+    <!--    New Styles -->
+
+
+
+
+    <style name="item_header" parent="WrapLayout">
+        <item name="android:fontFamily">@font/lato_semibold</item>
+        <item name="android:textColor">@color/header1</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="item_sub_header" parent="WrapLayout">
+        <item name="android:fontFamily">@font/lato_semibold</item>
+        <item name="android:textColor">@color/header4</item>
+        <item name="android:textSize">13sp</item>
+    </style>
+
+    <style name="sub_header_one" parent="WrapLayout">
+        <item name="android:fontFamily">@font/lato_semibold</item>
+        <item name="android:textColor">@color/header3</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="sub_header_two" parent="WrapLayout">
+    <item name="android:fontFamily">@font/lato_regular</item>
+    <item name="android:textColor">@color/header4</item>
+    <item name="android:textSize">14sp</item>
+    <item name="android:background">@null</item>
+</style>
+
+    <style name="sub_header_three" parent="WrapLayout">
+        <item name="android:fontFamily">@font/lato_regular</item>
+        <item name="android:textColor">@color/header3</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="sub_header_four" parent="WrapLayout">
+        <item name="android:fontFamily">@font/lato_regular</item>
+        <item name="android:textColor">@color/colorAccent</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="sub_header_five" parent="WrapLayout">
+        <item name="android:fontFamily">@font/lato_semibold</item>
+        <item name="android:textColor">@color/header5</item>
+        <item name="android:textSize">13sp</item>
+    </style>
+
+    <style name="save_button_style" parent="WrapLayout">
+        <item name="android:fontFamily">@font/lato_regular</item>
+        <item name="android:textColor">@color/colorAccent</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:padding">10dp</item>
+    </style>
+
+    <style name="disable_button_style" parent="WrapLayout">
+        <item name="android:fontFamily">@font/lato_regular</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:padding">10dp</item>
+    </style>
+
+
+    <style name="sub_header_seven" parent="WrapLayout">
+        <item name="android:fontFamily">@font/lato_regular</item>
+        <item name="android:textColor">@color/header2</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="sub_header_nine" parent="WrapLayout">
+        <item name="android:fontFamily">@font/lato_regular</item>
+        <item name="android:textColor">@color/header2</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="sub_header_ten" parent="WrapLayout">
+        <item name="android:fontFamily">@font/lato_regular</item>
+        <item name="android:textColor">@color/header2</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="sub_header_eleven" parent="WrapLayout">
+        <item name="android:fontFamily">@font/lato_semibold</item>
+        <item name="android:textColor">@color/header1</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+
+    <style name="header_action_bar" parent="WrapLayout">
+        <item name="android:gravity">center</item>
+        <item name="android:fontFamily">@font/lato_bold</item>
+        <item name="android:textColor">@color/header1</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="sub_header_action_bar" parent="WrapLayout">
+        <item name="android:fontFamily">@font/lato_regular</item>
+        <item name="android:textColor">@color/header1</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="nav_text" parent="WrapLayout">
+        <item name="android:fontFamily">@font/lato_semibold</item>
+        <item name="android:textColor">@color/header4</item>
+        <item name="android:textSize">9sp</item>
+    </style>
+
+    <style name="premium_pricing_text" parent="WrapLayout">
+        <item name="android:layout_gravity">center</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/colorAccent</item>
+        <item name="android:paddingTop">7dp</item>
+        <item name="android:paddingBottom">7dp</item>
+        <item name="fontFamily">@font/lato_regular</item>
+        <item name="android:layout_alignParentTop">true</item>
+        <item name="android:layout_centerHorizontal">true</item>
+    </style>
+
+    <style name="calendar_controller_textstyle" parent="WrapLayout">
+        <item name="android:layout_gravity">center</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/colorAccent</item>
+        <item name="android:paddingTop">7dp</item>
+        <item name="android:paddingBottom">7dp</item>
+        <item name="fontFamily">@font/lato_bold</item>
+        <item name="android:layout_alignParentTop">true</item>
+        <item name="android:layout_centerHorizontal">true</item>
+    </style>
+
+    <style name="PaymentsFieldText" parent="save_button_style">
+        <item name="android:textSize">16.0sp</item>
+        <item name="android:height">50dp</item>
+        <item name="android:paddingLeft">20dp</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:textColor">@color/colorAccent</item>
+        <item name="android:background">@color/white</item>
+        <item name="android:foreground">?attr/selectableItemBackground</item>
+        <item name="android:layout_width">match_parent</item>
+    </style>
+
+    <style name="place_holder_text" parent="WrapLayout">
+        <item name="android:fontFamily">@font/lato_regular</item>
+        <item name="android:textColor">@color/header2</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="subtitle_text" parent="WrapLayout">
+        <item name="android:fontFamily">@font/lato_regular</item>
+        <item name="android:textColor">@color/header5</item>
+        <item name="android:textSize">13sp</item>
+    </style>
+
+    <style name="label_button_style" parent="WrapLayout">
+        <item name="android:fontFamily">@font/lato_regular</item>
+        <item name="android:textColor">@color/colorAccent</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="sub_header_thirteen" parent="WrapLayout">
+        <item name="android:fontFamily">@font/lato_regular</item>
+        <item name="android:textColor">@color/header4</item>
+        <item name="android:textSize">13sp</item>
+        <item name="background">@null</item>
+    </style>
+
+
+    <style name="sub_header_15" parent="WrapLayout">
+        <item name="android:fontFamily">@font/lato_semibold</item>
+        <item name="android:textColor">@color/header4</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+
+
+    <style name="sub_header_17" parent="WrapLayout">
+        <item name="android:fontFamily">@font/lato_bold</item>
+        <item name="android:textColor">@color/header2</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="sub_header_18" parent="WrapLayout">
+        <item name="android:fontFamily">@font/lato_regular</item>
+        <item name="android:textColor">@color/header3</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+
+
+    <style name="weekday_header_textstyle">
+        <item name="android:orientation">horizontal</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">14dp</item>
+        <item name="android:textColor">@color/header4</item>
+        <item name="fontFamily">@font/lato_semibold</item>
+    </style>
+
+
+
+    <style name="SubHeaderLayoout">
+        <item name="android:layout_height">52dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:background">@color/colorPrimary</item>
+        <item name="fontFamily">@font/lato_regular</item>
+        <item name="android:textColor">@color/header3</item>
+    </style>
+
+    <style name="SubHeaderLayoout_24dp" parent="SubHeaderLayoout">
+        <item name="android:layout_height">24dp</item>
+    </style>
+
+    <style name="payment_card_theme">
+        <item name="android:textColorHint">@color/header4</item>
+        <item name="colorControlNormal">@color/header4</item>
+        <item name="colorControlActivated">@color/colorAccent</item>
+        <item name="android:editTextColor">@color/header2</item>
+    </style>
+
+
+
+    <!-- Currently used new styles -->
+
+
+    <style name="edit_text_header_style" parent="WrapLayout">
+        <item name="android:fontFamily">@font/lato_regular</item>
+        <item name="android:textColor">@color/header3</item>
+        <item name="android:textSize">12sp</item>
+        <item name="background">@null</item>
+    </style>
+
+    <style name="edit_text_value_style" parent="WrapLayout">
+        <item name="android:fontFamily">@font/lato_regular</item>
+        <item name="android:textColor">@color/header2</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:background">@color/transparent</item>
+        <item name="android:textColorHint">@color/header4</item>
+    </style>
+
+    <style name="ListText" parent="edit_text_value_style">
+        <item name="android:layout_centerVertical">true</item>
+    </style>
+
+    <style name="text_view_value_style" parent="WrapLayout">
+    <item name="android:fontFamily">@font/lato_regular</item>
+    <item name="android:textColor">@color/header2</item>
+    <item name="android:textSize">16sp</item>
+    <item name="android:background">@null</item>
+        <item name="android:textColorHint">@color/header5</item>
+    </style>
+
+    <style name="appt_details_text_style" parent="WrapLayout">
+        <item name="android:fontFamily">@font/lato_semibold</item>
+        <item name="android:textColor">@color/header2</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:background">@null</item>
+    </style>
+    <style name="appt_details_sub_header_text_style" parent="WrapLayout">
+        <item name="android:fontFamily">@font/lato_regular</item>
+        <item name="android:textColor">@color/header3</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:background">@null</item>
+    </style>
+    <style name="appt_details_header_text_style" parent="WrapLayout">
+        <item name="android:fontFamily">@font/lato_regular</item>
+        <item name="android:textColor">@color/icon_color</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:background">@null</item>
+    </style>
+
+
+    <style name="social_button_style" parent="WrapLayout">
+        <item name="android:layout_height">48dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:fontFamily">@font/lato_regular</item>
+        <item name="android:textColor">@color/header2</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:paddingTop">13dp</item>
+        <item name="android:paddingBottom">13dp</item>
+    </style>
+
+
+
+    <style name="WeekDaysStaffdetailView" parent="WrapHeightLayout">
+        <item name="android:layout_weight">1</item>
+        <item name="android:background">@null</item>
+        <item name="fontFamily">@font/lato_regular</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:textColor">@color/header2</item>
+        <item name="android:textColorHint">@color/header5</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="TextInputLayoutAppearance" parent="Widget.Design.TextInputLayout">
+        <item name="colorControlNormal">@color/header5</item>
+        <item name="android:textColorHint">@color/header5</item>
+        <item name="colorControlActivated">@color/header2</item>
+    </style>
+
+
+    <style name="icon_wrapper_style">
+        <item name="android:layout_width">22dp</item>
+        <item name="android:layout_height">22dp</item>
+    </style>
+
+    <style name="sub_header_16" parent="WrapLayout">
+        <item name="android:fontFamily">@font/lato_semibold</item>
+        <item name="android:textColor">@color/header2</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="sub_header_regular_16_header4" parent="WrapLayout">
+        <item name="android:fontFamily">@font/lato_regular</item>
+        <item name="android:textColor">@color/header4</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="sub_header_regular_12_header3" parent="WrapLayout">
+        <item name="android:fontFamily">@font/lato_regular</item>
+        <item name="android:textColor">@color/header3</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+    <style name="sub_header_19" parent="WrapLayout">
+        <item name="android:fontFamily">@font/lato_bold</item>
+        <item name="android:textColor">@color/header2</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+    <style name="sub_header_20" parent="WrapLayout">
+        <item name="android:fontFamily">@font/lato_bold</item>
+        <item name="android:textColor">@color/header3</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="sub_header_21" parent="WrapLayout">
+        <item name="android:fontFamily">@font/lato_regular</item>
+        <item name="android:textColor">@color/header4</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+
+    <style name="Dialog_Header_Style" parent="match_parent_layout">
+        <item name="android:layout_height">56dp</item>
+        <item name="android:background">@color/colorPrimary</item>
+    </style>
+    <style name="wrap_content_layout">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+    </style>
+
+    <style name="place_holder_heading" parent="WrapLayout">
+        <item name="android:fontFamily">@font/lato_bold</item>
+        <item name="android:textColor">@color/header2</item>
+        <item name="android:textSize">24sp</item>
+    </style>
+
+    <style name="place_holder_subheading" parent="WrapLayout">
+        <item name="android:fontFamily">@font/lato_regular</item>
+        <item name="android:textColor">@color/icon_color</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+    <style name="app_detail_action_item_layout_style" parent="MatchLayout">
+        <item name="android:layout_height">53dp</item>
+        <item name="background">@color/white</item>
+    </style>
+
+
+
+    <style name="ContentNotAvailable" parent="sub_header_three">
+        <item name="android:visibility">gone</item>
+    </style>
+
+    <style name="sub_header_24" parent="WrapLayout">
+        <item name="android:fontFamily">@font/lato_bold</item>
+        <item name="android:textColor">@color/header2</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="length_counter" parent="WrapLayout">
+        <item name="android:fontFamily">@font/lato_bold</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="card_layout" parent="WrapLayout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:fontFamily">@font/lato_regular</item>
+        <item name="cardElevation">10dp</item>
+        <item name="cardCornerRadius">10dp</item>
+    </style>
+
+
+
+</resources>
+

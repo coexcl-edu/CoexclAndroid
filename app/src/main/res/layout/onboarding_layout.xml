@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:theme="@style/AppTheme"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/app_background_gradient">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="54dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/white_border_r9"
+        android:elevation="20dp">
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/viewpager"
+            style="@style/match_parent_layout"
+             />
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tab_layout_indicator"
+            android:layout_gravity="center"
+            app:tabBackground="@drawable/tab_select"
+            app:tabGravity="center"
+            app:tabIndicatorHeight="0dp"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:background="@null"
+            style="@style/WrapLayout"/>
+
+    </RelativeLayout>
+
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tablayout"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        app:tabGravity="fill"
+        app:tabMode="fixed"
+        app:tabTextColor="@color/header2"
+        app:tabSelectedTextColor="@color/colorAccent"
+        android:scrollIndicators="bottom"
+        app:tabIndicatorHeight="2dp"
+        android:layout_marginTop="2dp"
+        app:tabIndicatorColor="@color/colorAccent"
+        android:layout_above="@+id/registration"
+        android:background="@null"
+
+        />
+
+    <RelativeLayout
+        android:id="@+id/registration"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_alignParentBottom="true"
+
+        >
+        <TextView
+            android:id="@+id/signup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:layout_centerVertical="true"
+            android:textSize="18dp"
+            android:layout_marginLeft="25dp"
+            android:padding="10dp"
+            android:textStyle="bold"
+            android:visibility="gone"
+            android:text="Sign Up"/>
+
+        <TextView
+            android:id="@+id/login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:paddingRight="25dp"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:text="Lets Begin >"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>

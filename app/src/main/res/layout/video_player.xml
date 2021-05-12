@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/video_container"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:alpha="90"
+    android:keepScreenOn="true"
+    android:background="@android:color/black"
+    >
+
+    <com.home.coexcleducation.ui.CustomVideoView
+        android:id="@+id/videoSurface"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_centerInParent="true"
+        android:visibility="visible"
+        />
+    <!--  android:layout_alignParentRight="true"
+      android:layout_alignParentLeft="true"
+       android:layout_alignParentBottom="true"
+        android:layout_alignParentTop="true" -->
+
+
+    <RelativeLayout
+        android:id="@+id/topButton"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:background="#CC000000"
+        >
+
+        <Button
+            android:id="@+id/doneButton"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:textColor="#ffffff"
+            android:text="Done"
+            android:textSize="22sp"
+            android:background="@android:color/transparent"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            />
+
+        <ImageView
+            android:id="@+id/change_Quality"
+            android:layout_width="50dp"
+            android:layout_height="28dp"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="16dp"
+            android:layout_toLeftOf="@+id/full_screen"
+            android:src="@drawable/setting" />
+
+        <ImageView
+            android:id="@+id/full_screen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="16dp"
+            android:src="@drawable/ic_media_fullscreen_stretch" />
+
+        <ProgressBar
+            android:id="@+id/downloadURLProgress"
+            style="?android:attr/progressBarStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignRight="@+id/full_screen"
+            android:layout_marginRight="65dp"
+            android:layout_centerVertical="true" />
+
+    </RelativeLayout>
+
+    <ProgressBar
+        android:id="@+id/progressVideo"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true" />
+
+    <include android:visibility="gone" android:id="@+id/choose_quality" layout="@layout/choose_quality" />
+
+</RelativeLayout>

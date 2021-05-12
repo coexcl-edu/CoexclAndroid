@@ -1,0 +1,478 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/coordinateLayout"
+    style="@style/match_parent_layout"
+    android:orientation="vertical">
+
+    <com.google.android.material.appbar.CollapsingToolbarLayout
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:background="@drawable/appcolour_gradient_for_background">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:scaleType="fitXY"
+            android:alpha="0.3"
+            android:src="@drawable/kid_full"/>
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="160dp"
+                android:src="@drawable/profile_back"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="150dp"
+                android:layout_gravity="center"
+                android:src="@drawable/kid_place_holder"/>
+
+        </FrameLayout>
+
+    </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+    <ScrollView
+        style="@style/match_parent_layout"
+        android:orientation="vertical"
+        android:scrollbars="none"
+        >
+
+        <LinearLayout
+            android:id="@+id/profile_layout"
+            android:visibility="visible"
+            style="@style/match_parent_layout"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="300dp"/>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="-30dp"
+                android:background="@drawable/top_cornor_radius">
+
+            <LinearLayout
+                android:id="@+id/personal_detail_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                >
+
+            <TextView
+                style="@style/header_action_bar"
+                android:text="Personal Details"
+                android:padding="20dp"/>
+
+            <LinearLayout
+                style="@style/match_parent_layout"
+                android:clickable="false"
+                android:padding="5dp"
+                android:foreground="?attr/selectableItemBackground"
+                app:srcCompat="@drawable/ic_pin_grey700">
+
+                <ImageView
+                    style="@style/icon_wrapper_style"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="21dp"
+                    android:layout_marginRight="16dp"
+                    app:srcCompat="@drawable/ic_staff_grey700" />
+
+                    <TextView
+                        android:id="@+id/name"
+                        style="@style/edit_text_value_style"
+                        android:layout_height="wrap_content"
+                        android:layout_toEndOf="@+id/contact_detail_logo"
+                        android:layout_toRightOf="@+id/contact_detail_logo"
+                        android:gravity="left"
+                        android:paddingRight="5dp"
+                        android:paddingBottom="3dp"
+                        android:paddingTop="3dp"
+                        android:text="Abhishek kumar"
+                        android:textColor="@color/input_color" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                style="@style/match_parent_layout"
+                android:clickable="false"
+                android:foreground="?attr/selectableItemBackground"
+                android:padding="5dp"
+                app:srcCompat="@drawable/ic_pin_grey700">
+
+                <ImageView
+                    style="@style/icon_wrapper_style"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="21dp"
+                    android:layout_marginRight="16dp"
+                    app:srcCompat="@drawable/ic_email_grey700" />
+
+                <TextView
+                    android:id="@+id/email"
+                    style="@style/edit_text_value_style"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:paddingRight="5dp"
+                    android:paddingBottom="3dp"
+                    android:paddingTop="3dp"
+                    android:text="abhishek@gmail.com"
+                    android:textColor="@color/input_color" />
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/match_parent_layout"
+                android:clickable="false"
+                android:foreground="?attr/selectableItemBackground"
+                android:padding="5dp"
+                app:srcCompat="@drawable/ic_pin_grey700">
+
+                <ImageView
+                    style="@style/icon_wrapper_style"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="21dp"
+                    android:layout_marginRight="16dp"
+                    app:srcCompat="@drawable/ic_phone_grey700" />
+
+                <TextView
+                    android:id="@+id/phone"
+                    style="@style/edit_text_value_style"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:paddingRight="5dp"
+                    android:paddingBottom="3dp"
+                    android:paddingTop="3dp"
+                    android:text="+91 9835900320"
+                    android:textColor="@color/input_color" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                style="@style/match_parent_layout"
+                android:clickable="false"
+                android:foreground="?attr/selectableItemBackground"
+                android:padding="5dp"
+                app:srcCompat="@drawable/ic_pin_grey700">
+
+                <ImageView
+                    style="@style/icon_wrapper_style"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="21dp"
+                    android:layout_marginRight="16dp"
+                    app:srcCompat="@drawable/class_icon" />
+
+                <TextView
+                    android:id="@+id/school_class"
+                    style="@style/edit_text_value_style"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:paddingRight="5dp"
+                    android:paddingBottom="3dp"
+                    android:paddingTop="3dp"
+                    android:text="Class 8th"
+                    android:textColor="@color/input_color" />
+            </LinearLayout>
+
+                <LinearLayout
+                    style="@style/match_parent_layout"
+                    android:clickable="false"
+                    android:foreground="?attr/selectableItemBackground"
+                    android:padding="5dp"
+                    app:srcCompat="@drawable/ic_pin_grey700">
+
+                    <ImageView
+                        style="@style/icon_wrapper_style"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="21dp"
+                        android:layout_marginRight="16dp"
+                        app:srcCompat="@drawable/class_icon" />
+
+                    <TextView
+                        android:id="@+id/gender"
+                        style="@style/edit_text_value_style"
+                        android:layout_height="wrap_content"
+                        android:gravity="left"
+                        android:paddingRight="5dp"
+                        android:paddingBottom="3dp"
+                        android:paddingTop="3dp"
+                        android:text="Male"
+                        android:textColor="@color/input_color" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <View
+                android:background="@color/divider_color"
+                android:layout_height="1dp"
+                android:layout_width="match_parent"
+                android:layout_margin="20dp"/>
+
+            <LinearLayout
+                android:id="@+id/school_detail_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                >
+
+                <TextView
+                    style="@style/header_action_bar"
+                    android:text="School Details"
+                    android:paddingLeft="20dp"
+                    android:paddingBottom="20dp"/>
+
+                <LinearLayout
+                    style="@style/match_parent_layout"
+                    android:clickable="false"
+                    android:padding="5dp"
+                    android:foreground="?attr/selectableItemBackground"
+                    >
+
+                    <ImageView
+                        style="@style/icon_wrapper_style"
+                        android:layout_centerVertical="true"
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        android:layout_marginLeft="24dp"
+                        android:layout_marginRight="16dp"
+                        app:srcCompat="@drawable/ic_page_grey700" />
+
+                    <TextView
+                        android:id="@+id/school_name"
+                        style="@style/edit_text_value_style"
+                        android:layout_height="wrap_content"
+                        android:layout_toEndOf="@+id/contact_detail_logo"
+                        android:layout_toRightOf="@+id/contact_detail_logo"
+                        android:gravity="left"
+                        android:paddingRight="5dp"
+                        android:paddingBottom="3dp"
+                        android:paddingTop="3dp"
+                        android:text="RKVM School Jasidhi"
+                        android:textColor="@color/input_color" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    style="@style/match_parent_layout"
+                    android:clickable="false"
+                    android:padding="5dp"
+                    android:foreground="?attr/selectableItemBackground"
+                    >
+
+                    <ImageView
+                        style="@style/icon_wrapper_style"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="21dp"
+                        android:layout_marginRight="16dp"
+                        app:srcCompat="@drawable/ic_document_grey700" />
+
+                    <TextView
+                        style="@style/edit_text_value_style"
+                        android:layout_height="wrap_content"
+                        android:gravity="left"
+                        android:paddingRight="5dp"
+                        android:paddingBottom="3dp"
+                        android:paddingTop="3dp"
+                        android:text="RKVM-01273"
+                        android:textColor="@color/input_color" />
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/match_parent_layout"
+                    android:clickable="false"
+                    android:padding="5dp"
+                    android:foreground="?attr/selectableItemBackground"
+                    app:srcCompat="@drawable/ic_pin_grey700">
+
+                    <ImageView
+                        style="@style/icon_wrapper_style"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="21dp"
+                        android:layout_marginRight="16dp"
+                        app:srcCompat="@drawable/ic_pin_grey700" />
+
+                    <TextView
+                        style="@style/edit_text_value_style"
+                        android:layout_height="wrap_content"
+                        android:gravity="left"
+                        android:paddingRight="5dp"
+                        android:paddingBottom="3dp"
+                        android:paddingTop="3dp"
+                        android:text="Prabhu Dham, 52 Bigha, Madhupur, Deoghar, Jharkhand"
+                        android:textColor="@color/input_color" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+             <View
+                android:background="@color/divider_color"
+                android:layout_height="1dp"
+                android:layout_width="match_parent"
+                android:layout_margin="20dp"/>
+
+            <LinearLayout
+                android:id="@+id/parental_detail_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                >
+
+                <TextView
+                    style="@style/header_action_bar"
+                    android:text="Parental Details"
+                    android:paddingLeft="20dp"
+                    android:paddingBottom="20dp"/>
+
+                <LinearLayout
+                    style="@style/match_parent_layout"
+                    android:clickable="false"
+                    android:padding="5dp"
+                    android:foreground="?attr/selectableItemBackground"
+                    >
+
+                    <ImageView
+                        style="@style/icon_wrapper_style"
+                        android:layout_centerVertical="true"
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        android:layout_marginLeft="24dp"
+                        android:layout_marginRight="16dp"
+                        app:srcCompat="@drawable/ic_staff_grey700" />
+
+                    <TextView
+                        android:id="@+id/parent_name"
+                        style="@style/edit_text_value_style"
+                        android:layout_height="wrap_content"
+                        android:layout_toEndOf="@+id/contact_detail_logo"
+                        android:layout_toRightOf="@+id/contact_detail_logo"
+                        android:gravity="left"
+                        android:paddingRight="5dp"
+                        android:paddingBottom="3dp"
+                        android:paddingTop="3dp"
+                        android:text="Parent Name"
+                        android:textColor="@color/input_color" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    style="@style/match_parent_layout"
+                    android:clickable="false"
+                    android:padding="5dp"
+                    android:foreground="?attr/selectableItemBackground"
+                    >
+
+                    <ImageView
+                        style="@style/icon_wrapper_style"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="21dp"
+                        android:layout_marginRight="16dp"
+                        app:srcCompat="@drawable/ic_phone_grey700" />
+
+                    <TextView
+                        android:id="@+id/parent_phone"
+                        style="@style/edit_text_value_style"
+                        android:layout_height="wrap_content"
+                        android:gravity="left"
+                        android:paddingRight="5dp"
+                        android:paddingBottom="3dp"
+                        android:paddingTop="3dp"
+                        android:text="983478234"
+                        android:textColor="@color/input_color" />
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/match_parent_layout"
+                    android:clickable="false"
+                    android:padding="5dp"
+                    android:foreground="?attr/selectableItemBackground"
+                    app:srcCompat="@drawable/ic_pin_grey700">
+
+                    <ImageView
+                        style="@style/icon_wrapper_style"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="21dp"
+                        android:layout_marginRight="16dp"
+                        app:srcCompat="@drawable/ic_pin_grey700" />
+
+                    <TextView
+                        android:id="@+id/parent_address"
+                        style="@style/edit_text_value_style"
+                        android:layout_height="wrap_content"
+                        android:gravity="left"
+                        android:paddingRight="5dp"
+                        android:paddingBottom="3dp"
+                        android:paddingTop="3dp"
+                        android:text="Prabhu Dham, 52 Bigha, Madhupur, Deoghar, Jharkhand"
+                        android:textColor="@color/input_color" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <View
+                android:background="@color/divider_color"
+                android:layout_height="1dp"
+                android:layout_width="match_parent"
+                android:layout_margin="20dp"/>
+
+            <LinearLayout
+                android:id="@+id/accounts_detail_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                >
+
+                <TextView
+                    style="@style/header_action_bar"
+                    android:text="Accounts Details"
+                    android:paddingLeft="20dp"
+                    android:paddingBottom="20dp"/>
+
+                <LinearLayout
+                    style="@style/match_parent_layout"
+                    android:clickable="false"
+                    android:padding="5dp"
+                    android:foreground="?attr/selectableItemBackground"
+                    app:srcCompat="@drawable/ic_pin_grey700">
+
+                    <ImageView
+                        style="@style/icon_wrapper_style"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="21dp"
+                        android:layout_marginRight="16dp"
+                        app:srcCompat="@drawable/ic_premium" />
+
+                    <TextView
+                        android:id="@+id/staff_name"
+                        style="@style/edit_text_value_style"
+                        android:layout_height="wrap_content"
+                        android:layout_toEndOf="@+id/contact_detail_logo"
+                        android:layout_toRightOf="@+id/contact_detail_logo"
+                        android:gravity="left"
+                        android:paddingRight="5dp"
+                        android:paddingBottom="3dp"
+                        android:paddingTop="3dp"
+                        android:text="Premium - (Renews yearly)"
+                        android:textColor="@color/input_color" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="80dp"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

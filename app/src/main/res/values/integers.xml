@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="anim_short">200</integer>
+    <integer name="anim_intermediate">250</integer>
+    <integer name="anim_medium">400</integer>
+    <integer name="anim_sync_duration">40</integer>
+      
+</resources>

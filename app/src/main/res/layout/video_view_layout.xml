@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/video_player_view"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/video_name"
+            style="@style/header_action_bar"
+            android:paddingTop="10dp"
+            android:paddingLeft="10dp"
+            android:text="Thermodynamics Introduction"/>
+        <TextView
+            android:id="@+id/posted_by"
+            style="@style/sub_header_nine"
+            android:paddingTop="5dp"
+            android:paddingLeft="10dp"
+            android:paddingBottom="10dp"
+            android:layout_below="@+id/video_name"
+            android:text="By Michael"/>
+
+        <ImageView
+            android:id="@+id/more_option"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginStart="15dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="15dp"
+            android:src="@drawable/ic_more_grey" />
+
+
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/divider_color"/>
+
+
+
+    <ListView
+        android:id="@+id/video_listview"
+        style="@style/MatchLayout"
+        android:dividerHeight="0.5dp"
+        android:scrollbars="none"
+        android:layout_width="match_parent"/>
+
+
+
+</LinearLayout>

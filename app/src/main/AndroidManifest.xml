@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.home.coexcleducation">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/coexcl_app_icon"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/coexcl_app_icon"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.CoexclEducation">
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.CoexclEducation">
+        </activity>
+
+        <activity
+            android:name=".ui.registration.SignupActivity"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.CoexclEducation">
+        </activity>
+
+        <activity
+            android:name=".ui.ChatView"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.CoexclEducation">
+        </activity>
+        <activity
+            android:name=".ui.VideoPlayerView"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.CoexclEducation">
+        </activity>
+
+        <activity
+            android:name=".ui.registration.LoginActivity"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.CoexclEducation">
+        </activity>
+
+        <activity
+            android:name=".ui.lession.SubjectDetailActivtiy"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.CoexclEducation">
+        </activity>
+
+        <activity
+            android:name=".ui.settings.AboutLayout"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.CoexclEducation">
+        </activity>
+        <activity
+            android:name=".ui.settings.ProgressLayout"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.CoexclEducation">
+        </activity>
+
+        <activity
+            android:name=".ui.onboarding.OnBoardingActivity"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.CoexclEducation">
+        </activity>
+        <activity
+            android:name=".ui.registration.LaunchActivity"
+            android:launchMode="singleTop"
+            android:theme="@style/splash_screen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="com.freshchat.consumer.sdk.activity.ChannelListActivity"
+            android:theme="@style/ChatTheme"
+            tools:replace="android:theme" />
+
+        <activity
+            android:name="com.freshchat.consumer.sdk.activity.ConversationDetailActivity"
+            android:theme="@style/ChatTheme"
+            tools:replace="android:theme" />
+
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.home.coexcleducation.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/freshchat_file_provider_paths" />
+        </provider>
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+    </application>
+
+</manifest>

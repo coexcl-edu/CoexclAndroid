@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#139EEC</color>
+    <color name="colorPrimaryDark">#139EEC</color>
+    <color name="colorAccent">#2687bf</color>
+<!--    <color name="purple_200">#FFBB86FC</color>-->
+<!--    <color name="purple_500">#FF6200EE</color>-->
+<!--    <color name="purple_700">#FF3700B3</color>-->
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="black_50_opacity_main">#BFffffff</color>
+    <color name="coexcl_orange">#FFA500</color>
+
+
+
+    <color name="header1">#333333</color>
+    <color name="header2">#142640</color>
+    <color name="header3">#556784</color>
+    <color name="header4">#8495B1</color>
+    <color name="header5">#AFB4BB</color>
+
+    <color name="premium_pricing_colour">#3C60DA</color>
+    <color name="icon_bottom_nav_inactive">#8495B1</color>
+    <color name="icon_bottom_nav_active">#6285FF</color>
+    <color name="icon_gray_500">#556784</color>
+    <color name="icon_gray_400">#8495B1</color>
+
+    <color name="red_500">#DD2727</color>
+    <color name="foreground_color">#D9E1EE</color>
+    <color name="menu_bg_color">#FEFFFF</color>
+    <color name="grey_200_bg">#F6F8FC</color>
+    <color name="red_400">#FC4C4C</color>
+    <color name="grey_600">#3B4C66</color>
+
+    <color name="name_lable_color">#181818</color>
+
+
+
+    <color name="sub_header">#384355</color>
+    <color name="white">#FFFFFF</color>
+    <color name="cream_light">#F2F2F2</color>
+    <color name="full_black">#000000</color>
+    <color name="menuTextColor">#6a7375</color>
+    <color name="menuTextColorNew">#8b9294</color>
+    <color name="left_menu_background_Color">#2e363d</color>
+    <color name="gray">#d8d8d8</color>
+    <color name="date_picker_text">#929aa0</color>
+    <color name="light_red">#ed5555</color>
+    <color name="DarkGray">#949a9c</color>
+    <color name="darker_gray">#333332</color>
+    <color name="green">#69e49b</color>
+    <color name="dark_gray_bg">#3d484e</color>
+    <color name="medium_green">#2eafa8</color>
+    <color name="lightest_gray">#80333333</color>
+    <color name="header_color">#293438</color>
+    <color name="divider_color">#D9E1EE</color>
+    <color name="category">#818687</color>
+    <color name="transparent">#00000000</color>
+    <color name="smokeGray">#f7f7f7</color>
+    <color name="textGray">#4d4d4d</color>
+    <color name="text_light_grey">#333333</color>
+    <color name="light_red_bg">#ff6e6e</color>
+    <color name="half_transparent_light_grey">#80333333</color>
+    <color name="empty_list_text_color">#444a4f</color>
+    <color name="gradientColor2">#00C5E4</color>
+    <color name="transperency_50_empty_list_text_color">#80444a4f</color>
+    <color name="gradient_end_color">#a3e0f5</color>
+    <color name="slot_offhour_color">#EBF0F0</color>
+    <color name="base_green_color">#00D4D4</color>
+    <color name="screen_base_color">#EBF1F1</color>
+    <color name="listselectedtext">#333332</color>
+    <color name="listunselectedtext">#80333332</color>
+    <color name="texthint">#40333333</color>
+    <color name="textsecondcolor">#80333333</color>
+    <color name="buttondisablewhite">#33FFFFFF</color>
+    <color name="appt_divider">#26005050</color>
+    <color name="red">#ff6e6e</color>
+    <color name="discout_red">#f15151</color>
+    <color name="cross_icon_red_color">#FF8585</color>
+    <color name="tick_icon_green_color">#62D392</color>
+    <color name="white_transperency">#666285FF</color>
+    <color name="header_color_50_transperency">#80333333</color>
+    <color name="input_color">#333333</color>
+    <color name="input_color_60_transperent">#BF333333</color>
+    <color name="inout_color_25_transperent">#40333333</color>
+    <color name="inout_color_50_transperent">#80333333</color>
+    <color name="input_hint_color">#40333333</color>
+    <color name="header_color_25_transperency">#40333333</color>
+    <color name="calender_disable_color">#efefef</color>
+    <color name="dissmiss_red_color">#e88b91</color>
+    <color name="active_bottom_nav_text_color">#00A8AD</color>
+    <color name="inactive_bottom_nav_text_color">#555555</color>
+    <color name="service_cateegory_color">#999999</color>
+    <color name="option_unselected">#80333333</color>
+    <color name="option_selected">#333333</color>
+    <color name="session_detail_divider">#f2f6f6</color>
+    <color name="sms_status_divider">#E1E9E9</color>
+    <color name="reminder_status_color2">#2aafab</color>
+    <color name="reminder_status_color1">#7f333333</color>
+    <color name="reminder_status_color3">#d0021b</color>
+    <color name="class_name_background">#d8232e2e</color>
+    <color name="lite_grey">#0c005050</color>
+    <color name="app_update_background_color">#00e3f3</color>
+    <color name="premium_blue">#00adef</color>
+    <color name="default_green">#52ad77</color>
+
+    <!--<color name="service_color1">#ff6e6e</color>-->
+    <!--<color name="service_color2">#ff9e5c</color>-->
+    <!--<color name="service_color3">#ffd45c</color>-->
+    <!--<color name="service_color4">#d3d342</color>-->
+    <!--<color name="service_color5">#65d77c</color>-->
+    <!--<color name="service_color6">#49c449</color>-->
+    <!--<color name="service_color7">#00beb9</color>-->
+    <!--<color name="service_color8">#628AFF</color>-->
+    <!--<color name="service_color9">#4842EA</color>-->
+    <color name="service_color10">#997FF2</color>
+    <color name="service_color11">#993C99</color>
+    <color name="service_color12">#D32A6B</color>
+    <color name="service_color13">#C49A6C</color>
+    <color name="service_color14">#9B8579</color>
+
+    <color name="icon_color">#139EEC</color>
+
+
+
+    <!--<color name="service_color1_20_percent">#33ff6e6e</color>-->
+    <!--<color name="service_color2_20_percent">#33ff9e5c</color>-->
+    <!--<color name="service_color3_20_percent">#33ffd45c</color>-->
+    <!--<color name="service_color4_20_percent">#33d3d342</color>-->
+    <!--<color name="service_color5_20_percent">#3365d77c</color>-->
+    <!--<color name="service_color6_20_percent">#3349c449</color>-->
+    <!--<color name="service_color7_20_percent">#3300beb9</color>-->
+    <!--<color name="service_color8_20_percent">#33628AFF</color>-->
+    <!--<color name="service_color9_20_percent">#334842EA</color>-->
+    <color name="service_color10_20_percent">#33997FF2</color>
+    <color name="service_color11_20_percent">#33993C99</color>
+    <color name="service_color12_20_percent">#33D32A6B</color>
+    <color name="service_color13_20_percent">#33C49A6C</color>
+    <color name="service_color14_20_percent">#339B8579</color>
+
+
+
+
+    <!--<color name="service_color1_50_percent">#80ff6e6e</color>-->
+    <!--<color name="service_color2_50_percent">#80ff9e5c</color>-->
+    <!--<color name="service_color3_50_percent">#80ffd45c</color>-->
+    <!--<color name="service_color4_50_percent">#80d3d342</color>-->
+    <!--<color name="service_color5_50_percent">#8065d77c</color>-->
+    <!--<color name="service_color6_50_percent">#8049c449</color>-->
+    <!--<color name="service_color7_50_percent">#8000beb9</color>-->
+    <!--<color name="service_color8_50_percent">#80628AFF</color>-->
+    <!--<color name="service_color9_50_percent">#804842EA</color>-->
+    <color name="service_color10_50_percent">#80997FF2</color>
+    <color name="service_color11_50_percent">#80993C99</color>
+    <color name="service_color12_50_percent">#80D32A6B</color>
+    <color name="service_color13_50_percent">#80C49A6C</color>
+    <color name="service_color14_50_percent">#809B8579</color>
+
+
+
+
+
+    <color name="service_color1_20_percent">#33F0C2C1</color>
+    <color name="service_color2_20_percent">#33E1C6E1</color>
+    <color name="service_color3_20_percent">#33B5CEDB</color>
+    <color name="service_color4_20_percent">#33CAE79E</color>
+    <color name="service_color5_20_percent">#33F3E7AE</color>
+    <color name="service_color6_20_percent">#33FADEB3</color>
+    <color name="service_color7_20_percent">#33BBE6E1</color>
+    <color name="service_color8_20_percent">#33E6DBCB</color>
+    <color name="service_color9_20_percent">#33E1E0E2</color>
+
+
+
+
+
+    <color name="service_color1_50_percent">#80F0C2C1</color>
+    <color name="service_color2_50_percent">#80E1C6E1</color>
+    <color name="service_color3_50_percent">#80B5CEDB</color>
+    <color name="service_color4_50_percent">#80CAE79E</color>
+    <color name="service_color5_50_percent">#80F3E7AE</color>
+    <color name="service_color6_50_percent">#80FADEB3</color>
+    <color name="service_color7_50_percent">#80BBE6E1</color>
+    <color name="service_color8_50_percent">#80E6DBCB</color>
+    <color name="service_color9_50_percent">#80E1E0E2</color>
+
+
+
+    <color name="headerseperatorcolor">#e6e6e6</color>
+
+
+    <color name="text_color">#9b9b9b</color>
+    <color name="text_color1">#3a414d</color>
+    <color name="text_color2">#737373</color>
+    <color name="text_color3">#be737373</color>
+    <color name="text_color4">#d8d8d8</color>
+    <color name="text_color5">#acacaa</color>
+    <color name="text_color6">#00afab</color>
+    <color name="text_color7">#6600afab</color>
+    <color name="text_color8">#4a4a4a</color>
+    <color name="text_color9">#664a4a4a</color>
+    <color name="text_color10">#CC9b9b9b</color>
+    <color name="text_color11">#40333333</color>
+    <color name="text_color12">#01c4c1</color>
+    <color name="text_color13">#803a414d</color>
+    <color name="text_color14">#8001c4c1</color>
+    <color name="eventshadowcolor">#6B7C8A</color>
+    <color name="shadowcolor">#E5E5E5</color>
+    <color name="event_selector">#D6DDE1</color>
+    <color name="text_color15">#f4f8f8</color>
+    <color name="text_color16">#2ac8c4</color>
+    <color name="text_color17">#384355</color>
+    <color name="text_color19">#394355</color>
+    <color name="text_color20">#afb4bb</color>
+    <color name="text_color21">#64384355</color>
+    <color name="tab_divider">#e4eded</color>
+    <color name="background_color">#ffffff</color>
+    <color name="grey_bg_color">#d9d9d9</color>
+
+    <color name="eventselector" >#F6F9F9</color>
+    <color name="small_bottom_text">#00beb9</color>
+    <color name="hourseparator1">#dddddd</color>
+    <color name="hourseparator2">#d8d8d8</color>
+    <color name="premium_color2">#313b3f</color>
+    <color name="premium_color3">#cc313b3f</color>
+    <color name="premium_color4">#39a4f3</color>
+    <color name="trasparent_bg_color">#593a414d</color>
+    <color name="other_month_days">#E4E8EB</color>
+    <color name="text_color18">#9ba1aa</color>
+    <color name="red_booking_page">#ff3b30</color>
+    <color name="black_50_opacity">#80384355</color>
+    <color name="blue_app">#01bcc5</color>
+    <color name="light_grey_bg">#f2f6f5</color>
+    <color name="teal_color">#00c5c0</color>
+    <color name="light_gray_40opacity">#66333333</color>
+    <color name="remove_color">#BB1717</color>
+    <color name="now_red">#f84c58</color>
+    <color name="selector_color">#d9d9d9</color>
+</resources>
