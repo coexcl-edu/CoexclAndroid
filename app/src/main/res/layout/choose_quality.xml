@@ -90,7 +90,6 @@
            android:layout_height="50dp"
            android:layout_alignLeft="@+id/QualityGroup"
            android:layout_below="@+id/QualityGroup"
-           android:background="@drawable/coexcl"
            android:gravity="center"
            android:text="Done"
            android:textSize="18sp" />

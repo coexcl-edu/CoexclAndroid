@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/note_layout">
+    <LinearLayout
+        android:id="@+id/maths"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="?attr/selectableItemBackground"
+        android:padding="20dp"
+        >
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/ic_make_notes"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center">
+        <TextView
+            android:id="@+id/note_label"
+            style="@style/sub_header_eleven"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:ellipsize="end"
+            android:text="Notes"
+            android:lines="1"
+            android:gravity="center|left"
+            android:paddingLeft="20dp"
+            android:layout_marginRight="30dp"/>
+
+        <TextView
+            android:id="@+id/note_sub"
+            style="@style/item_sub_header"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Description"
+            android:gravity="center|left"
+            android:ellipsize="end"
+            android:lines="1"
+            android:layout_marginRight="30dp"
+            android:paddingLeft="20dp"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/popupLayout"
+        android:layout_width="65dp"
+        android:layout_height="85dp"
+        android:layout_alignParentRight="true"
+        android:layout_gravity="right">
+
+        <View
+            android:id="@+id/menuPlace"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="5dp"
+             />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/popupMenu"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+                android:scaleType="center"
+                app:srcCompat="@drawable/ic_more_grey" />
+        </FrameLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

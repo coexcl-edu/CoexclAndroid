@@ -13,8 +13,10 @@ class AboutLayout : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.about_layout)
 
+        ViewUtils().setWindowBackground(this)
+
         var stringbuilder =  StringBuilder()
-        stringbuilder.append("Version: 2.0.1").append("\n")
+        stringbuilder.append("Version: 2.0.2.20220318").append("\n")
         stringbuilder.append("Released Year: 2021").append("\n")
         stringbuilder.append("All Rights Reserved © COEXCL SERVICES PVT LTD.").append("")
 

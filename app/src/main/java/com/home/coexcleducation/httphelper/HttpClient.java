@@ -4,9 +4,14 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.provider.Settings;
 import android.util.Log;
+import android.widget.Toast;
 
+import com.home.coexcleducation.MainApplication;
+import com.home.coexcleducation.jdo.UserDetails;
 import com.home.coexcleducation.utils.CoexclLogs;
+import com.home.coexcleducation.utils.Helper;
 import com.home.coexcleducation.utils.PreferenceHelper;
+import com.home.coexcleducation.utils.ViewUtils;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -44,86 +49,92 @@ public class HttpClient {
     }
 
     public HttpHelper executeHttpRequest(HttpHelper pHttphelper) throws Exception {
-        String lResult = null;
-        StringBuilder lResponse             = new StringBuilder();
-        URL lGetMessageUrl                  = new URL(pHttphelper.getUrl());
-        HttpURLConnection urlConnection     = (HttpURLConnection) lGetMessageUrl.openConnection();
 
-        try {
-            if (pHttphelper.getHeader() != null && pHttphelper.getHeader().size() > 0) {
-                for (String lKey : pHttphelper.getHeader().keySet())
-                    urlConnection.addRequestProperty(lKey, pHttphelper.getHeader().get(lKey));
-            }
+        if(Helper.isOnline(mContext)) {
 
-            urlConnection.setRequestMethod(pHttphelper.getRequestType());
+            String lResult = null;
+            StringBuilder lResponse = new StringBuilder();
+            URL lGetMessageUrl = new URL(pHttphelper.getUrl());
+            HttpURLConnection urlConnection = (HttpURLConnection) lGetMessageUrl.openConnection();
 
-            if(pHttphelper.getRequestType().equals(HttpMethod.PATCH.name())) {
-                urlConnection.setRequestProperty("X-HTTP-Method-Override", "PATCH");
-                urlConnection.setRequestMethod("POST");
-            }
+            try {
+                if (pHttphelper.getHeader() != null && pHttphelper.getHeader().size() > 0) {
+                    for (String lKey : pHttphelper.getHeader().keySet())
+                        urlConnection.addRequestProperty(lKey, pHttphelper.getHeader().get(lKey));
+                }
+
+                urlConnection.setRequestMethod(pHttphelper.getRequestType());
+
+                if (pHttphelper.getRequestType().equals(HttpMethod.PATCH.name())) {
+                    urlConnection.setRequestProperty("X-HTTP-Method-Override", "PATCH");
+                    urlConnection.setRequestMethod("POST");
+                }
 
 //            urlConnection.setRequestProperty("User-agent", Helper.getSetmoreUserAgent(mContext));
 //            urlConnection.setRequestProperty("X-SM-DUID", Settings.Secure.getString(mContext.getContentResolver(), Settings.Secure.ANDROID_ID));
 
-            if (pHttphelper.getRequestType().equals(HttpMethod.POST.name()) || pHttphelper.getRequestType().equals(HttpMethod.PUT.name())) {
-                urlConnection.setDoOutput(true);
+                if (pHttphelper.getRequestType().equals(HttpMethod.POST.name()) || pHttphelper.getRequestType().equals(HttpMethod.PUT.name())) {
+                    urlConnection.setDoOutput(true);
 
-                if (HttpContentType.HTTP_CONTENTTYPE_JSON.equalsIgnoreCase(pHttphelper.getContentType())) {
-                    urlConnection.setRequestProperty("Content-Type", HttpContentType.HTTP_CONTENTTYPE_JSON);
+                    if (HttpContentType.HTTP_CONTENTTYPE_JSON.equalsIgnoreCase(pHttphelper.getContentType())) {
+                        urlConnection.setRequestProperty("Content-Type", HttpContentType.HTTP_CONTENTTYPE_JSON);
+                    }
+
+                    if (pHttphelper.getPayload() != null) {
+                        OutputStreamWriter wr = new OutputStreamWriter(urlConnection.getOutputStream());
+                        wr.write(pHttphelper.getPayload().toString().trim());
+                        wr.flush();
+                    }
+
+                } else if (pHttphelper.getRequestType().equals(HttpMethod.DELETE.name())) {
+                    if (HttpContentType.HTTP_CONTENTTYPE_JSON.equalsIgnoreCase(pHttphelper.getContentType())) {
+                        urlConnection.setRequestProperty("Content-Type", HttpContentType.HTTP_CONTENTTYPE_JSON);
+                    }
+                    if (pHttphelper.getPayload() != null) {
+                        OutputStreamWriter wr = new OutputStreamWriter(urlConnection.getOutputStream());
+                        wr.write(pHttphelper.getPayload().trim());
+                        wr.flush();
+                    }
                 }
 
-                if (pHttphelper.getPayload() != null) {
-                    OutputStreamWriter wr = new OutputStreamWriter(urlConnection.getOutputStream());
-                    wr.write(pHttphelper.getPayload().toString().trim());
-                    wr.flush();
+                try {
+                    if (urlConnection.getResponseCode() == HttpURLConnection.HTTP_OK || urlConnection.getResponseCode() == HttpURLConnection.HTTP_CREATED) {
+                        InputStream inputStream = urlConnection.getInputStream();
+                        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
+                        while ((lResult = bufferedReader.readLine()) != null) {
+                            lResponse.append(lResult);
+                        }
+                        pHttphelper.setResponse(lResponse.toString());
+                    } else if (urlConnection.getResponseCode() == 400) {
+                        InputStream inputStream = urlConnection.getErrorStream();
+                        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
+                        while ((lResult = bufferedReader.readLine()) != null) {
+                            lResponse.append(lResult);
+                        }
+                        pHttphelper.setResponse(lResponse.toString());
+                    } else if (urlConnection.getResponseCode() == 403) {  //todo will be removed when login enabled for setmore health accounts
+                        InputStream inputStream = urlConnection.getErrorStream();
+                        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
+                        while ((lResult = bufferedReader.readLine()) != null) {
+                            lResponse.append(lResult);
+                        }
+                        pHttphelper.setResponse(lResponse.toString());
+                    }
+                    pHttphelper.setStatusCode(urlConnection.getResponseCode());
+                    CoexclLogs.infoLog(TAG, "Http Response Code - " + urlConnection.getResponseCode());
+                    CoexclLogs.infoLog(TAG, "Http Response - " + lResponse.toString());
+                } catch (IOException e) {
+                    Log.e(TAG, "Exception while executeHttpRequest - ", e);
+                } catch (StackOverflowError error) {
+                    Log.e(TAG, "StackOverflowError while executeHttpRequest - ", error);
+                } finally {
+                    urlConnection.disconnect();
                 }
-
-            } else if (pHttphelper.getRequestType().equals(HttpMethod.DELETE.name())) {
-                if (HttpContentType.HTTP_CONTENTTYPE_JSON.equalsIgnoreCase(pHttphelper.getContentType())) {
-                    urlConnection.setRequestProperty("Content-Type", HttpContentType.HTTP_CONTENTTYPE_JSON);
-                }
-                if (pHttphelper.getPayload() != null) {
-                    OutputStreamWriter wr = new OutputStreamWriter(urlConnection.getOutputStream());
-                    wr.write(pHttphelper.getPayload().trim());
-                    wr.flush();
-                }
+            } catch (Exception e) {
+                CoexclLogs.printException(e);
             }
-
-            try {
-                if (urlConnection.getResponseCode() == HttpURLConnection.HTTP_OK || urlConnection.getResponseCode() == HttpURLConnection.HTTP_CREATED) {
-                    InputStream inputStream = urlConnection.getInputStream();
-                    BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
-                    while ((lResult = bufferedReader.readLine()) != null) {
-                        lResponse.append(lResult);
-                    }
-                    pHttphelper.setResponse(lResponse.toString());
-                } else if (urlConnection.getResponseCode() == 400) {
-                    InputStream inputStream = urlConnection.getErrorStream();
-                    BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
-                    while ((lResult = bufferedReader.readLine()) != null) {
-                        lResponse.append(lResult);
-                    }
-                    pHttphelper.setResponse(lResponse.toString());
-                } else if(urlConnection.getResponseCode() == 403){  //todo will be removed when login enabled for setmore health accounts
-                    InputStream inputStream = urlConnection.getErrorStream();
-                    BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
-                    while ((lResult = bufferedReader.readLine()) != null) {
-                        lResponse.append(lResult);
-                    }
-                    pHttphelper.setResponse(lResponse.toString());
-                }
-                pHttphelper.setStatusCode(urlConnection.getResponseCode());
-                CoexclLogs.infoLog(TAG, "Http Response Code - " + urlConnection.getResponseCode());
-                CoexclLogs.infoLog(TAG, "Http Response - " + lResponse.toString());
-            } catch (IOException e) {
-                Log.e(TAG, "Exception while executeHttpRequest - ", e);
-            } catch (StackOverflowError error) {
-                Log.e(TAG, "StackOverflowError while executeHttpRequest - ", error);
-            } finally {
-                urlConnection.disconnect();
-            }
-        } catch (Exception e) {
-            CoexclLogs.printException(e);
+        } else {
+            Toast.makeText(mContext, "Internet is not available!", Toast.LENGTH_SHORT).show();
         }
         return pHttphelper;
     }
@@ -157,6 +168,7 @@ public class HttpClient {
             writer.append("--" + boundary).append(CRLF);
             writer.append("Content-Disposition: form-data; name=\"" + "file" + "\"; filename=\"" + pSourceFile.getName() + "\"").append(CRLF);
             writer.append("Content-Type: " + lContentType).append(CRLF);
+            writer.append("userid: " + UserDetails.getInstance().getID());
             writer.append(CRLF).flush();
 
             InputStream is = null;

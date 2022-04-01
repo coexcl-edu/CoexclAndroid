@@ -13,7 +13,7 @@
         android:layout_height="300dp"
         android:maxHeight="250dp"
         android:scaleType="fitXY"
-        android:src="@drawable/lab_image"/>
+        />
 
         <androidx.cardview.widget.CardView
             android:id="@+id/name_layout"

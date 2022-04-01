@@ -30,7 +30,7 @@
 
 
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
                 <TextView
@@ -47,7 +47,6 @@
                     android:id="@+id/name"
                     style="@style/header_action_bar"
                     android:layout_width="match_parent"
-                    android:layout_below="@+id/welcome"
                     android:text="Ravi Singh"
                     android:gravity="center"
                     android:textColor="@color/white"
@@ -56,8 +55,9 @@
                 <TextView
                     android:id="@+id/school"
                     style="@style/item_header"
+                    android:layout_gravity="center"
                     android:layout_below="@+id/name"
-                    android:text="Dav public school "
+                    android:text="Dav"
                     android:textColor="@color/white"
                     android:background="@drawable/curve_shape"
                     android:layout_marginTop="5dp"
@@ -68,12 +68,13 @@
         </RelativeLayout>
 
         <ImageView
+            android:id="@+id/profile_image"
             android:layout_width="55dp"
             android:layout_height="55dp"
             android:layout_alignParentRight="true"
             android:layout_alignParentTop="true"
             android:layout_margin="20dp"
-            android:src="@drawable/kid_place_holder"/>
+            android:src="@drawable/avatar2"/>
 
     </RelativeLayout>
 
@@ -95,23 +96,28 @@
             android:weightSum="10">
 
             <LinearLayout
+                android:id="@+id/notes"
                 style="@style/MatchLayout"
                 android:layout_weight="5"
                 android:orientation="vertical"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="?attr/selectableItemBackground"
                 android:gravity="center">
 
                 <ImageView
+                    android:id="@+id/make_notes"
                     style="@style/MatchLayout"
-                    android:layout_height="55dp"
-                    android:src="@drawable/ic_make_notes"
-                    />
+                    android:layout_height="62dp"
+                    android:clickable="false"
+                    android:src="@drawable/ic_make_notes" />
 
                 <TextView
                     style="@style/sub_header_nine"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:paddingTop="15dp"
                     android:gravity="center"
+                    android:paddingTop="15dp"
                     android:text="Make Notes"/>
 
             </LinearLayout>
@@ -123,14 +129,20 @@
                 android:layout_height="match_parent"/>
 
             <LinearLayout
+                android:id="@+id/fun_fact"
                 style="@style/MatchLayout"
                 android:layout_weight="5"
                 android:orientation="vertical"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="?attr/selectableItemBackground"
                 android:gravity="center">
 
                 <ImageView
+                    android:id="@+id/fun_fact_image"
                     style="@style/MatchLayout"
                     android:layout_height="55dp"
+                    android:clickable="false"
                     android:src="@drawable/ic_fun_facts"
                     />
 
@@ -159,14 +171,19 @@
             android:weightSum="10">
 
             <LinearLayout
+                android:id="@+id/school_activity"
                 style="@style/MatchLayout"
                 android:layout_weight="5"
                 android:orientation="vertical"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="?attr/selectableItemBackground"
                 android:gravity="center">
 
                 <ImageView
                     style="@style/MatchLayout"
                     android:layout_height="65dp"
+                    android:clickable="false"
                     android:src="@drawable/ic_school_activity"
                     />
 
@@ -186,15 +203,20 @@
                 android:layout_height="match_parent"/>
 
             <LinearLayout
+                android:id="@+id/start_quiz"
                 style="@style/MatchLayout"
                 android:layout_weight="5"
                 android:orientation="vertical"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="?attr/selectableItemBackground"
                 android:gravity="center">
 
                 <ImageView
                     style="@style/MatchLayout"
                     android:layout_height="55dp"
-                    android:src="@drawable/ic_chat"
+                    android:clickable="false"
+                    android:src="@drawable/ic_quiz"
                     />
 
                 <TextView
@@ -203,8 +225,10 @@
                     android:layout_height="wrap_content"
                     android:paddingTop="15dp"
                     android:gravity="center"
-                    android:text="Ask Doubts"/>
+                    android:text="Daily Quiz"/>
+
             </LinearLayout>
+
 
         </LinearLayout>
 
@@ -221,14 +245,19 @@
             android:weightSum="10">
 
             <LinearLayout
+                android:id="@+id/live_class"
                 style="@style/MatchLayout"
                 android:layout_weight="5"
                 android:orientation="vertical"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="?attr/selectableItemBackground"
                 android:gravity="center">
 
                 <ImageView
                     style="@style/MatchLayout"
                     android:layout_height="55dp"
+                    android:clickable="false"
                     android:src="@drawable/live_class"
                     />
 
@@ -248,15 +277,21 @@
                 android:layout_height="match_parent"/>
 
             <LinearLayout
+                android:id="@+id/ask_doubt"
                 style="@style/MatchLayout"
                 android:layout_weight="5"
                 android:orientation="vertical"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="?attr/selectableItemBackground"
                 android:gravity="center">
 
                 <ImageView
+                    android:id="@+id/chat_image"
                     style="@style/MatchLayout"
                     android:layout_height="55dp"
-                    android:src="@drawable/ic_quiz"
+                    android:clickable="false"
+                    android:src="@drawable/ic_chat"
                     />
 
                 <TextView
@@ -265,9 +300,9 @@
                     android:layout_height="wrap_content"
                     android:paddingTop="15dp"
                     android:gravity="center"
-                    android:text="Daily Quiz"/>
-
+                    android:text="Ask Doubts"/>
             </LinearLayout>
+
 
         </LinearLayout>
     <View

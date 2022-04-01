@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+
+        <LinearLayout
+            android:id="@+id/maths"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="?attr/selectableItemBackground"
+            android:padding="20dp"
+            >
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/live_class"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginRight="40dp"
+                android:layout_gravity="center">
+                <TextView
+                    android:id="@+id/note_label"
+                    style="@style/sub_header_eleven"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:ellipsize="end"
+                    android:text="Chemical Energy"
+                    android:lines="1"
+                    android:gravity="center|left"
+                    android:paddingLeft="15dp"/>
+
+                <TextView
+                    android:id="@+id/note_sub"
+                    style="@style/sub_header_18"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="By Naresh sir for 30 mins"
+                    android:gravity="center|left"
+                    android:ellipsize="end"
+                    android:lines="1"
+                    android:paddingLeft="15dp"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/relativeLayout2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:orientation="vertical"
+            android:layout_marginRight="17dp" >
+
+            <TextView
+                android:id="@+id/time"
+                style="@style/appt_details_text_style"
+                android:textSize="14sp"
+                android:text="9:00 am"
+                />
+
+            <TextView
+                android:id="@+id/date"
+                style="@style/item_sub_header"
+                android:textSize="14sp"
+                android:text="24th May"
+                />
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</LinearLayout>

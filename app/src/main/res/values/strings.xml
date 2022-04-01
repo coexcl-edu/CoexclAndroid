@@ -2,8 +2,11 @@
     <string name="app_name">Coexcl</string>
     <string name="chat_app_id">204497eb-bf08-400c-b8a2-b540e825c56d</string>
     <string name="chat_app_key">4f547293-bc24-4378-b2ee-745b29e14b86</string>
+
+<!--    <string name="chat_app_id">4c164f3a-679e-489d-80d8-cefc50850ad6</string>-->
+<!--    <string name="chat_app_key">28d9355e-d817-4c4f-a98e-c6e5fb643613</string>-->
     <string name="title_home">Home</string>
-    <string name="title_videos">Videos</string>
+    <string name="title_learning">Learning</string>
     <string name="title_notifications">Notifications</string>
     <string name="title_profile">Profile</string>
     <string name="title_settings">Settings</string>
@@ -12,17 +15,45 @@
     <string name="what_you_would_like_to_do_it_today">What you would like to do today !</string>
 
     <array name="class_name">
-        <item>Class 1</item>
-        <item>Class 2</item>
-        <item>Class 3</item>
-        <item>Class 4</item>
-        <item>Class 5</item>
         <item>Class 6</item>
         <item>Class 7</item>
         <item>Class 8</item>
+        <item>Class 9</item>
         <item>Class 10</item>
-        <item>Class 10 +1</item>
-        <item>Class 10 +2</item>
+        <item>Class 10+1</item>
+        <item>Class 10+2</item>
+    </array>
+
+    <array name="blood_group">
+        <item>Choose your blood group</item>
+        <item>A+</item>
+        <item>A-</item>
+        <item>B+</item>
+        <item>B-</item>
+        <item>AB+</item>
+        <item>AB-</item>
+        <item>O+</item>
+        <item>O-</item>
+    </array>
+
+    <array name="fav_subject">
+        <item>Choose your favorite subject</item>
+        <item>Maths</item>
+        <item>Physics</item>
+        <item>Chemistry</item>
+        <item>Biology</item>
+        <item>History</item>
+        <item>Civics</item>
+        <item>English</item>
+        <item>Hindi</item>
+    </array>
+
+
+    <array name="gender">
+        <item>Choose your gender</item>
+        <item>Male</item>
+        <item>Female</item>
+        <item>Not Specified</item>
     </array>
 
     <array name="school_name">
@@ -35,9 +66,9 @@
         <item>Others</item>
     </array>
 
-    <string name="feature1">Get 24x7 online tutor Faculty for all your Science and Maths doubts and get it solved by IITians.</string>
-    <string name="feature2">Virtual schooling made easy with COEXCL. Attend live classes , quizzes, get notes etc with just one touch.</string>
-    <string name="feature3">Get all learning contents like learning videos, Notes, quizzes and lots more with us.</string>
+    <string name="feature1">Get 24x7 online tutor Facility for all your Science and Maths doubts and get it solved by IITians.</string>
+    <string name="feature2">Virtual Schooling made easy, Schools can schedule their own Live classes, send Important Notifications and Update their school activities for particular segment of students.</string>
+    <string name="feature3">Now you can see Fun facts, make your study notes, attend Daily quizzes, and trace your progress too in our new Leaderboard.</string>
 
 <!--    Settings-->
 
@@ -46,9 +77,129 @@
     <string name="school_settings">School Settings</string>
     <string name="faq">FAQs</string>
     <string name="contact_us">Contact Us</string>
+    <string name="share_app">Share App</string>
+    <string name="rate_us">Rate Us</string>
     <string name="terms">Terms &amp; Conditions</string>
     <string name="about">About</string>
-    <string name="signout">SignOut</string>
+    <string name="signout">Log Out</string>
+    <string name="quiz_general_instructions1">The clock has been set at the server and the countdown timer at the top right corner of your screen will display the time remaining for you to complete the exam. When the clock runs out the exam ends by default and you are not required to end or submit your exam.</string>
+    <string name="quiz_general_instructions2">《Previous》 and 《Next》 button are given to switch between questions. And you can select 《Submit》whenever you want to finish your exam and submit for review.</string>
+    <string name="quiz_general_instructions3">Markings Scheme:</string>
 
+
+
+
+    <string name="next">Next</string>
+    <string name="prev">Prev</string>
+    <string name="submit">Submit</string>
+    <string name="view_answer">View Answer</string>
+
+    <string name="answers">Answers</string>
+    <string name="q_reference">Questions</string>
+    <string name="take_quiz">Take Quiz</string>
+
+    // labels of list preference
+    <string name="easy">Easy</string>
+    <string name="medium">Medium</string>
+    <string name="hard">Hard</string>
+
+    <string name="gk">General Knowledge</string>
+    <string name="politics">Politics</string>
+    <string name="history">History</string>
+    <string name="sports">Sports</string>
+    <string name="geography">Geography</string>
+    <string name="any_category">Any Category</string>
+    <string name="entertainment_film">Entertainment: Film</string>
+    <string name="entertainment_books">Entertainment: Books</string>
+    <string name="entertainment_music">Entertainment: Music</string>
+    <string name="entertainment_musical_theatres"><![CDATA[Entertainment: Musicals & Theatres]]></string>
+    <string name="entertainment_television">Entertainment: Television</string>
+    <string name="entertainment_video">Entertainment: Video Games</string>
+    <string name="entertainment_board">Entertainment: Board Games</string>
+    <string name="science_nature"><![CDATA[Science & Nature]]></string>
+    <string name="science_computer">Science: Computers</string>
+    <string name="science_maths">Science: Maths</string>
+    <string name="mythology">Mythology</string>
+    <string name="arts">Arts</string>
+    <string name="celebrity">Celebrities</string>
+    <string name="animal">Animals</string>
+    <string name="vehicles">Vehicles</string>
+    <string name="entertainment_comics">Entertainment: Comics</string>
+    <string name="science_gadgets">Science: Gadgets</string>
+    <string name="entertainment_japanese"><![CDATA[Entertainment: Japanese Anime & Manga]]></string>
+    <string name="entertainment_cartoon"><![CDATA[Entertainment: Cartoon & Animations]]></string>
+
+    //keys of list preference
+    <string name="easy_value" translatable="false">easy</string>
+    <string name="medium_value" translatable="false">medium</string>
+    <string name="hard_value" translatable="false">hard</string>
+
+
+    <string name="gk_value" translatable="false">9</string>
+    <string name="politics_value" translatable="false">24</string>
+    <string name="history_value" translatable="false">23</string>
+    <string name="sports_value" translatable="false">21</string>
+    <string name="geography_value" translatable="false">22</string>
+    <string name="any_category_value" translatable="false">0</string>
+    <string name="entertainment_film_value" translatable="false">11</string>
+    <string name="entertainment_books_value" translatable="false">10</string>
+    <string name="entertainment_music_value" translatable="false">12</string>
+    <string name="entertainment_musical_theatres_value" translatable="false">13></string>
+    <string name="entertainment_television_value" translatable="false">14</string>
+    <string name="entertainment_video_value" translatable="false">15</string>
+    <string name="entertainment_board_value" translatable="false">16</string>
+    <string name="science_nature_value" translatable="false">17</string>
+    <string name="science_computer_value" translatable="false">18</string>
+    <string name="science_maths_value" translatable="false">19</string>
+    <string name="mythology_value" translatable="false">20</string>
+    <string name="arts_value" translatable="false">25</string>
+    <string name="celebrity_value" translatable="false">26</string>
+    <string name="animal_value" translatable="false">27</string>
+    <string name="vehicles_value" translatable="false">28</string>
+    <string name="entertainment_comics_value" translatable="false">29</string>
+    <string name="science_gadgets_value" translatable="false">30</string>
+    <string name="entertainment_japanese_value" translatable="false">31</string>
+    <string name="entertainment_cartoon_value" translatable="false">32</string>
+
+    <array name="category_quiz">
+        <item>Any Category</item>
+        <item>Politics</item>
+        <item>History</item>
+        <item>Sports</item>
+        <item>Geography</item>
+        <item>General Knowledge</item>
+        <item>Entertainment: Film</item>
+        <item>Entertainment: Books</item>
+        <item>Entertainment: Music</item>
+        <item><![CDATA[Entertainment: Musicals & Theatres]]></item>
+        <item>Entertainment: Television</item>
+        <item>Entertainment: Video Games</item>
+        <item>Entertainment: Board Games</item>
+        <item><![CDATA[Science & Nature]]></item>
+        <item>Science: Computers</item>
+        <item>Science: Maths</item>
+        <item>Mythology</item>
+        <item>Arts</item>
+        <item>Celebrities</item>
+        <item>Animals</item>
+        <item>Vehicles</item>
+        <item>Entertainment: Comics</item>
+        <item>Science: Gadgets</item>
+        <item><![CDATA[Entertainment: Japanese Anime & Manga]]></item>
+        <item><![CDATA[Entertainment: Cartoon & Animations]]></item>
+
+    </array>
+
+    // list preference key and title
+    <string name="difficulty">Difficulty</string>
+    <string name="difficulty_key" translatable="false">difficulty</string>
+
+    <string name="category">Category</string>
+    <string name="category_key" translatable="false">category</string>
+
+    <string name="filter">Choose Subject</string>
+
+
+    <string name="quiz_benefit">Not only are quizzes fun for students, they are also a sneaky form of learning as they do not feel like a traditional activity. Quizzes can help your students practise existing knowledge while stimulating interest in learning about new subject matter.</string>
 
 </resources>

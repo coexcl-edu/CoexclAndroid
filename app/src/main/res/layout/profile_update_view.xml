@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/coordinateLayout"
+    style="@style/match_parent_layout"
+    android:orientation="vertical">
+
+    <com.google.android.material.appbar.CollapsingToolbarLayout
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:background="@color/colorPrimary">
+
+        <TextView
+            android:id="@+id/save"
+            style="@style/WrapLayout"
+            android:background="@drawable/curve_shape"
+            android:padding="10dp"
+            android:layout_gravity="right"
+            android:layout_margin="10dp"
+            android:textColor="@color/white"
+            android:text="Save"/>
+
+        <ImageView
+            android:id="@+id/close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:src="@drawable/ic_chevron_left_grey700"/>
+
+        <ImageView
+            android:id="@+id/back_profile"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:scaleType="fitXY"
+            android:alpha="0.2"
+            android:src="@drawable/one"/>
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content">
+
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="160dp"
+                android:src="@drawable/profile_back"/>
+
+            <ImageView
+                android:id="@+id/front_profile"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_gravity="center"
+                android:scaleType="fitXY"
+                android:src="@drawable/avatar2"/>
+
+        </FrameLayout>
+
+    </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+    <ScrollView
+        style="@style/match_parent_layout"
+        android:orientation="vertical"
+        android:scrollbars="none"
+        android:background="@drawable/top_cornor_radius"
+        android:layout_marginTop="-30dp"
+        >
+
+        <LinearLayout
+            android:id="@+id/profile_layout"
+            android:visibility="visible"
+            style="@style/match_parent_layout"
+            android:orientation="vertical">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    >
+
+                    <LinearLayout
+                        android:id="@+id/personal_detail_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        >
+
+                        <TextView
+                            style="@style/header_action_bar"
+                            android:text="Personal Details"
+                            android:padding="20dp"/>
+
+                        <LinearLayout
+                            style="@style/match_parent_layout"
+                            android:orientation="vertical"
+                            android:paddingLeft="20dp"
+                            android:paddingRight="30dp">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColorHint="@color/colorAccent"
+                            android:paddingLeft="10dp"
+                            android:hint="Name">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:layout_width="match_parent"
+                                android:id="@+id/name"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/header3"
+                                android:textColorHint="@color/white"
+                                android:maxLines="1"
+                                android:singleLine="true"
+                                android:maxLength="50"
+                                android:background="@color/transparent"/>
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColorHint="@color/colorAccent"
+                            android:paddingLeft="10dp"
+                            android:hint="Email">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:layout_width="match_parent"
+                                android:id="@+id/email"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/header3"
+                                android:textColorHint="@color/white"
+                                android:maxLines="1"
+                                android:singleLine="true"
+                                android:maxLength="50"
+                                android:background="@color/transparent"/>
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+
+                        <androidx.appcompat.widget.AppCompatSpinner
+                            android:id="@+id/class_spinner"
+                            style="@style/Spinner"
+                            android:layout_width="match_parent"
+                            android:layout_height="60dp"
+                            android:entries="@array/class_name"
+                            android:backgroundTint="@color/header3"
+                            />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_marginLeft="10dp"
+                            android:background="@color/date_picker_text"/>
+
+                        <androidx.appcompat.widget.AppCompatSpinner
+                            android:id="@+id/gender"
+                            style="@style/Spinner"
+                            android:layout_width="match_parent"
+                            android:layout_height="60dp"
+                            android:entries="@array/gender"
+                            android:backgroundTint="@color/header3"
+                            />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_marginLeft="10dp"
+                            android:background="@color/date_picker_text"/>
+
+                        <androidx.appcompat.widget.AppCompatSpinner
+                            android:id="@+id/blood_group"
+                            style="@style/Spinner"
+                            android:layout_width="match_parent"
+                            android:layout_height="60dp"
+                            android:entries="@array/blood_group"
+                            android:backgroundTint="@color/header3"
+                            />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_marginLeft="10dp"
+                            android:background="@color/date_picker_text"/>
+
+                        <androidx.appcompat.widget.AppCompatSpinner
+                            android:id="@+id/fav_subject"
+                            style="@style/Spinner"
+                            android:layout_width="match_parent"
+                            android:layout_height="60dp"
+                            android:entries="@array/fav_subject"
+                            android:backgroundTint="@color/header3"
+                            />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_marginLeft="10dp"
+                            android:background="@color/date_picker_text"/>
+
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColorHint="@color/colorAccent"
+                            android:paddingLeft="10dp"
+                            android:hint="Favorite Sports">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:layout_width="match_parent"
+                                android:id="@+id/fav_sport"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/header3"
+                                android:textColorHint="@color/white"
+                                android:maxLines="1"
+                                android:singleLine="true"
+                                android:maxLength="50"
+                                android:background="@color/transparent"/>
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColorHint="@color/colorAccent"
+                            android:paddingLeft="10dp"
+                            android:hint="Aim in Life">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:layout_width="match_parent"
+                                android:id="@+id/aim"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/header3"
+                                android:textColorHint="@color/gray"
+                                android:maxLines="1"
+                                android:singleLine="true"
+                                android:maxLength="50"
+                                android:background="@color/transparent"/>
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/parental_detail_layout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                style="@style/header_action_bar"
+                                android:text="Parental Details"
+                                android:paddingLeft="20dp"
+                                android:paddingTop="30dp"
+                                android:paddingBottom="10dp"/>
+
+                            <LinearLayout
+                                style="@style/match_parent_layout"
+                                android:orientation="vertical"
+                                android:paddingLeft="20dp"
+                                android:paddingRight="30dp">
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textColorHint="@color/colorAccent"
+                                android:paddingLeft="10dp"
+                                android:hint="Father's Name">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:layout_width="match_parent"
+                                    android:id="@+id/parent_name"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="@color/header3"
+                                    android:textColorHint="@color/white"
+                                    android:maxLines="1"
+                                    android:singleLine="true"
+                                    android:maxLength="50"
+                                    android:background="@color/transparent"/>
+
+                            </com.google.android.material.textfield.TextInputLayout>
+
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textColorHint="@color/colorAccent"
+                                android:paddingLeft="10dp"
+                                android:hint="Mother's Name">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:layout_width="match_parent"
+                                    android:id="@+id/mother_name"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="@color/header3"
+                                    android:textColorHint="@color/white"
+                                    android:maxLines="1"
+                                    android:singleLine="true"
+                                    android:maxLength="50"
+                                    android:background="@color/transparent"/>
+
+                            </com.google.android.material.textfield.TextInputLayout>
+
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textColorHint="@color/colorAccent"
+                                android:paddingLeft="10dp"
+                                android:hint="Parent's Mobile">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:layout_width="match_parent"
+                                    android:id="@+id/parent_phone"
+                                    android:layout_height="wrap_content"
+                                    android:inputType="phone"
+                                    android:maxLength="10"
+                                    android:singleLine="true"
+                                    android:textColor="@color/header3"
+                                    android:textColorHint="@color/white"
+                                    android:background="@color/transparent"/>
+
+                            </com.google.android.material.textfield.TextInputLayout>
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/school_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/header_action_bar"
+                            android:text="School Details"
+                            android:paddingLeft="20dp"
+                            android:paddingTop="30dp"
+                            android:paddingBottom="10dp"/>
+
+                        <LinearLayout
+                            style="@style/match_parent_layout"
+                            android:orientation="vertical"
+                            android:paddingLeft="20dp"
+                            android:paddingRight="30dp">
+
+                            <RelativeLayout
+                                android:id="@+id/choose_school"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp">
+
+                                <TextView
+                                    android:id="@+id/school_details"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="@color/colorAccent"
+                                    android:padding="15dp"
+                                    android:layout_marginLeft="5dp"
+                                    android:text="Choose Your School"/>
+
+                                <ImageView
+                                    style="@style/WrapLayout"
+                                    android:layout_alignParentEnd="true"
+                                    android:layout_centerVertical="true"
+                                    android:src="@drawable/ic_chevron_right_grey400"/>
+
+                            </RelativeLayout>
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:layout_marginLeft="10dp"
+                                android:background="@color/date_picker_text"/>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="80dp"/>
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+
+
+</LinearLayout>

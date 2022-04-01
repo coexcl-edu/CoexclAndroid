@@ -1,0 +1,119 @@
+package com.home.coexcleducation.quiz.solution;
+
+import android.graphics.Color;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.TextView;
+
+
+import androidx.annotation.NonNull;
+import androidx.core.content.ContextCompat;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.home.coexcleducation.MainApplication;
+import com.home.coexcleducation.R;
+import com.home.coexcleducation.quiz.SolutionActivity;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
+public class AnswerAdapter extends RecyclerView.Adapter<AnswerAdapter.AnswerViewHolder> {
+    private ArrayList<Integer> Answers;
+    private List<Integer> Answer;
+    private List<String> optA;
+    private List<String> optB;
+    private List<String> optC;
+    private List<String> optD;
+
+    AnswerAdapter(ArrayList<Integer> answers, List<Integer> answer, List<String> optionsA, List<String> optionsB, List<String> optionsC, List<String> optionsD) {
+        Answers = answers;
+        Answer = answer;
+        optA = optionsA;
+        optB = optionsB;
+        optC = optionsC;
+        optD = optionsD;
+    }
+
+    @Override
+    public int getItemCount() {
+        return Answer.size();
+    }
+
+    @Override
+    public void onBindViewHolder(@NonNull AnswerViewHolder answerViewHolder, int i) {
+        String qus = "Q."+(i + 1);
+        String ans;
+        String corr = null;
+
+        switch (Answers.get(i)) {
+            default:
+                ans = "Not Attempted";
+                break;
+            case 1:
+                ans = 1 + ". " + optA.get(i);
+                break;
+            case 2:
+                ans = 2 + ". " + optB.get(i);
+                break;
+            case 3:
+                ans = 3 + ". " + optC.get(i);
+                break;
+            case 4:
+                ans = 4 + ". " + optD.get(i);
+                break;
+        }
+
+        switch (Answer.get(i)) {
+            case 1:
+                corr = 1 + ". " + optA.get(i);
+                break;
+            case 2:
+                corr = 2 + ". " + optB.get(i);
+                break;
+            case 3:
+                corr = 3 + ". " + optC.get(i);
+                break;
+            case 4:
+                corr = 4 + ". " + optD.get(i);
+                break;
+        }
+
+        answerViewHolder.question.setText(qus +" "+SolutionActivity.getQuestion().get(i));
+        answerViewHolder.answered.setText("Attempted : "+  ans);
+        answerViewHolder.correct.setText("Correct Answer : "+corr);
+
+        if ( Answer.get(i).equals(Answers.get(i)) )
+            answerViewHolder.answered.setTextColor(ContextCompat.getColor(MainApplication.CONTEXT, R.color.base_green_color));
+        else
+            answerViewHolder.answered.setTextColor(ContextCompat.getColor(MainApplication.CONTEXT, R.color.cross_icon_red_color));
+    }
+
+    @NonNull
+    @Override
+    public AnswerViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
+        return new AnswerViewHolder(LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.relative, viewGroup, false));
+    }
+
+
+    class AnswerViewHolder extends RecyclerView.ViewHolder {
+
+        @BindView(R.id.tv_question)
+        TextView question;
+
+        @BindView(R.id.tv_answered)
+        TextView answered;
+
+        @BindView(R.id.tv_correct)
+        TextView correct;
+
+        AnswerViewHolder(@NonNull View itemView) {
+            super(itemView);
+
+            ButterKnife.bind(this, itemView);
+        }
+    }
+}

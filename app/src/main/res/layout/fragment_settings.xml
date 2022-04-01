@@ -37,7 +37,6 @@
                     android:id="@+id/name"
                     style="@style/header_action_bar"
                     android:layout_width="match_parent"
-                    android:layout_below="@+id/welcome"
                     android:text="Settings"
                     android:gravity="center"
                     android:textColor="@color/white"
@@ -77,6 +76,7 @@
                         android:id="@+id/upgrade_premum_layout"
                         style="@style/timeoffelementlayout"
                         android:background="@color/white"
+                        android:visibility="gone"
                         android:foreground="?attr/selectableItemBackground">
 
                         <androidx.appcompat.widget.AppCompatImageView
@@ -111,6 +111,7 @@
                     android:id="@+id/premium_divider"
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
+                    android:visibility="gone"
                     android:background="@color/divider_color" />
 
                 <RelativeLayout
@@ -154,6 +155,7 @@
                     android:id="@+id/settings_layout"
                     style="@style/timeoffelementlayout"
                     android:background="@color/white"
+                    android:visibility="gone"
                     android:foreground="?attr/selectableItemBackground">
 
                     <androidx.appcompat.widget.AppCompatImageView
@@ -184,6 +186,7 @@
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
+                    android:visibility="gone"
                     android:background="@color/divider_color" />
 
 
@@ -225,7 +228,84 @@
 
 
                 <RelativeLayout
-                    android:id="@+id/staff_layout"
+                    android:id="@+id/share_app_layout"
+                    style="@style/timeoffelementlayout"
+                    android:background="@color/white"
+                    android:foreground="?attr/selectableItemBackground">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/share_app_image"
+                        style="@style/WrapLayout"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="13dp"
+                        android:layout_marginRight="26dp"
+                        app:srcCompat="@drawable/ic_outline_share_24" />
+
+                    <TextView
+                        style="@style/edit_text_value_style"
+                        android:id="@+id/share_app_label"
+                        android:layout_width="wrap_content"
+                        android:layout_toRightOf="@+id/share_app_image"
+                        android:text="@string/share_app"
+                        android:layout_centerVertical="true"/>
+
+                    <ImageView
+                        style="@style/WrapLayout"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="5dp"
+                        app:srcCompat="@drawable/ic_chevron_right_grey400" />
+
+                </RelativeLayout>
+
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/divider_color" />
+
+
+                <RelativeLayout
+                    android:id="@+id/rate_us_layout"
+                    style="@style/timeoffelementlayout"
+                    android:background="@color/white"
+                    android:foreground="?attr/selectableItemBackground">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/rate_us_image"
+                        style="@style/WrapLayout"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="13dp"
+                        android:layout_marginRight="26dp"
+                        app:srcCompat="@drawable/ic_outline_rate_review_24" />
+
+                    <TextView
+                        style="@style/edit_text_value_style"
+                        android:id="@+id/rate_us_label"
+                        android:layout_width="wrap_content"
+                        android:layout_toRightOf="@+id/rate_us_image"
+                        android:text="@string/rate_us"
+                        android:layout_centerVertical="true"/>
+
+                    <ImageView
+                        style="@style/WrapLayout"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="5dp"
+                        app:srcCompat="@drawable/ic_chevron_right_grey400" />
+
+                </RelativeLayout>
+
+
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/divider_color" />
+
+
+                <RelativeLayout
+                    android:id="@+id/contact_us"
                     style="@style/timeoffelementlayout"
                     android:background="@color/white"
                     android:foreground="?attr/selectableItemBackground">
@@ -262,7 +342,7 @@
                     android:background="@color/divider_color" />
 
                 <RelativeLayout
-                    android:id="@+id/service_layout"
+                    android:id="@+id/terms_layout"
                     style="@style/timeoffelementlayout"
                     android:background="@color/white"
                     android:foreground="?attr/selectableItemBackground">
@@ -273,7 +353,7 @@
                         android:layout_centerVertical="true"
                         android:layout_marginLeft="13dp"
                         android:layout_marginRight="26dp"
-                        app:srcCompat="@drawable/ic_edit_grey700" />
+                        app:srcCompat="@drawable/ic_outline_privacy_tip_24" />
 
                     <TextView
                         android:id="@+id/services_label"
@@ -341,7 +421,7 @@
                     android:background="@color/divider_color" />
 
                 <RelativeLayout
-                    android:id="@+id/class_layout"
+                    android:id="@+id/logout"
                     style="@style/timeoffelementlayout"
                     android:background="@color/white"
                     android:foreground="?attr/selectableItemBackground">

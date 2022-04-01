@@ -12,7 +12,14 @@
     <RelativeLayout
         style="@style/MatchLayout"
         android:layout_weight="8"
+
         >
+        <ImageView
+            android:id="@+id/back"
+            style="@style/WrapLayout"
+            android:padding="20dp"
+            android:src="@drawable/ic_chevron_left_grey700"/>
+
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -37,8 +44,7 @@
                     android:id="@+id/name"
                     style="@style/header_action_bar"
                     android:layout_width="match_parent"
-                    android:layout_below="@+id/welcome"
-                    android:text="Settings"
+                    android:text="Progress Report"
                     android:gravity="center"
                     android:textColor="@color/white"
                     android:textSize="24sp" />
@@ -57,52 +63,70 @@
         android:orientation="vertical"
         android:layout_alignParentBottom="true"
         android:layout_marginTop="-30dp"
-        android:background="@drawable/top_cornor_radius"
-        android:weightSum="9">
+        android:background="@drawable/top_corner_gray"
+        android:weightSum="9"
+        >
 
-        <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="30dp"
-            >
 
-            <LinearLayout
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
+                android:layout_marginTop="10dp"
                 >
 
-                <com.anychart.AnyChartView
-                    android:id="@+id/any_chart_view"
-                    android:layout_width="match_parent"
-                    android:layout_height="300dp"
-                    />
 
-                <ProgressBar
-                    android:id="@+id/progress_bar"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:layout_constraintBottom_toBottomOf="parent"
+                <com.ramijemli.percentagechartview.PercentageChartView
+                    android:id="@+id/chart"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_margin="24dp"
+                    app:layout_constraintDimensionRatio="2.0"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    />
+                    app:pcv_backgroundBarThickness="20dp"
+                    app:pcv_mode="ring"
+                    app:pcv_progress="1"
+                    app:pcv_progressColor="@color/coexcl_orange"
+                    app:pcv_backgroundBarColor="@color/gray"
+                    app:pcv_progressBarThickness="20dp"
+                    app:pcv_startAngle="90"
+                    app:pcv_animDuration="1000"
+                    app:pcv_textColor="@color/colorAccent"
+                    app:pcv_textSize="50sp"
+                    app:pcv_textStyle="bold"/>
 
 
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:background="@color/divider_color" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="150dp"/>
+        <TextView
+            style="@style/sub_header_nine"
+            android:text="Avg progress report for all quiz"
+            android:padding="15dp"
+            android:layout_gravity="center"/>
 
-            </LinearLayout>
+        <TextView
+            android:id="@+id/topStudent"
+            style="@style/header_action_bar"
+            android:text="Top Students"
+            android:padding="15dp"
+            />
 
-        </ScrollView>
-
-
+        <RelativeLayout
+            style="@style/MatchLayout">
+        <ListView
+            android:id="@+id/leader_borad_list"
+            android:divider="@null"
+            android:layout_marginLeft="10dp"
+            style="@style/MatchLayout"/>
+            <ProgressBar
+                android:id="@+id/progress_bar"
+                style="@style/WrapLayout"
+                android:indeterminateTint="@color/colorAccent"
+                android:layout_centerInParent="true"
+                android:visibility="gone"/>
+        </RelativeLayout>
 
     </LinearLayout>
 

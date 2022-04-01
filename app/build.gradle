@@ -2,35 +2,51 @@ plugins {
     id 'com.android.application'
     id 'kotlin-android'
     id 'kotlin-android-extensions'
+    id 'com.google.gms.google-services'
+    id 'com.google.firebase.crashlytics'
+    id 'com.onesignal.androidsdk.onesignal-gradle-plugin'
 }
 
 android {
-    compileSdkVersion 30
+
+    signingConfigs {
+        config {
+            keyAlias 'coexcl'
+            keyPassword 'coexcl123'
+            storeFile file('/Users/abhishekkumar/Documents/coexclkeystore')
+            storePassword 'coexcl123'
+        }
+
+    }
+
+    compileSdkVersion 31
     buildToolsVersion "30.0.3"
 
     defaultConfig {
         applicationId "com.home.coexcleducation"
         minSdkVersion 21
         targetSdkVersion 30
-        versionCode 1
-        versionName "1.0"
+        versionCode 11
+        versionName "1.0.1.20220317"
         android.defaultConfig.vectorDrawables.useSupportLibrary = true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
     }
 
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
     }
     kotlinOptions {
         jvmTarget = '1.8'
     }
+
 }
 
 dependencies {
@@ -47,7 +63,7 @@ dependencies {
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.0'
     implementation 'androidx.navigation:navigation-fragment-ktx:2.3.4'
     implementation 'androidx.navigation:navigation-ui-ktx:2.3.4'
-    testImplementation 'junit:junit:4.+'
+//    testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
     implementation 'com.github.freshworks:freshchat-android:4.3.3'
@@ -65,8 +81,36 @@ dependencies {
     api 'com.google.firebase:firebase-core:17.5.1'
     api 'com.google.firebase:firebase-config:19.2.0'
     api 'com.google.firebase:firebase-perf:19.0.9'
-    api 'com.google.firebase:firebase-crashlytics:17.2.2'
     api 'com.google.firebase:firebase-analytics:18.0.0'
-    api 'com.daimajia.swipelayout:library:1.2.0@aar'
-    implementation 'com.github.AnyChart:AnyChart-Android:1.1.2'
+    api 'com.google.firebase:firebase-crashlytics:17.2.2'
+//    api 'com.daimajia.swipelayout:library:1.2.0@aar'
+
+    implementation 'com.ramijemli.percentagechartview:percentagechartview:0.3.1'
+
+    implementation 'com.onesignal:OneSignal:[4.0.0, 4.99.99]'
+    implementation 'com.github.stfalcon-studio:SmsVerifyCatcher:0.3.3'
+    implementation 'com.google.android.material:material:1.1.0-alpha07'
+    implementation 'org.apache.commons:commons-text:1.6'
+    implementation 'com.github.barteksc:android-pdf-viewer:2.8.2'
+    implementation 'com.github.dhaval2404:imagepicker:2.1'
+//    implementation 'com.google.android.gms:play-services-auth:17.0.0'
+//    implementation 'com.google.android.gms:play-services-auth-api-phone:17.4.0'
+
+
+    implementation 'com.jakewharton:butterknife:10.0.0'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:10.0.0'
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+
+    implementation 'im.crisp:crisp-sdk:1.0.9'
+    implementation 'androidx.multidex:multidex:2.0.1'
+    // If you're not using AndroidX
+    implementation 'com.android.support:multidex:1.0.3'
+
+    api(
+            [group: 'com.fasterxml.jackson.core', name: 'jackson-core', version: '2.4.1'],
+            [group: 'com.fasterxml.jackson.core', name: 'jackson-annotations', version: '2.4.1'],
+            [group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.4.1'],
+    )
+
 }

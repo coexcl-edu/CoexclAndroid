@@ -42,9 +42,9 @@ public class ListAdapter extends BaseAdapter {
 		final int position = index;
 		ViewHolder lViewholder;
 		if (convertView == null) {
-			convertView = mInflater.inflate(R.layout.video_item, null);
+			convertView = mInflater.inflate(R.layout.spinner_item, null);
 			lViewholder = new ViewHolder();
-			lViewholder.mLabel = convertView.findViewById(R.id.Name_of_challenge);
+			lViewholder.mLabel = convertView.findViewById(R.id.note_label);
 			convertView.setTag(lViewholder);
 		} else {
 			lViewholder = (ViewHolder) convertView.getTag();

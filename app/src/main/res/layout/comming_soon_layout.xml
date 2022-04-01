@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="10"
+    android:background="@drawable/app_background_gradient"
+    >
+
+    <RelativeLayout
+        style="@style/MatchLayout"
+        android:layout_weight="8"
+        >
+
+        <ImageView
+            android:id="@+id/back"
+            style="@style/WrapLayout"
+            android:padding="20dp"
+            android:src="@drawable/ic_chevron_left_grey700"/>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:scaleType="fitXY"
+            android:alpha="0.1"
+            android:visibility="visible"
+            android:src="@drawable/one"/>
+
+        <RelativeLayout
+            style="@style/MatchLayout"
+            android:padding="20dp"
+            android:gravity="center"
+            >
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <TextView
+                    android:id="@+id/name"
+                    style="@style/header_action_bar"
+                    android:layout_width="match_parent"
+                    android:text="Coming Soon "
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:textSize="24sp" />
+
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="2"
+        android:orientation="vertical"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="-30dp"
+        android:background="@drawable/top_cornor_radius"
+        android:weightSum="9">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="30dp"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="200dp"
+                    android:padding="30dp"
+                    android:src="@drawable/coming_soon"/>
+
+                <TextView
+                    style="@style/sub_header_eleven"
+                    android:layout_width="match_parent"
+                    android:gravity="center"
+                    android:text="We are working on it, will notify you shortly"/>
+
+
+            </LinearLayout>
+
+        </ScrollView>
+
+    </LinearLayout>
+
+</LinearLayout>

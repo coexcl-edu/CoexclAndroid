@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/note_layout" >
+    <LinearLayout
+        android:id="@+id/maths"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="?attr/selectableItemBackground"
+        android:padding="20dp"
+        >
+
+        <TextView
+            android:id="@+id/note_label"
+            style="@style/sub_header_eleven"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:ellipsize="end"
+            android:text="Notes"
+            android:gravity="center|left"
+            android:textColor="@color/colorAccent"
+            android:paddingLeft="20dp"/>
+
+
+
+    </LinearLayout>
+
+</RelativeLayout>

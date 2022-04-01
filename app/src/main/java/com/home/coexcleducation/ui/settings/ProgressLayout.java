@@ -1,113 +1,129 @@
 package com.home.coexcleducation.ui.settings;
 
+import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ImageView;
+import android.widget.ListView;
+import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.anychart.AnyChart;
-import com.anychart.AnyChartView;
-import com.anychart.chart.common.dataentry.SingleValueDataSet;
-import com.anychart.charts.CircularGauge;
-import com.anychart.enums.Anchor;
-import com.anychart.graphics.vector.text.HAlign;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.freshchat.consumer.sdk.Freshchat;
+import com.freshchat.consumer.sdk.FreshchatActionListener;
+import com.freshchat.consumer.sdk.FreshchatMessage;
 import com.home.coexcleducation.R;
+import com.home.coexcleducation.jdo.UserDetails;
+import com.home.coexcleducation.ui.adaptar.LeaderBoardAdaptar;
+import com.home.coexcleducation.utils.ApiUtilty;
+import com.home.coexcleducation.utils.CoexclLogs;
+import com.home.coexcleducation.utils.FirebaseAnalyticsCoexcl;
+import com.home.coexcleducation.utils.ViewUtils;
+import com.ramijemli.percentagechartview.PercentageChartView;
+
+import java.util.HashMap;
+import java.util.List;
 
 public class ProgressLayout extends AppCompatActivity {
+
+    PercentageChartView mChart;
+    ListView mTopStudent;
+    ImageView mBack;
+    TextView mTopStudentHeader;
+    ProgressBar mProgressBar;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.progress_layout);
-        AnyChartView anyChartView = findViewById(R.id.any_chart_view);
-        anyChartView.setProgressBar(findViewById(R.id.progress_bar));
+        new ViewUtils().setWindowBackground(this);
+        mChart = findViewById(R.id.chart);
+        mBack = findViewById(R.id.back);
+        mTopStudent = findViewById(R.id.leader_borad_list);
+        mTopStudentHeader = findViewById(R.id.topStudent);
+        mProgressBar = findViewById(R.id.progress_bar);
 
-        CircularGauge circularGauge = AnyChart.circular();
-        circularGauge.fill("#fff")
-                .stroke(null)
-                .padding(0, 0, 0, 0)
-                .margin(30, 30, 30, 30);
-        circularGauge.startAngle(0)
-                .sweepAngle(360);
+        final Handler handler = new Handler(Looper.getMainLooper());
+        handler.postDelayed(new Runnable() {
+            public void run() {
+                mChart.setProgress(UserDetails.getInstance().getProgressReport(), true);
+            }
+        }, 400);
 
-        double currentValue = 13.8D;
-        circularGauge.data(new SingleValueDataSet(new Double[] { currentValue }));
+        mBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                new ViewUtils().exitActivityToRight(ProgressLayout.this);
+            }
+        });
 
-        circularGauge.axis(0)
-                .startAngle(-150)
-                .radius(80)
-                .sweepAngle(300)
-                .width(3)
-                .ticks("{ type: 'line', length: 4, position: 'outside' }");
+        mTopStudent.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-        circularGauge.axis(0).labels().position("outside");
+            }
+        });
+        new FirebaseAnalyticsCoexcl().logFirebaseEvent(this, "", "Home", "Progress Report");
+        new FetchLeaderBoard().execute();
 
-        circularGauge.axis(0).scale()
-                .minimum(0)
-                .maximum(140);
-
-        circularGauge.axis(0).scale()
-                .ticks("{interval: 10}")
-                .minorTicks("{interval: 10}");
-
-        circularGauge.needle(0)
-                .stroke(null)
-                .startRadius("6%")
-                .endRadius("38%")
-                .startWidth("2%")
-                .endWidth(0);
-
-        circularGauge.cap()
-                .radius("4%")
-                .enabled(true)
-                .stroke(null);
-
-        circularGauge.label(0)
-                .text("<span style=\"font-size: 25\">Wind Speed</span>")
-                .useHtml(true)
-                .hAlign(HAlign.CENTER);
-        circularGauge.label(0)
-                .anchor(Anchor.CENTER_TOP)
-                .offsetY(100)
-                .padding(15, 20, 0, 0);
-
-        circularGauge.label(1)
-                .text("<span style=\"font-size: 20\">" + currentValue + "</span>")
-                .useHtml(true)
-                .hAlign(HAlign.CENTER);
-        circularGauge.label(1)
-                .anchor(Anchor.CENTER_TOP)
-                .offsetY(-100)
-                .padding(5, 10, 0, 0)
-                .background("{fill: 'none', stroke: '#c1c1c1', corners: 3, cornerType: 'ROUND'}");
-
-        circularGauge.range(0,
-                "{\n" +
-                        "    from: 0,\n" +
-                        "    to: 25,\n" +
-                        "    position: 'inside',\n" +
-                        "    fill: 'green 0.5',\n" +
-                        "    stroke: '1 #000',\n" +
-                        "    startSize: 6,\n" +
-                        "    endSize: 6,\n" +
-                        "    radius: 80,\n" +
-                        "    zIndex: 1\n" +
-                        "  }");
-
-        circularGauge.range(1,
-                "{\n" +
-                        "    from: 80,\n" +
-                        "    to: 140,\n" +
-                        "    position: 'inside',\n" +
-                        "    fill: 'red 0.5',\n" +
-                        "    stroke: '1 #000',\n" +
-                        "    startSize: 6,\n" +
-                        "    endSize: 6,\n" +
-                        "    radius: 80,\n" +
-                        "    zIndex: 1\n" +
-                        "  }");
-
-        anyChartView.setChart(circularGauge);
     }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        new ViewUtils().exitActivityToRight(ProgressLayout.this);
+    }
+
+    class FetchLeaderBoard extends AsyncTask<String, String, String> {
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+            mProgressBar.setVisibility(View.VISIBLE);
+        }
+
+        @Override
+        protected String doInBackground(String... strings) {
+            try {
+                String lRes = new ApiUtilty().fetchLeaderBoard(ProgressLayout.this).getResponse();
+                CoexclLogs.errorLog("LederBorad", "lRes - "+lRes);
+                return lRes;
+            } catch (Exception e){
+                e.printStackTrace();
+            }
+            return "";
+        }
+
+        @Override
+        protected void onPostExecute(String result) {
+            super.onPostExecute(result);
+            mProgressBar.setVisibility(View.GONE);
+            try {
+                if (!result.equals("")) {
+                    ObjectMapper lMapper = new ObjectMapper();
+                    List<HashMap<String, Object>> lResponseObject = lMapper.readValue(result, List.class);
+                    if(!lResponseObject.isEmpty()) {
+                        LeaderBoardAdaptar lLeaderBoardAdaptar = new LeaderBoardAdaptar(ProgressLayout.this, lResponseObject);
+                        mTopStudent.setAdapter(lLeaderBoardAdaptar);
+                        mTopStudentHeader.setVisibility(View.VISIBLE);
+                    } else
+                        mTopStudentHeader.setVisibility(View.GONE);
+                } else {
+                    mTopStudentHeader.setVisibility(View.GONE);
+                    new ViewUtils().displayToast("Unable to fetch top student list", "failure", ProgressLayout.this, "");
+                }
+            } catch (Exception e) {
+                mTopStudentHeader.setVisibility(View.GONE);
+                    e.printStackTrace();
+            }
+        }
+    }
+
 }

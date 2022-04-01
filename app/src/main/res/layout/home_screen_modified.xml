@@ -14,7 +14,7 @@
         android:maxHeight="250dp"
         android:scaleType="fitXY"
         android:alpha="0.1"
-        android:src="@drawable/lab_image"/>
+        />
 
 
     <LinearLayout

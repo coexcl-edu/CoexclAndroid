@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                style="@style/Dialog_Header_Style"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="vertical"
+                android:paddingLeft="14dp"
+                android:paddingTop="14dp"
+                android:paddingRight="14dp"
+                android:paddingBottom="14dp">
+
+                <TextView
+                    android:id="@+id/Alert_Message"
+                    style="@style/header_action_bar"
+                    android:layout_gravity="center"
+                    android:text="Header"
+                   />
+
+
+            </LinearLayout>
+
+            <!-- <LinearLayout android:layout_width="fill_parent" android:layout_height="0.5dp" android:background="#c0c0c0" android:id="@+id/callDivider"/> -->
+
+            <LinearLayout
+                android:id="@+id/uplayout"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingTop="14dp"
+                android:clickable="true"
+                android:background="@color/white"
+                android:foreground="?attr/selectableItemBackground">
+
+                <TextView
+                    android:id="@+id/Dialog_UpBtn"
+                    style="@style/edit_text_value_style"
+                    android:layout_width="match_parent"
+                    android:gravity="center"
+                    android:text="Cancel"
+                    android:duplicateParentState="true"/>
+
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="14dp"
+                    android:background="@color/sms_status_divider" />
+
+            </LinearLayout>
+
+            <!-- <LinearLayout android:layout_width="fill_parent" android:layout_height="0.5dp" android:background="#c0c0c0" android:id="@+id/msgDivider" android:visibility="gone"/>
+            -->
+
+
+            <LinearLayout
+                android:id="@+id/downlayout"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:foreground="?attr/selectableItemBackground"
+                android:orientation="vertical"
+                android:paddingTop="14dp"
+                android:clickable="true"
+                >
+
+
+                <TextView
+                    android:id="@+id/Dialog_bottomBtn"
+                    style="@style/edit_text_value_style"
+                    android:layout_width="match_parent"
+                    android:gravity="center"
+                    android:text="Cancel"
+                    android:duplicateParentState="true" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="14dp"
+                    android:background="@color/sms_status_divider" />
+            </LinearLayout>
+
+
+            <!-- <LinearLayout android:layout_width="fill_parent" android:layout_height="0.5dp" android:background="#c0c0c0" android:id="@+id/middleDivider" android:visibility="gone"/> -->
+
+            <LinearLayout
+                android:id="@+id/middlelayout"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:foreground="?attr/selectableItemBackground"
+                android:orientation="vertical"
+                android:paddingTop="14dp"
+                android:clickable="true"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/Dialog_MiddleBtn"
+                    style="@style/edit_text_value_style"
+                    android:layout_width="match_parent"
+                    android:gravity="center"
+                    android:text="Cancel"
+                    android:duplicateParentState="true" />
+
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="14dp"
+                    android:background="@color/sms_status_divider" />
+
+            </LinearLayout>
+
+
+            <!-- <LinearLayout android:layout_width="fill_parent" android:layout_height="0.5dp" android:background="#c0c0c0" android:id="@+id/removeDivider"/> -->
+
+
+            <LinearLayout
+                android:id="@+id/removelayout"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:foreground="?attr/selectableItemBackground"
+                android:orientation="vertical"
+                android:paddingTop="14dp"
+                android:clickable="true">
+
+                <TextView
+                    android:id="@+id/Dialog_Remove"
+                    style="@style/edit_text_value_style"
+                    android:layout_width="match_parent"
+                    android:gravity="center"
+                    android:text="Remove"
+                    android:duplicateParentState="true" />
+
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="14dp"
+                    android:background="@color/sms_status_divider" />
+
+                <TextView
+                    style="@style/edit_text_value_style"
+                    android:id="@+id/cancel"
+                    android:layout_height="42dp"
+                    android:text="Cancel"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:visibility="gone"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/listViewLayout"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:foreground="?attr/selectableItemBackground"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <ListView
+                    android:id="@+id/label_listView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:divider="@drawable/toolbar_divider"
+                    android:scrollbars="none" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+</LinearLayout>

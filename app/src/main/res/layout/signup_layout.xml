@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
@@ -8,6 +8,12 @@
     android:weightSum="10"
     android:background="@drawable/app_background_gradient"
     >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:weightSum="10">
 
     <RelativeLayout
         style="@style/MatchLayout"
@@ -28,7 +34,6 @@
             android:gravity="center"
             >
 
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -46,7 +51,6 @@
                 <TextView
                     style="@style/header_action_bar"
                     android:layout_width="match_parent"
-                    android:layout_below="@+id/welcome"
                     android:text="Student Registration"
                     android:gravity="center"
                     android:textColor="@color/white"
@@ -92,13 +96,39 @@
                     android:orientation="vertical"
                     android:layout_marginLeft="50dp"
                     android:layout_marginRight="50dp"
-                    android:layout_marginTop="50dp"
+                    android:layout_marginTop="30dp"
                     >
 
                     <com.google.android.material.textfield.TextInputLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:textColorHint="@color/colorAccent"
+                        android:layout_marginTop="10dp"
+                        android:hint="Mobile">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:layout_width="match_parent"
+                            android:id="@+id/mobile"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/colorAccent"
+                            android:textColorHint="@color/colorAccent"
+                            android:inputType="phone"
+                            android:lines="1"
+                            android:background="@color/transparent"
+                            android:singleLine="true"
+                            android:imeOptions="actionNext"
+                            android:maxLength="10"
+                            android:enabled="false"
+                            android:drawableRight="@drawable/success_tick"
+                            android:nextFocusDown="@+id/password"/>
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
                         android:hint="Name"
+                        android:layout_marginTop="10dp"
                         android:textColorHint="@color/colorAccent">
 
                         <com.google.android.material.textfield.TextInputEditText
@@ -112,28 +142,6 @@
                             android:singleLine="true"
                             android:imeOptions="actionNext"
                             android:maxLength="30"
-                            android:nextFocusDown="@+id/mobile"/>
-
-                    </com.google.android.material.textfield.TextInputLayout>
-
-                    <com.google.android.material.textfield.TextInputLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textColorHint="@color/colorAccent"
-                        android:hint="Mobile">
-
-                        <com.google.android.material.textfield.TextInputEditText
-                            android:layout_width="match_parent"
-                            android:id="@+id/mobile"
-                            android:layout_height="wrap_content"
-                            android:textColor="@color/colorAccent"
-                            android:textColorHint="@color/colorAccent"
-                            android:inputType="phone"
-                            android:background="@color/transparent"
-                            android:lines="1"
-                            android:singleLine="true"
-                            android:imeOptions="actionNext"
-                            android:maxLength="10"
                             android:nextFocusDown="@+id/password"/>
 
                     </com.google.android.material.textfield.TextInputLayout>
@@ -141,6 +149,7 @@
                     <com.google.android.material.textfield.TextInputLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
                         android:textColorHint="@color/colorAccent"
                         android:hint="Password">
 
@@ -164,6 +173,7 @@
                     <com.google.android.material.textfield.TextInputLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
                         android:textColorHint="@color/colorAccent"
                         android:hint="Confirm Password">
 
@@ -189,9 +199,38 @@
                         style="@style/Spinner"
                         android:layout_width="match_parent"
                         android:layout_height="50dp"
-                        android:paddingLeft="10dp"
+                        android:layout_marginTop="10dp"
                         android:backgroundTint="@color/colorAccent"
-                        android:entries="@array/class_name"/>
+                        />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/date_picker_text"/>
+
+                    <RelativeLayout
+                        android:id="@+id/choose_your_school"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp">
+
+                        <TextView
+                            android:id="@+id/school_details"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/colorAccent"
+                            android:padding="15dp"
+                            android:layout_marginLeft="5dp"
+                            android:textSize="14dp"
+                            android:text="Choose Your School"/>
+
+                        <ImageView
+                            style="@style/WrapLayout"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/ic_chevron_right_grey400"/>
+
+                    </RelativeLayout>
 
                     <View
                         android:layout_width="match_parent"
@@ -199,28 +238,9 @@
                         android:background="@color/date_picker_text"/>
 
 
-                    <com.google.android.material.textfield.TextInputLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textColorHint="@color/colorAccent"
-                        android:hint="School ID (Optional)">
-
-                        <com.google.android.material.textfield.TextInputEditText
-                            android:layout_width="match_parent"
-                            android:id="@+id/school_id"
-                            android:layout_height="wrap_content"
-                            android:textColor="@color/colorAccent"
-                            android:textColorHint="@color/colorAccent"
-                            android:background="@color/transparent"/>
-
-                    </com.google.android.material.textfield.TextInputLayout>
-
-
-
-
                     <TextView
-                        android:id="@+id/login"
-                        android:layout_marginTop="30dp"
+                        android:id="@+id/create_account"
+                        android:layout_marginTop="20dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center"
@@ -232,18 +252,6 @@
 
                 </LinearLayout>
 
-
-
-                <TextView
-                    android:id="@+id/create_account"
-                    android:layout_below="@+id/social_login"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:textColor="@color/white"
-                    android:layout_marginTop="20dp"
-                    android:textSize="20sp"
-                    android:text="Not having account? Create yours"/>
 
             </RelativeLayout>
 
@@ -257,4 +265,6 @@
 
     </LinearLayout>
 
-</LinearLayout>
+
+    </LinearLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

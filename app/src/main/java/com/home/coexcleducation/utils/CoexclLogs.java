@@ -5,7 +5,7 @@ import android.util.Log;
 public class CoexclLogs {
 
     public static void infoLog(String lActivityName , String lMessage) {
-//        if(ApiConstants.SHOW_LOGS)
+        if(ApiConstant.SHOW_LOGS)
             Log.i(lActivityName, lMessage);
     }
 
@@ -17,7 +17,7 @@ public class CoexclLogs {
      * @param lException
      */
     public static void errorLog(String lActivityName , String lMessage , Exception lException) {
-//        if(ApiConstants.SHOW_LOGS)
+        if(ApiConstant.SHOW_LOGS)
             Log.e(lActivityName, lMessage, lException);
     }
 
@@ -27,7 +27,7 @@ public class CoexclLogs {
      * @param lMessage
      */
     public static void errorLog(String lActivityName , String lMessage) {
-//        if(ApiConstants.SHOW_LOGS)
+        if(ApiConstant.SHOW_LOGS)
             Log.e(lActivityName, lMessage);
     }
 
@@ -38,7 +38,7 @@ public class CoexclLogs {
      * @param lMessage
      */
     public static void debugLog(String lActivityName , String lMessage) {
-//        if(ApiConstants.SHOW_LOGS)
+        if(ApiConstant.SHOW_LOGS)
             Log.d(lActivityName, lMessage);
     }
 
@@ -49,7 +49,7 @@ public class CoexclLogs {
      * @param lMessage
      */
     public static void warningLog(String lActivityName , String lMessage) {
-//        if(ApiConstants.SHOW_LOGS)
+        if(ApiConstant.SHOW_LOGS)
             Log.w(lActivityName, lMessage);
     }
 

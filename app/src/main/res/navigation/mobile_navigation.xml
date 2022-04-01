@@ -13,8 +13,8 @@
 
     <fragment
         android:id="@+id/navigation_dashboard"
-        android:name="com.home.coexcleducation.ui.videos.VideoFragment"
-        android:label="@string/title_videos"
+        android:name="com.home.coexcleducation.ui.videos.LearnFragment"
+        android:label="@string/title_learning"
         tools:layout="@layout/fragment_videos" />
 
     <fragment

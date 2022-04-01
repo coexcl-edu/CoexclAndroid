@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="10"
+    android:background="@drawable/app_background_gradient"
+    >
+
+    <RelativeLayout
+        style="@style/MatchLayout"
+        android:layout_weight="8"
+        >
+
+        <ImageView
+            android:id="@+id/back_button"
+            style="@style/WrapLayout"
+            android:padding="20dp"
+            android:src="@drawable/ic_chevron_left_grey700"/>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:scaleType="fitXY"
+            android:alpha="0.1"
+            android:visibility="visible"
+            android:src="@drawable/one"/>
+
+        <RelativeLayout
+            style="@style/MatchLayout"
+            android:padding="20dp"
+            android:gravity="center"
+            >
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <TextView
+                    android:id="@+id/name"
+                    style="@style/header_action_bar"
+                    android:layout_width="match_parent"
+                    android:text="Live Class"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:textSize="24sp" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="2"
+        android:orientation="vertical"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="-30dp"
+        android:background="@drawable/top_cornor_radius"
+        android:weightSum="9">
+
+        <LinearLayout
+            style="@style/MatchLayout"
+            android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+            android:layout_marginTop="30dp"
+            android:src="@drawable/online_teacher"/>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:id="@+id/time"
+                style="@style/sub_header_eleven"
+                android:layout_width="match_parent"
+                android:text="9:00am"
+                android:paddingLeft="30dp"
+                android:layout_weight="1"/>
+
+            <TextView
+                android:id="@+id/duration"
+                style="@style/sub_header_eleven"
+                android:gravity="right"
+                android:paddingRight="30dp"
+                android:layout_width="match_parent"
+                android:text="60 mins"
+                android:layout_weight="1"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:id="@+id/date"
+                style="@style/sub_header_18"
+                android:paddingLeft="30dp"
+                android:layout_width="match_parent"
+                android:text="23rd May"
+                android:layout_weight="1"/>
+
+            <TextView
+                android:id="@+id/teacher"
+                style="@style/sub_header_18"
+                android:gravity="right"
+                android:paddingRight="30dp"
+                android:layout_width="match_parent"
+                android:text="By Naresh Sir"
+                android:layout_weight="1"/>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_margin="30dp"
+            android:background="@color/divider_color"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/topicName"
+                style="@style/sub_header_eleven"
+                android:paddingLeft="30dp"
+                android:text="Topic : Thermodynamics"
+                android:layout_weight="1"/>
+
+            <TextView
+                android:id="@+id/subject"
+                style="@style/sub_header_eleven"
+                android:gravity="right"
+                android:paddingLeft="30dp"
+                android:text="Subject : Physics"
+                android:layout_marginBottom="20dp"
+                android:layout_weight="1"/>
+
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/notice_body"
+            style="@style/sub_header_18"
+            android:layout_width="match_parent"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp"
+            android:text="@string/feature3" />
+
+        <Button
+            android:id="@+id/joinLiveClass"
+            style="@style/WrapLayout"
+            android:layout_gravity="center"
+            android:layout_marginTop="40dp"
+            android:drawableLeft="@drawable/ic_outline_play_circle_outline_24"
+            android:backgroundTint="@color/red_500"
+            android:text="Join Live Class"/>
+    </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

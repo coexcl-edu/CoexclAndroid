@@ -39,7 +39,6 @@
                     android:id="@+id/name"
                     style="@style/header_action_bar"
                     android:layout_width="match_parent"
-                    android:layout_below="@+id/welcome"
                     android:text="Learnings"
                     android:gravity="center"
                     android:textColor="@color/white"
@@ -77,6 +76,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="horizontal"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="?attr/selectableItemBackground"
                 android:padding="20dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginLeft="20dp">
@@ -108,6 +110,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="horizontal"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="?attr/selectableItemBackground"
                 android:padding="20dp"
                 android:layout_marginLeft="20dp">
 
@@ -138,6 +143,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="horizontal"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="?attr/selectableItemBackground"
                 android:padding="20dp"
                 android:layout_marginLeft="20dp">
 
@@ -168,6 +176,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="horizontal"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="?attr/selectableItemBackground"
                 android:padding="20dp"
                 android:layout_marginLeft="20dp">
 
@@ -198,6 +209,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="horizontal"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="?attr/selectableItemBackground"
                 android:padding="20dp"
                 android:layout_marginLeft="20dp">
 
@@ -228,6 +242,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="horizontal"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="?attr/selectableItemBackground"
                 android:padding="20dp"
                 android:layout_marginLeft="20dp">
 
@@ -247,15 +264,13 @@
             </LinearLayout>
 
 
-
-
         </LinearLayout>
 
         </ScrollView>
 
         <View
             android:layout_width="match_parent"
-            android:layout_height="56dp"/>
+            android:layout_height="86dp"/>
 
     </LinearLayout>
 

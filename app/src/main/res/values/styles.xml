@@ -1,6 +1,6 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
@@ -9,6 +9,8 @@
         <item name="android:statusBarColor">@color/transparent</item>
         <item name="android:colorEdgeEffect">@color/colorAccent</item>
         <item name="android:colorControlHighlight">@color/colorAccent</item>
+        <item name="android:spinnerDropDownItemStyle">@style/Spinner</item>
+        <item name="android:forceDarkAllowed" tools:targetApi="q">false</item>
 
 
     </style>
@@ -23,7 +25,6 @@
     <style name="Spinner" parent="Widget.AppCompat.Light.DropDownItem.Spinner">
         <item name="android:paddingEnd">0dp</item>
         <item name="android:textColor">@color/white</item>
-        <item name="android:backgroundTint">@color/red</item>
         <item name="android:textSize">14sp</item>
     </style>
 
@@ -1059,7 +1060,7 @@
     </style>
 
     <style name="sub_header_action_bar" parent="WrapLayout">
-        <item name="android:fontFamily">@font/lato_regular</item>
+        <item name="android:fontFamily">@font/latobold</item>
         <item name="android:textColor">@color/header1</item>
         <item name="android:textSize">18sp</item>
     </style>
@@ -1146,7 +1147,7 @@
     <style name="sub_header_18" parent="WrapLayout">
         <item name="android:fontFamily">@font/lato_regular</item>
         <item name="android:textColor">@color/header3</item>
-        <item name="android:textSize">14sp</item>
+        <item name="android:textSize">16sp</item>
     </style>
 
 
@@ -1308,7 +1309,7 @@
 
     <style name="Dialog_Header_Style" parent="match_parent_layout">
         <item name="android:layout_height">56dp</item>
-        <item name="android:background">@color/colorPrimary</item>
+        <item name="android:background">@color/white</item>
     </style>
     <style name="wrap_content_layout">
         <item name="android:layout_height">wrap_content</item>

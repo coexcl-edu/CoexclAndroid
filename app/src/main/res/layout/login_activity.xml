@@ -59,13 +59,14 @@
                     >
 
                     <com.google.android.material.textfield.TextInputEditText
-                        android:layout_width="match_parent"
                         android:id="@+id/username"
-                        android:layout_height="wrap_content"
-                        android:textColor="@color/white"
-                        android:textColorHint="@color/white"
+                        android:layout_width="match_parent"
+                        android:layout_height="68dp"
+                        android:background="@color/transparent"
                         android:inputType="phone"
-                        android:background="@color/transparent"/>
+                        android:maxLength="10"
+                        android:textColor="@color/white"
+                        android:textColorHint="@color/white" />
 
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -73,13 +74,16 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textColorHint="@color/white"
+                    android:layout_marginTop="15dp"
                     android:hint="Password">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:layout_width="match_parent"
                         android:id="@+id/password"
                         android:layout_height="wrap_content"
+                        android:inputType="textPassword"
                         android:textColor="@color/white"
+                        android:maxLength="50"
                         android:textColorHint="@color/white"
                         android:background="@color/transparent"/>
 
@@ -87,8 +91,19 @@
 
 
                 <TextView
+                    android:id="@+id/forgetPassword"
+                    android:layout_below="@+id/social_login"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:textColor="@color/white"
+                    android:padding="10dp"
+                    android:textSize="15sp"
+                    android:text="forgot password?"/>
+
+                <TextView
                     android:id="@+id/login"
-                    android:layout_marginTop="30dp"
+                    android:layout_marginTop="20dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
@@ -132,6 +147,7 @@
                 </LinearLayout>
 
             </RelativeLayout>
+
 
             <TextView
                 android:id="@+id/create_account"

@@ -9,13 +9,14 @@ import java.util.Set;
 public class PreferenceHelper {
 
     Context mContext;
+    public static final String NOTIFICATION_COUNT                = "notificationCount";
 
     public PreferenceHelper(Context pContext) {
         this.mContext = pContext;
     }
 
     public static SharedPreferences getSharedPreference(Context context) {
-        return context.getSharedPreferences("com.adaptavant.setmore", 0);
+        return context.getSharedPreferences("com.coexcl.education", 0);
     }
 
 

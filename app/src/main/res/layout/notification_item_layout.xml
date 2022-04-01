@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp">
+
+
+    <RelativeLayout
+        style="@style/WrapLayout"
+        android:layout_margin="5dp"
+
+        android:layout_height="wrap_content"
+        >
+
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/icon_notifications"/>
+
+        <RelativeLayout
+            android:id="@+id/headers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/logo"
+            android:orientation="vertical"
+            >
+
+        <TextView
+            android:id="@+id/course_name"
+            style="@style/header_action_bar"
+            android:layout_width="match_parent"
+            android:textSize="16sp"
+            android:layout_marginTop="3dp"
+            android:lines="1"
+            android:singleLine="true"
+            android:gravity="left"
+            android:ellipsize="end"
+            android:text="Notification Header"/>
+
+        <TextView
+            android:id="@+id/course_price"
+            android:layout_below="@+id/course_name"
+            style="@style/item_header"
+            android:layout_width="match_parent"
+            android:gravity="left"
+            android:linksClickable="true"
+            android:autoLink="web"
+            android:layout_marginTop="5dp"
+            android:text="Notification message"/>
+
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/course_image"
+            android:layout_below="@+id/headers"
+            android:layout_width="match_parent"
+            android:scaleType="fitXY"
+            android:layout_height="150dp"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/push_notifications"
+            />
+
+
+    </RelativeLayout>
+
+</RelativeLayout>
