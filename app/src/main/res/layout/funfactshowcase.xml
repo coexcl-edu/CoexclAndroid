@@ -26,7 +26,7 @@
                     android:id="@+id/feature_logo"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:src="@drawable/onboarding_2"
+                    android:src="@drawable/onboarding_1"
                     android:scaleType="fitXY"
                     android:layout_weight="4"
                     />
@@ -39,7 +39,7 @@
                     android:layout_centerInParent="true"
                     android:autoSizeTextType="uniform"
                     android:autoSizeMinTextSize="14sp"
-                    android:autoSizeMaxTextSize="30sp"
+                    android:autoSizeMaxTextSize="25sp"
                     android:autoSizeStepGranularity="2sp"
                     android:textStyle="bold"
                     android:gravity="center"

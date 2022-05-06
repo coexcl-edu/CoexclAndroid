@@ -15,6 +15,7 @@ import com.freshchat.consumer.sdk.Freshchat
 import com.home.coexcleducation.R
 import com.home.coexcleducation.database.NotificationTable
 import com.home.coexcleducation.jdo.UserDetails
+import com.home.coexcleducation.premium.UpgradePlanActivity
 import com.home.coexcleducation.ui.ComingSoonActivty
 import com.home.coexcleducation.ui.registration.LoginActivity
 import com.home.coexcleducation.utils.CoexclLogs
@@ -35,7 +36,7 @@ class SettingsFragment : Fragment() {
 
 
         root.upgrade_premum_layout.setOnClickListener{
-            startActivity(Intent(requireActivity(), ComingSoonActivty::class.java))
+            startActivity(Intent(requireActivity(), UpgradePlanActivity::class.java))
             requireActivity().overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_left)
         }
 

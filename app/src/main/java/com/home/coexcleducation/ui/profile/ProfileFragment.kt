@@ -6,6 +6,7 @@ import android.view.*
 import android.widget.LinearLayout
 import android.widget.RelativeLayout
 import androidx.appcompat.widget.PopupMenu
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
@@ -41,9 +42,9 @@ class ProfileFragment : Fragment() {
         mEditProfile = root.findViewById(R.id.popupLayout)
 
         val window: Window = requireActivity().window
-        val background = resources.getDrawable(R.drawable.appcolour_gradient_for_background)
+        val background = ContextCompat.getDrawable(requireContext(), R.drawable.appcolour_gradient_for_background)
         window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
-        window.setStatusBarColor(resources.getColor(android.R.color.transparent))
+        window.statusBarColor = ContextCompat.getColor(requireContext(), android.R.color.transparent)
         window.setBackgroundDrawable(background)
 
         root.changePassword.setOnClickListener{

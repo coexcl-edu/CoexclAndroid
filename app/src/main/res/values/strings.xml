@@ -1,10 +1,17 @@
 <resources>
     <string name="app_name">Coexcl</string>
+
+<!--    freshchat-->
     <string name="chat_app_id">204497eb-bf08-400c-b8a2-b540e825c56d</string>
     <string name="chat_app_key">4f547293-bc24-4378-b2ee-745b29e14b86</string>
 
 <!--    <string name="chat_app_id">4c164f3a-679e-489d-80d8-cefc50850ad6</string>-->
 <!--    <string name="chat_app_key">28d9355e-d817-4c4f-a98e-c6e5fb643613</string>-->
+
+
+    <string name="intercom_chat_app_id">g887mfk5</string>
+    <string name="intercom_chat_app_key">android_sdk-960a36cb1cf0cc85344eab86b872716f3f49af5e</string>
+
     <string name="title_home">Home</string>
     <string name="title_learning">Learning</string>
     <string name="title_notifications">Notifications</string>

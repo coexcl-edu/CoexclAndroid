@@ -1,5 +1,6 @@
 package com.home.coexcleducation.utils
 
+import android.annotation.SuppressLint
 import android.app.Activity
 import android.app.Dialog
 import android.content.ContentResolver
@@ -10,11 +11,13 @@ import android.view.Gravity
 import android.view.ViewGroup
 import android.view.Window
 import android.widget.ImageView
-import android.widget.LinearLayout
 import com.bumptech.glide.Glide
 import com.fasterxml.jackson.databind.ObjectMapper
+import com.home.coexcleducation.MainApplication
 import com.home.coexcleducation.R
+import com.home.coexcleducation.intercom.IntercomHelper
 import com.home.coexcleducation.jdo.UserDetails
+import io.intercom.android.sdk.Intercom
 import kotlinx.android.synthetic.main.profile_update_view.*
 import java.util.*
 
@@ -106,7 +109,7 @@ class Utilty {
                                 else 0.0F
 
                     lUserDetails.isLoggedIn = true
-
+                    IntercomHelper().updateUser(MainApplication.CONTEXT)
                 }
             }
         }
@@ -222,4 +225,7 @@ class Utilty {
         }
 
     }
+
+
+
 }

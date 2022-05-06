@@ -1,24 +1,14 @@
 package com.home.coexcleducation;
 
-import android.app.Application;
-import android.content.BroadcastReceiver;
 import android.content.Context;
-import android.content.Intent;
-import android.content.IntentFilter;
-
 import androidx.appcompat.app.AppCompatDelegate;
-import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 import androidx.multidex.MultiDexApplication;
 
-import com.freshchat.consumer.sdk.Event;
-import com.freshchat.consumer.sdk.Freshchat;
+import com.home.coexcleducation.intercom.IntercomHelper;
+import com.home.coexcleducation.jdo.UserDetails;
 import com.home.coexcleducation.utils.ApiConstant;
-import com.home.coexcleducation.utils.CoexclLogs;
-import com.home.coexcleducation.utils.PreferenceHelper;
 import com.onesignal.OSNotificationReceivedEvent;
 import com.onesignal.OneSignal;
-
-import im.crisp.client.Crisp;
 
 public class MainApplication extends MultiDexApplication {
 
@@ -35,6 +25,10 @@ public class MainApplication extends MultiDexApplication {
         OneSignal.initWithContext(this);
         OneSignal.setAppId(ApiConstant.ONE_SIGNAL_KEY);
 
+        new IntercomHelper().initialize(this);
+        new IntercomHelper().regsisterIntercomUser(UserDetails.getInstance().getID());
+        new IntercomHelper().updateUser(MainApplication.CONTEXT);
+
         OneSignal.setNotificationWillShowInForegroundHandler(new OneSignal.OSNotificationWillShowInForegroundHandler() {
             @Override
             public void notificationWillShowInForeground(OSNotificationReceivedEvent notificationReceivedEvent) {
@@ -42,11 +36,10 @@ public class MainApplication extends MultiDexApplication {
             }
         });
 
-        Crisp.configure(getApplicationContext(), "60348a37-7f2e-4c87-97db-da05913f7e18");
 
 
-        IntentFilter lFilter = new IntentFilter(Freshchat.FRESHCHAT_EVENTS);
-        LocalBroadcastManager.getInstance(CONTEXT).registerReceiver(lReceiver, lFilter);
+//        IntentFilter lFilter = new IntentFilter(Freshchat.FRESHCHAT_EVENTS);
+//        LocalBroadcastManager.getInstance(CONTEXT).registerReceiver(lReceiver, lFilter);
 
 
 //        OneSignal.setNotificationOpenedHandler(
@@ -67,21 +60,21 @@ public class MainApplication extends MultiDexApplication {
         return CONTEXT;
     }
 
-    @Override
-    public void onTerminate() {
-        super.onTerminate();
-        LocalBroadcastManager.getInstance(CONTEXT).unregisterReceiver(lReceiver);
-    }
+//    @Override
+//    public void onTerminate() {
+//        super.onTerminate();
+////        LocalBroadcastManager.getInstance(CONTEXT).unregisterReceiver(lReceiver);
+//    }
 
-    BroadcastReceiver lReceiver = new BroadcastReceiver() {
-        @Override
-        public void onReceive(Context context, Intent intent) {
-
-            if(intent == null && intent.getExtras() == null)
-                return;
-
-            Event lName = Freshchat.getEventFromBundle(intent.getExtras());
-            CoexclLogs.errorLog("TAG", "FreshChat lName - "+lName);
-        }
-    };
+//    BroadcastReceiver lReceiver = new BroadcastReceiver() {
+//        @Override
+//        public void onReceive(Context context, Intent intent) {
+//
+//            if(intent == null && intent.getExtras() == null)
+//                return;
+//
+//            Event lName = Freshchat.getEventFromBundle(intent.getExtras());
+//            CoexclLogs.errorLog("TAG", "FreshChat lName - "+lName);
+//        }
+//    };
 }

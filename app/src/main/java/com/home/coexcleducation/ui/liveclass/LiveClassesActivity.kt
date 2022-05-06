@@ -49,7 +49,7 @@ class LiveClassesActivity : AppCompatActivity() {
 
     private fun setValue() {
         try {
-            val lLongValue: Long = mClassObject.get("startTime") as Long
+            val lLongValue: Long = mClassObject.get("startTime").toString().toLong();
             time.text = SimpleDateFormat("dd MMM", Locale.ENGLISH).format(Date(lLongValue))
             date.text = SimpleDateFormat("hh:mm a", Locale.ENGLISH).format(Date(lLongValue))
             duration.text = mClassObject.get("duration").toString() + " mins"

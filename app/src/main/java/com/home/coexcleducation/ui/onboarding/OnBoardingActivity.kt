@@ -2,19 +2,14 @@ package com.home.coexcleducation.ui.onboarding
 
 import android.content.Intent
 import android.os.Bundle
-import android.view.View
-import android.view.Window
-import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
-import androidx.viewpager.widget.ViewPager
 import com.google.android.material.tabs.TabLayout
 import com.home.coexcleducation.R
 import com.home.coexcleducation.ui.registration.LoginActivity
-import com.home.coexcleducation.ui.registration.SignupActivity
 import com.home.coexcleducation.utils.ViewUtils
 import kotlinx.android.synthetic.main.onboarding_layout.*
 
@@ -26,6 +21,8 @@ class OnBoardingActivity : AppCompatActivity() {
 
         ViewUtils().setWindowBackground(this)
 
+
+//        window.statusBarColor = ContextCompat.getColor(this, R.color.smokeGray)
 
         login.setOnClickListener{
             startActivity(Intent(this, LoginActivity::class.java))

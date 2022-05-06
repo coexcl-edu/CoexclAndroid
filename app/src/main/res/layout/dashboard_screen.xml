@@ -6,66 +6,120 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:weightSum="10"
-    android:background="@drawable/app_background_gradient"
+    android:background="@color/white"
     >
 
     <RelativeLayout
         style="@style/MatchLayout"
         android:layout_weight="6"
         >
+
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="center"
+            android:alpha="0.5"
             android:scaleType="fitXY"
-            android:alpha="0.1"
-            android:visibility="visible"
-            android:src="@drawable/one"/>
+            android:src="@drawable/five"
+            android:visibility="visible" />
 
         <RelativeLayout
             style="@style/MatchLayout"
-            android:padding="20dp"
-            android:gravity="center"
-            >
-
+            android:gravity="center">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
-                <TextView
-                    android:id="@+id/welcome"
-                    style="@style/item_header"
-                    android:layout_width="match_parent"
-                    android:fontFamily="@font/architects_daughter"
-                    android:text="Welcome"
-                    android:gravity="center"
-                    android:textColor="@color/white"
-                    android:textSize="20sp" />
+                android:layout_marginBottom="50dp"
+                android:orientation="vertical"
+                android:paddingLeft="30dp">
 
                 <TextView
                     android:id="@+id/name"
                     style="@style/header_action_bar"
                     android:layout_width="match_parent"
-                    android:text="Ravi Singh"
-                    android:gravity="center"
-                    android:textColor="@color/white"
+                    android:gravity="left"
+                    android:text="Arya Singh"
+                    android:textColor="@color/header1"
                     android:textSize="24sp" />
 
                 <TextView
                     android:id="@+id/school"
                     style="@style/item_header"
-                    android:layout_gravity="center"
                     android:layout_below="@+id/name"
-                    android:text="Dav"
-                    android:textColor="@color/white"
-                    android:background="@drawable/curve_shape"
+                    android:layout_gravity="left"
                     android:layout_marginTop="5dp"
-                    android:padding="10dp"
+                    android:text="Coexcl"
+                    android:textColor="@color/header2"
                     android:textSize="14sp" />
             </LinearLayout>
 
+
         </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/top_cornor_blue"
+            android:orientation="horizontal"
+            android:padding="30dp"
+            android:weightSum="2">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_weight="1">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="5dp"
+                    >
+                    <TextView
+                        android:id="@+id/moving"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:maxLines="1"
+                        android:text="Having more doubt?"
+                        android:textColor="@color/white"
+                        android:textSize="14dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/moving2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@+id/moving"
+                        android:maxLines="1"
+                        android:text="Book a video session"
+                        android:textColor="@color/white"
+                        android:textSize="12dp" />
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:padding="5dp"
+                    android:src="@drawable/arrrow"
+                    />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/book_live_class"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/gray_cornor_4r"
+                android:gravity="center"
+                android:padding="15dp"
+                android:text="Book Live Session"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+        </LinearLayout>
 
         <ImageView
             android:id="@+id/profile_image"

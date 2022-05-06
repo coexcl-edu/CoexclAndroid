@@ -12,6 +12,8 @@ import com.home.coexcleducation.utils.CoexclLogs;
 import com.home.coexcleducation.utils.Constants;
 import com.home.coexcleducation.utils.PreferenceHelper;
 
+import io.intercom.android.sdk.push.IntercomPushClient;
+
 /**
  * Created by ABHIshek on 23/05/16.
  */
@@ -30,6 +32,7 @@ public class RegistrationIntentService extends JobIntentService {
                 CoexclLogs.printException(e);
             }
             Freshchat.getInstance(this).setPushRegistrationToken(refreshedToken);
+            new IntercomPushClient().sendTokenToIntercom(getApplication(), refreshedToken);
             CoexclLogs.errorLog(TAG, "   Sending FCM token to intercom   " + refreshedToken);
             CoexclLogs.infoLog(TAG, "Refreshed token: " + refreshedToken);
             CoexclLogs.infoLog(TAG, "fcm token: " + refreshedToken);

@@ -15,6 +15,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
+import io.intercom.android.sdk.push.IntercomPushClient;
+
 
 /**
  * Created by ABHIshek on 08/02/17.
@@ -24,6 +26,7 @@ public class FireBaseMessagingService extends FirebaseMessagingService {
 
     private static final String TAG = "FireBaseMessagingService";
     SharedPreferences mPreference;
+    private final IntercomPushClient intercomPushClient = new IntercomPushClient();
 
     @Override
     public void onMessageReceived(RemoteMessage remoteMessage) {
@@ -37,6 +40,9 @@ public class FireBaseMessagingService extends FirebaseMessagingService {
                 Map message = remoteMessage.getData();
                 if (Freshchat.isFreshchatNotification(remoteMessage)) {
                     Freshchat.handleFcmMessage(this, remoteMessage);
+                }
+                if (intercomPushClient.isIntercomPush(message)) {
+                    intercomPushClient.handlePush(getApplication(), message);
                 }
             }
         } catch (Exception e) {

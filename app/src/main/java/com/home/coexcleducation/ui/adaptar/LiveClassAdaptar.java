@@ -48,7 +48,7 @@ public class LiveClassAdaptar extends BaseAdapter {
         }
 
         try {
-            Long lLongValue = (Long) mLabelList.get(position).get("startTime");
+            Long lLongValue = Long.parseLong( mLabelList.get(position).get("startTime").toString());
             String lDate = lDateformat.format(new Date(lLongValue));
             String lTime = lTimeFormat.format(new Date(lLongValue));
             lViewholder.mLabel.setText(mLabelList.get(position).get("topic")+ "("+mLabelList.get(position).get("subject")+")");

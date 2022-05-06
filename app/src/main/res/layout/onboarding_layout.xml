@@ -76,13 +76,12 @@
             android:id="@+id/login"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/white"
-            android:layout_centerVertical="true"
             android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
             android:paddingRight="25dp"
-            android:textSize="18dp"
-            android:textStyle="bold"
-            android:text="Lets Begin >"/>
+            android:text="Lets Begin >"
+            android:textColor="@color/white"
+            android:textSize="18dp" />
 
     </RelativeLayout>
 

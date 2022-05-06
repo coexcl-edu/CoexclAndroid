@@ -76,7 +76,6 @@
                         android:id="@+id/upgrade_premum_layout"
                         style="@style/timeoffelementlayout"
                         android:background="@color/white"
-                        android:visibility="gone"
                         android:foreground="?attr/selectableItemBackground">
 
                         <androidx.appcompat.widget.AppCompatImageView
@@ -111,7 +110,6 @@
                     android:id="@+id/premium_divider"
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
-                    android:visibility="gone"
                     android:background="@color/divider_color" />
 
                 <RelativeLayout

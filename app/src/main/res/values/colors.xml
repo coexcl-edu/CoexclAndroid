@@ -3,6 +3,9 @@
     <color name="colorPrimary">#139EEC</color>
     <color name="colorPrimaryDark">#139EEC</color>
     <color name="colorAccent">#2687bf</color>
+    <color name="colorAccent_light">#89cef5</color>
+    <color name="status_bar">#AEE1FD</color>
+    <color name="status_bar_2">#80CFFB</color>
 <!--    <color name="purple_200">#FFBB86FC</color>-->
 <!--    <color name="purple_500">#FF6200EE</color>-->
 <!--    <color name="purple_700">#FF3700B3</color>-->
@@ -11,6 +14,7 @@
     <color name="black">#FF000000</color>
     <color name="black_50_opacity_main">#BFffffff</color>
     <color name="coexcl_orange">#FFA500</color>
+
 
 
 

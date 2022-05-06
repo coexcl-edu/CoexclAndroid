@@ -2,9 +2,8 @@ package com.home.coexcleducation.ui.home
 
 import android.content.Intent
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
+import android.view.animation.TranslateAnimation
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
@@ -12,14 +11,16 @@ import com.bumptech.glide.Glide
 import com.freshchat.consumer.sdk.*
 import com.google.firebase.crashlytics.FirebaseCrashlytics
 import com.home.coexcleducation.R
+import com.home.coexcleducation.intercom.IntercomHelper
 import com.home.coexcleducation.jdo.UserDetails
 import com.home.coexcleducation.quiz.QuizHomeActivity
+import com.home.coexcleducation.ui.bookliveclass.ListOfSubjectForBooking
 import com.home.coexcleducation.ui.fanfacts.FunFactsActivity
 import com.home.coexcleducation.ui.liveclass.LiveClassListActivity
 import com.home.coexcleducation.ui.notes.NoteListingActivity
 import com.home.coexcleducation.ui.school.SchoolActivity
 import com.home.coexcleducation.utils.FirebaseAnalyticsCoexcl
-import im.crisp.client.ChatActivity
+import com.home.coexcleducation.utils.Utilty
 import kotlinx.android.synthetic.main.dashboard_screen.view.*
 
 
@@ -35,7 +36,14 @@ class HomeFragment : Fragment() {
         homeViewModel =
                 ViewModelProvider(this).get(HomeViewModel::class.java)
         val root = inflater.inflate(R.layout.dashboard_screen, container, false)
-        requireActivity().window.statusBarColor = ContextCompat.getColor(requireContext(), R.color.colorAccent)
+
+//        val window: Window = requireActivity().window
+//        val background = ContextCompat.getDrawable(requireContext(), R.drawable.home_screen_status_gradient)
+//        window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
+//        window.statusBarColor = ContextCompat.getColor(requireContext(), android.R.color.transparent)
+//        window.setBackgroundDrawable(background)
+
+        requireActivity().window.statusBarColor = ContextCompat.getColor(requireContext(), R.color.status_bar)
 
         FirebaseCrashlytics.getInstance().setUserId(UserDetails.getInstance().id)
 
@@ -66,6 +74,14 @@ class HomeFragment : Fragment() {
 //            .placeholder(R.drawable.kid_place_holder)
 //            .into(root.profile_image);
 
+        root.book_live_class.setOnClickListener{
+            var lIntent = Intent(requireActivity(), ListOfSubjectForBooking::class.java)
+//            var lIntent = Intent(requireActivity(), ContactUs::class.java)
+            lIntent.putExtra("subject", "Daily Quiz")
+            startActivity(lIntent)
+            requireActivity().overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_left)
+            FirebaseAnalyticsCoexcl().logFirebaseEvent(requireActivity(), "", "Home", "Book Live Class")
+        }
 
         root.start_quiz.setOnClickListener{
             var lIntent = Intent(requireActivity(), QuizHomeActivity::class.java)
@@ -90,14 +106,13 @@ class HomeFragment : Fragment() {
 
 
         root.ask_doubt.setOnClickListener{
-            val tags: MutableList<String> = ArrayList()
-            tags.add("order_queries")
-            val options = ConversationOptions().filterByTags(tags, "Order Queries")
-            Freshchat.showConversations(requireContext(), options);
-            FirebaseAnalyticsCoexcl().logFirebaseEvent(requireActivity(), "", "Home", "AskDoubts")
+//            val tags: MutableList<String> = ArrayList()
+//            tags.add("order_queries")
+//            val options = ConversationOptions().filterByTags(tags, "Order Queries")
+//            Freshchat.showConversations(requireContext(), options);
+//            FirebaseAnalyticsCoexcl().logFirebaseEvent(requireActivity(), "", "Home", "AskDoubts")
 
-//            val crispIntent = Intent(requireActivity(), ChatActivity::class.java)
-//            startActivity(crispIntent)
+            IntercomHelper().startIntercomChat(requireContext());
         }
 
         root.fun_fact.setOnClickListener{

@@ -225,6 +225,13 @@
             android:theme="@style/Theme.CoexclEducation">
         </activity>
         <activity
+            android:name=".premium.UpgradePlanActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.CoexclEducation">
+        </activity>
+
+        <activity
             android:name=".ui.registration.LaunchActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
@@ -247,6 +254,17 @@
             android:theme="@style/ChatTheme"
             android:screenOrientation="portrait"
             tools:replace="android:theme" />
+        <activity
+            android:name=".ui.bookliveclass.ListOfLiveClassForBooking"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.CoexclEducation" />
+
+        <activity
+            android:name=".ui.bookliveclass.ListOfSubjectForBooking"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.CoexclEducation"/>
 
         <activity
             android:name=".quiz.QuizHomeActivity"
