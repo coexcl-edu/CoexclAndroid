@@ -164,7 +164,7 @@
                             android:clickable="false"
                             android:gravity="center"
                             android:paddingRight="40dp"
-                            android:text="Rs 5099/yr" />
+                            android:text="Rs 1099/yr" />
 
                         <androidx.appcompat.widget.AppCompatImageView
                             style="@style/WrapLayout"
@@ -231,7 +231,7 @@
                             android:clickable="false"
                             android:gravity="center"
                             android:paddingRight="40dp"
-                            android:text="Rs 599/mo" />
+                            android:text="Rs 99/mo" />
 
                         <androidx.appcompat.widget.AppCompatImageView
                             style="@style/WrapLayout"
@@ -277,6 +277,24 @@
                     android:layout_centerInParent="true"
                     />
                 </RelativeLayout>
+
+
+                    <TextView
+                        android:id="@+id/downgrade"
+                        style="@style/place_holder_subheading"
+                        android:layout_gravity="center"
+                        android:text="Manage your plan"
+                        android:paddingLeft="40dp"
+                        android:paddingRight="40dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="bottom"
+                        android:background="@drawable/roundable"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerInParent="true"
+                        android:layout_marginBottom="20dp"
+                        android:visibility="invisible"
+                        />
+
 
             </RelativeLayout>
         </LinearLayout>

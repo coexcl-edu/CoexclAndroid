@@ -10,6 +10,7 @@ import android.view.Window;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 
@@ -17,6 +18,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
 
+import com.bumptech.glide.Glide;
 import com.home.coexcleducation.R;
 import com.home.coexcleducation.jdo.UserDetails;
 import com.home.coexcleducation.quiz.api.Api;
@@ -40,13 +42,13 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 
 public class QuizHomeActivity extends AppCompatActivity {
-	Button start;
-	Button filter;
+	TextView start;
+	TextView filter;
 	ProgressBar progressBar;
 	Question q;
 	String difficulty;
 	String category;
-	ImageView mBack;
+	ImageView mBack, logo;
 
 	View.OnClickListener onClickListener = new View.OnClickListener() {
 		@Override
@@ -72,14 +74,29 @@ public class QuizHomeActivity extends AppCompatActivity {
 		setContentView(R.layout.activity_home);
 		start = findViewById(R.id.home_start);
 		filter = findViewById(R.id.home_filter);
+		logo = findViewById(R.id.logo);
 		progressBar = findViewById(R.id.progressBar2);
-		mBack = findViewById(R.id.back_button);
+		mBack = findViewById(R.id.back);
 		start.setOnClickListener(onClickListener);
 		filter.setOnClickListener(onClickListener);
+
+		ImageView lHearder = findViewById(R.id.header_background);
+
+//		Glide.with(this).asGif()
+//				.load(R.raw.quiz_icon)
+//				.into(logo);
 
 		Window window = getWindow();
 		window.setStatusBarColor(ContextCompat.getColor(this,R.color.colorAccent));
 		SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
+
+		CoexclLogs.errorLog("TAG", " package - "+getApplicationContext().getPackageName());
+		if (getApplicationContext().getPackageName().equals("com.home.coexcleducation")) {
+			lHearder.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.one));
+		} else {
+			lHearder.setAlpha(0.5f);
+			lHearder.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.cofi_back_one));
+		}
 
 		category = sharedPrefs.getString(
 				getString(R.string.category_key),

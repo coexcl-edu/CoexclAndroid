@@ -16,7 +16,6 @@ import com.home.coexcleducation.utils.FirebaseAnalyticsCoexcl
 import com.home.coexcleducation.utils.Helper
 import com.home.coexcleducation.utils.Helper.extractYTId
 import com.home.coexcleducation.utils.ViewUtils
-import kotlinx.android.synthetic.main.school_activity.back_button
 import kotlinx.android.synthetic.main.school_activity_details.*
 import java.text.SimpleDateFormat
 import java.util.*

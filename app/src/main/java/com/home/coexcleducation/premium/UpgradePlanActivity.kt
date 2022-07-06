@@ -2,7 +2,10 @@ package com.home.coexcleducation.premium
 
 import android.app.Dialog
 import android.content.Context
+import android.content.Intent
+import android.net.Uri
 import android.os.AsyncTask
+import android.os.Build
 import android.os.Bundle
 import android.text.Html
 import android.view.View
@@ -15,13 +18,18 @@ import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
 import com.android.billingclient.api.*
 import com.android.billingclient.api.BillingFlowParams.ProrationMode.IMMEDIATE_AND_CHARGE_FULL_PRICE
+import com.fasterxml.jackson.databind.ObjectMapper
 import com.google.android.material.tabs.TabLayout
 import com.home.coexcleducation.R
+import com.home.coexcleducation.httphelper.HttpHelper
 import com.home.coexcleducation.jdo.UserDetails
 import com.home.coexcleducation.utils.CoexclLogs
 import com.home.coexcleducation.utils.Constants
+import com.home.coexcleducation.utils.Helper
 import com.home.coexcleducation.utils.ViewUtils
 import kotlinx.android.synthetic.main.plant_upgrade_activity.*
+import java.util.*
+import kotlin.collections.ArrayList
 
 
 class UpgradePlanActivity : AppCompatActivity(), PurchasesUpdatedListener {
@@ -30,6 +38,8 @@ class UpgradePlanActivity : AppCompatActivity(), PurchasesUpdatedListener {
     lateinit var mContext: Context
     lateinit var mBillingClient: BillingClient
     var selectedPlan = 0
+    var mExistingPlanId : String = ""
+    var mNewPlanId : String = ""
     var TAG = "UpgradePlanActivity"
     var mSkuList: List<SkuDetails>? = null
     var mMonthlySKU: SkuDetails? = null
@@ -46,7 +56,7 @@ class UpgradePlanActivity : AppCompatActivity(), PurchasesUpdatedListener {
         mContext = this
         mBillingClient = BillingClient.newBuilder(mContext).enablePendingPurchases().setListener(this).build()
 
-        window.statusBarColor = ContextCompat.getColor(this, R.color.cream_light)
+        ViewUtils().setWindowBackground(this)
 
         back.setOnClickListener {
             exit()
@@ -74,12 +84,17 @@ class UpgradePlanActivity : AppCompatActivity(), PurchasesUpdatedListener {
             CoexclLogs.errorLog(TAG, "Acknowledge billingResult ---- " + billingResult.responseCode)
         }
 
+        downgrade.setOnClickListener{
+            val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/account/subscriptions"))
+            startActivity(browserIntent)
+        }
 
-        if (!UserDetails.getInstance().subscribed)
-            startConnection()
+        if (UserDetails.getInstance().subscribed) {
+            name.text = "Premium Member"
+            downgrade.visibility = View.VISIBLE
+        }
 
-        loadShowCaseViewPager(intent.getIntExtra("loadFrom", 0))
-
+        startConnection()
 
     }
 
@@ -136,11 +151,7 @@ class UpgradePlanActivity : AppCompatActivity(), PurchasesUpdatedListener {
                             mBillingClient.launchBillingFlow(this, flowParams)
 
                     } else {
-                        if(skuDetails.sku == Constants.MONTHLY_SUBSCRIPTION || skuDetails.sku == Constants.YEARLY_SUBSCRIPTION){
-
-
-                        }
-
+                        CoexclLogs.errorLog(TAG, "Loading the sku")
                         val flowParams = BillingFlowParams.newBuilder().setSkuDetails(skuDetails).build()
                         mBillingClient.launchBillingFlow(this@UpgradePlanActivity, flowParams)
                     }
@@ -152,16 +163,16 @@ class UpgradePlanActivity : AppCompatActivity(), PurchasesUpdatedListener {
     }
 
 
-     private fun loadShowCaseViewPager(currentScreen: Int) {
+     private fun loadShowCaseViewPager() {
         val adapter = ViewPagerAdapter(supportFragmentManager)
-        for (i in 0..3) {
-            adapter.addFragment("", PremiumDisplayFragment(i))
-        }
+//        for (i in 0..3) {
+            adapter.addFragment("", PremiumDisplayFragment(0))
+//        }
 
         viewpager.adapter = adapter
-        tab_layout_indicator.setupWithViewPager(viewpager, true)
-
-        viewpager.setCurrentItem(currentScreen, true)
+//        tab_layout_indicator.setupWithViewPager(viewpager, true)
+        viewpager.setCurrentItem(0, true)
+        loadPlans()
 
         tab_layout_indicator.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
             override fun onTabReselected(p0: TabLayout.Tab?) {}
@@ -180,28 +191,6 @@ class UpgradePlanActivity : AppCompatActivity(), PurchasesUpdatedListener {
         })
 
     }
-
-
-    private fun highlightPlanHeaders(position : Int, planName : TextView, planName2 : TextView, planName3 : TextView)  {
-        when (position) {
-            0 -> {
-                planName.setTextColor(ContextCompat.getColor(mContext, R.color.colorAccent))
-                planName2.setTextColor(ContextCompat.getColor(mContext, R.color.header2))
-                planName3.setTextColor(ContextCompat.getColor(mContext, R.color.header2))
-            }
-            1 -> {
-                planName2.setTextColor(ContextCompat.getColor(mContext, R.color.colorAccent))
-                planName.setTextColor(ContextCompat.getColor(mContext, R.color.header2))
-                planName3.setTextColor(ContextCompat.getColor(mContext, R.color.header2))
-            }
-            2 -> {
-                planName3.setTextColor(ContextCompat.getColor(mContext, R.color.colorAccent))
-                planName2.setTextColor(ContextCompat.getColor(mContext, R.color.header2))
-                planName.setTextColor(ContextCompat.getColor(mContext, R.color.header2))
-            }
-        }
-    }
-
 
 
      private fun startConnection() {
@@ -244,7 +233,6 @@ class UpgradePlanActivity : AppCompatActivity(), PurchasesUpdatedListener {
     }
 
 
-
      fun fetchingPlans() {
         if (areSubscriptionsSupported()) {
             val skuList: MutableList<String> = java.util.ArrayList()
@@ -259,8 +247,11 @@ class UpgradePlanActivity : AppCompatActivity(), PurchasesUpdatedListener {
                 override fun onSkuDetailsResponse(billingResult: BillingResult, list: MutableList<SkuDetails>?) {
                     CoexclLogs.errorLog(TAG, "querySkuDetailsAsync     " + list.toString())
                     mSkuList = list
+                    runOnUiThread{ loadShowCaseViewPager() }
+
                 }
             })
+
         }
     }
 
@@ -285,17 +276,18 @@ class UpgradePlanActivity : AppCompatActivity(), PurchasesUpdatedListener {
         }
     }
 
-    fun loadPlans(typeOfPlan: Int) {
-        selectedPlan = typeOfPlan
+    fun loadPlans() {
+//        selectedPlan = typeOfPlan
         active_plan_yearly.visibility = View.INVISIBLE
         active_plan_monthly.visibility = View.INVISIBLE
         discountPercentage.visibility = View.VISIBLE
         yearlyPlanBox.background = ContextCompat.getDrawable(mContext, R.drawable.brown_border_white_inside_4r)
         monthlyPlanBox.background = ContextCompat.getDrawable(mContext, R.drawable.brown_border_white_inside_4r)
         var activePlan = if (mAlreadyPurchasedProductList.size > 0)  mAlreadyPurchasedProductList.get(0).skus[0] else ""
-
+        CoexclLogs.errorLog(TAG, "SKU in load plans list = "+mSkuList!!.get(1))
         if (mSkuList != null) {
             for (skuDetails in mSkuList!!) {
+                CoexclLogs.errorLog(TAG, "SKU in load plans = "+skuDetails.sku)
                     if (skuDetails.sku == Constants.MONTHLY_SUBSCRIPTION) {
                         mMonthlySKU = skuDetails
                         monthly_pricing.text = getPriceFromMacro(skuDetails.getPriceCurrencyCode(), skuDetails.getPriceAmountMicros()) + "/month"
@@ -353,32 +345,68 @@ class UpgradePlanActivity : AppCompatActivity(), PurchasesUpdatedListener {
     }
 
 
-    inner class UpgradeToPremium : AsyncTask<List<Purchase>, Void?, Boolean>() {
+    inner class UpgradeToPremium : AsyncTask<List<Purchase>, Void?, String>() {
 
-        lateinit var lResponse : String
+        private lateinit var lPurchase : Purchase
 
         override fun onPreExecute() {
             super.onPreExecute()
             showLoader()
         }
 
-        override fun doInBackground(vararg lPurchaseList: List<Purchase>): Boolean {
+        override fun doInBackground(vararg lPurchaseList: List<Purchase>): String {
 
             try {
+                lPurchase = lPurchaseList[0][0]
+                val lParamMap = HashMap<String, String>()
+                lParamMap["orderId"] = lPurchase.orderId
+                lParamMap["packageId"] = mContext.applicationContext.packageName
+                lParamMap["productId"] = lPurchase.skus[0]
+                lParamMap["userId"] = UserDetails.getInstance().id
+                lParamMap["mobile"] = UserDetails.getInstance().mobile
+                lParamMap["pushToken"] = lPurchase.purchaseToken
 
+                if (mAlreadyPurchasedProductList.size > 0) {
+                    mExistingPlanId = mAlreadyPurchasedProductList[0].skus[0]
+                    mNewPlanId = lPurchase.skus[0]
+                    lParamMap["productId_old"] = mAlreadyPurchasedProductList[0].skus[0]
+                }
 
-            } catch (e: Exception) {
-                CoexclLogs.printException(e)
-            }
-            return false
+                try {
+                    lParamMap["device"] = Build.DEVICE
+                    lParamMap["versionName"] = mContext.packageManager.getPackageInfo(mContext.packageName, 0).versionName
+                } catch (e: Exception) {
+                    e.printStackTrace()
+                }
+
+                var lHttpHelper = HttpHelper()
+                lHttpHelper.payload = Helper().constructJson(lParamMap)
+                CoexclLogs.infoLog(TAG, "lParamMap: $lParamMap")
+                lHttpHelper = PremiumAPI(mContext).upgradeToPremium(lHttpHelper, this@UpgradePlanActivity)
+                CoexclLogs.infoLog(TAG, "Upgrade lResponse : " + lHttpHelper.response)
+
+                return lHttpHelper.response
+
+                } catch (e: Exception) {
+                    CoexclLogs.printException(e)
+                }
+
+            return ""
         }
 
-        override fun onPostExecute(result: Boolean) {
+        override fun onPostExecute(result: String) {
             super.onPostExecute(result)
             progress_bar.visibility = View.GONE
 
-            if (result) {
-
+            val lMapper = ObjectMapper()
+            var lResponseObject = lMapper.readValue(result, HashMap::class.java)
+                if (lResponseObject.containsKey("response") && lResponseObject.get("response") as Boolean) {
+                    var data = lResponseObject["data"] as HashMap<String, Any>
+                    if (data["status"]?.equals("active") == true) {
+                        UserDetails.getInstance().subscribed = true
+                    }
+                    showMessage("Upgrading Account Success!", Constants.SUCCESS_MESSEGE_TYPE, "")
+                    acknowledgePurchase(lPurchase)
             } else {
                 showMessage("Upgrading your Account failed!", Constants.FAILURE_MESSEGE_TYPE, "")
             }

@@ -5,13 +5,12 @@ xmlns:app="http://schemas.android.com/apk/res-auto"
 android:layout_width="match_parent"
 android:layout_height="match_parent"
 android:orientation="vertical"
-android:weightSum="10"
 android:background="@drawable/app_background_gradient"
     >
 
 <RelativeLayout
     style="@style/MatchLayout"
-    android:layout_weight="8"
+    android:layout_height="wrap_content"
     >
 
     <ImageView
@@ -21,17 +20,18 @@ android:background="@drawable/app_background_gradient"
         android:src="@drawable/ic_chevron_left_grey700"/>
 
     <ImageView
-        android:id="@+id/back_button"
+        android:id="@+id/header_background"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="center"
         android:scaleType="fitXY"
         android:alpha="0.1"
-        android:visibility="visible"
+        android:visibility="gone"
         android:src="@drawable/one"/>
 
     <RelativeLayout
         style="@style/MatchLayout"
+        android:layout_height="wrap_content"
         android:gravity="center"
         android:padding="20dp">
 
@@ -56,63 +56,61 @@ android:background="@drawable/app_background_gradient"
 
 </RelativeLayout>
 
-<ScrollView
-    style="@style/MatchLayout"
-    android:layout_weight="2"
-    android:layout_marginTop="-30dp"
-    android:background="@drawable/top_cornor_radius"
-    android:orientation="vertical">
-
 
     <LinearLayout
         style="@style/MatchLayout"
         android:orientation="vertical"
-        android:layout_alignParentBottom="true"
-        android:weightSum="9">
+        >
 
         <ImageView
+            android:id="@+id/logo"
             android:layout_width="match_parent"
-            android:layout_height="130dp"
+            android:layout_height="330dp"
             android:layout_margin="20dp"
             android:src="@drawable/logo_quiz"/>
-
-        <TextView
-            android:id="@+id/notice_body"
-            style="@style/sub_header_18"
-            android:paddingLeft="30dp"
-            android:paddingRight="30dp"
-            android:layout_width="match_parent"
-            android:text="@string/quiz_benefit"/>
 
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:orientation="vertical"
-            android:layout_marginTop="10dp"
+            android:gravity="bottom"
             >
+            <TextView
+                android:id="@+id/notice_body"
+                style="@style/sub_header_15"
+                android:paddingLeft="30dp"
+                android:paddingRight="30dp"
+                android:layout_width="match_parent"
+                android:textColor="@color/white"
+                android:text="@string/quiz_benefit"/>
 
-            <Button
+            <TextView
                 android:id="@+id/home_filter"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="20dp"
-                android:layout_gravity="center"
                 android:layout_marginTop="30dp"
+                android:background="@drawable/round_corner_white"
                 android:text="@string/filter"
-                android:textColor="@color/white"
-                android:background="@drawable/roundable2"
+                android:textColor="@color/colorAccent"
+                android:textSize="15dp"
+                android:textStyle="bold"
+                android:padding="15dp"
                 android:visibility="visible" />
 
-            <Button
+            <TextView
                 android:id="@+id/home_start"
-                android:layout_width="280dp"
+                android:layout_width="match_parent"
                 android:layout_height="59dp"
                 android:layout_gravity="center"
-                android:layout_marginTop="10dp"
-                android:background="@drawable/roundable2"
+                android:layout_margin="16dp"
+                android:background="@drawable/round_corner_white"
+                android:gravity="center"
                 android:text="@string/take_quiz"
-                android:textColor="@color/white"
+                android:textColor="@color/colorAccent"
+                android:textSize="20dp"
+                android:textStyle="bold"
                 android:visibility="visible" />
 
 
@@ -126,6 +124,5 @@ android:background="@drawable/app_background_gradient"
 
 
     </LinearLayout>
-</ScrollView>
 
 </LinearLayout>

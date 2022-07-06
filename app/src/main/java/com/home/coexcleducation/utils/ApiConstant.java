@@ -2,7 +2,7 @@ package com.home.coexcleducation.utils;
 
 public class ApiConstant {
 
-    public static Boolean SHOW_LOGS = true;
+    public static Boolean SHOW_LOGS = false;
 
 //    public static String  BASE_URL = "https://coexclapi.el.r.appspot.com";
     public static String  BASE_URL = "https://quantum-weft-311207.df.r.appspot.com";
@@ -15,6 +15,7 @@ public class ApiConstant {
     public static String SCHOOL_FETCH_API = BASE_URL+"/school";
     public static String LIVE_CLASSES_FETCH_API = BASE_URL+"/liveclass/getliveclass";
     public static String SIGN_UP_API = BASE_URL+"/users";
+    public static String FCM_TOKEN_UP_API = BASE_URL+"/users/updateToken";
     public static String NOTES_FETCH_API = BASE_URL+"/notes";
     public static String ADD_NOTES_API = BASE_URL+"/notes/addnote";
     public static String LEADER_BOARD_API = BASE_URL+"/users/leaderboard";
@@ -22,6 +23,12 @@ public class ApiConstant {
     public static String NOTICE_API = BASE_URL+"/notice/";
     public static String QUIZ_API = BASE_URL+"/quiz/school";
     public static String FUN_FACT_API = BASE_URL+"/funfacts/fetch";
+    public static String PREMIUM_UPGRADE_API = BASE_URL+"/premium/upgrade";
+    public static String PREMIUM_DOWN_UPGRADE_API = BASE_URL+"/premium/downgrade";
+    public static String GET_PLAN_API = BASE_URL+"/premium/getPlan";
+    public static String UPDATE_PLAN_STATUS_API = BASE_URL+"/premium/updatePlanStatus";
+    public static String UPDATE_LIMITED_SESSION = BASE_URL+"/users/updateSession";
+    public static String GET_PROFILE_API = BASE_URL+"/users/getProfile/";
 
 
     public static String MATHS_60mins = "https://booking.setmore.com/scheduleappointment/d0cd173e468478f4db4924f233f2d9b35fc20fa6/services/s2ed66845dc522fe5320e57875cf4acd7de33c052";
@@ -47,18 +54,10 @@ public class ApiConstant {
 
 
 
-
-
-
     public static String OTP_API = "https://2factor.in/API/V1/42d54e58-bd6e-11eb-8089-0200cd936042/SMS/";
     public static String VERIFY_OTP_API = "https://2factor.in/API/V1/42d54e58-bd6e-11eb-8089-0200cd936042/SMS/VERIFY/";
     public static String ONE_SIGNAL_KEY = "bf6dd7a2-0275-404d-9ee6-4be51092b6fb";
     public static  final Integer JOB_INTENT_REGISTRATION_ID  = 921908;
-
-
-
-
-
 
 
 

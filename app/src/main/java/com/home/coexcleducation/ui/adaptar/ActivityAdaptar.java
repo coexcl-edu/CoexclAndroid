@@ -6,9 +6,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import androidx.cardview.widget.CardView;
+import androidx.core.content.ContextCompat;
+
 import com.home.coexcleducation.R;
+import com.home.coexcleducation.utils.Constants;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -40,6 +45,7 @@ public class ActivityAdaptar  extends BaseAdapter {
             lViewholder.mLabel = convertView.findViewById(R.id.label);
             lViewholder.mSelected = convertView.findViewById(R.id.logo);
             lViewholder.mDate = convertView.findViewById(R.id.date);
+            lViewholder.mLayout = convertView.findViewById(R.id.base_view);
             convertView.setTag(lViewholder);
         } else {
             lViewholder = (ViewHolder) convertView.getTag();
@@ -49,6 +55,12 @@ public class ActivityAdaptar  extends BaseAdapter {
             Date lDate = inputFormat.parse(mLabelList.get(position).get("date"));
             lViewholder.mLabel.setText(mLabelList.get(position).get("title"));
             lViewholder.mDate.setText(lDateformat.format(lDate));
+            try {
+                lViewholder.mLayout.setBackgroundTintList(ContextCompat.getColorStateList(mContext, new Constants().getColourList().get(position)));
+            } catch (Exception e) {
+                e.printStackTrace();
+                lViewholder.mLayout.setBackgroundTintList(ContextCompat.getColorStateList(mContext, new Constants().getRandomColour()));
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -73,5 +85,6 @@ public class ActivityAdaptar  extends BaseAdapter {
     class ViewHolder {
         TextView mLabel, mDate;
         ImageView mSelected;
+        CardView mLayout;
     }
 }

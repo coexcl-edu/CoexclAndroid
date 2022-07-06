@@ -5,21 +5,25 @@ import android.app.Activity
 import android.app.Dialog
 import android.content.ContentResolver
 import android.content.Context
+import android.content.Intent
 import android.net.Uri
 import android.provider.MediaStore
 import android.view.Gravity
 import android.view.ViewGroup
 import android.view.Window
 import android.widget.ImageView
+import androidx.appcompat.app.AlertDialog
 import com.bumptech.glide.Glide
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.home.coexcleducation.MainApplication
 import com.home.coexcleducation.R
+import com.home.coexcleducation.httphelper.HttpHelper
 import com.home.coexcleducation.intercom.IntercomHelper
 import com.home.coexcleducation.jdo.UserDetails
-import io.intercom.android.sdk.Intercom
-import kotlinx.android.synthetic.main.profile_update_view.*
-import java.util.*
+import com.home.coexcleducation.premium.UpgradePlanActivity
+import com.home.coexcleducation.ui.registration.SignUpUtils
+import java.io.StringWriter
+import java.io.Writer
 
 class Utilty {
 
@@ -39,6 +43,8 @@ class Utilty {
                         map.get("schoolInfo") as HashMap<String, String> else HashMap<String, String>()
                     var lQuizInfo: HashMap<String, Any> = if(map.containsKey("quizInfo"))
                         map.get("quizInfo") as HashMap<String, Any> else HashMap<String, Any>()
+                    var lSessionInfo: HashMap<String, Any> = if(map.containsKey("limitedSession"))
+                        map.get("limitedSession") as HashMap<String, Any> else HashMap<String, Any>()
 
 
                     var lUserDetails = UserDetails.getInstance()
@@ -54,6 +60,8 @@ class Utilty {
                         .toString() else ""
                     lUserDetails.name =
                         if (map.containsKey("name")) map.get("name").toString() else ""
+                    lUserDetails.fcmToken =
+                        if (map.containsKey("fcmtoken")) map.get("fcmtoken").toString() else ""
                     lUserDetails.subscribed =
                         if (map.containsKey("subscribed")) map.get("subscribed") as Boolean else false
 
@@ -108,13 +116,23 @@ class Utilty {
                             if(lQuizInfo.containsKey("percent")) lQuizInfo.get("percent").toString().toFloat();
                                 else 0.0F
 
+
+                    lUserDetails.sessionDate = if (lSessionInfo.containsKey("date")) lSessionInfo["date"].toString()
+                    else Helper().currentMonth
+
+                    lUserDetails.sessionCount = (if (lSessionInfo.containsKey("session")) lSessionInfo["session"]
+                    else 0) as Int?
+
+
                     lUserDetails.isLoggedIn = true
+                    IntercomHelper().regsisterIntercomUser(lUserDetails.id)
                     IntercomHelper().updateUser(MainApplication.CONTEXT)
                 }
             }
         }
     }
 
+    @SuppressLint("Range")
     fun getRealPath(pContentResolver: ContentResolver, pUri: Uri): String? {
         var lPath: String? = ""
         val lCursor = pContentResolver.query(pUri, null, null, null, null)
@@ -226,6 +244,78 @@ class Utilty {
 
     }
 
+    fun updateToken(pContext : Context, refreshedToken : String) :HttpHelper {
+        val lWriter: Writer = StringWriter()
+        val mReqMap: java.util.HashMap<String, Any> = hashMapOf()
+        mReqMap["userid"] = UserDetails.getInstance().id
+        mReqMap["fcmtoken"] = refreshedToken
+        ObjectMapper().writeValue(lWriter, mReqMap)
+
+        var lHttpHelper = HttpHelper()
+        lHttpHelper.payload = lWriter.toString()
+        CoexclLogs.errorLog("MainActivity", "Req from Update Token - " + lHttpHelper.payload)
+        lHttpHelper = SignUpUtils().updateToken(pContext, lHttpHelper)
+        CoexclLogs.errorLog("MainActivity", "Response from  Update Token - " + lHttpHelper.response)
+        var result = lHttpHelper.payload
+        try {
+            if (!result.isNullOrEmpty()) {
+                var lMapper = ObjectMapper()
+                var lResponseObject = lMapper.readValue(result, java.util.HashMap::class.java)
+                if (lResponseObject.containsKey("response") && lResponseObject.get("response") as Boolean) {
+                    var data = lResponseObject.get("data") as HashMap<String, Any>
+                    UserDetails.getInstance().fcmToken =
+                        if (data.containsKey("fcmtoken")) data.get("fcmtoken").toString() else ""
+                }
+            }
+        } catch (e : java.lang.Exception) {
+
+        }
+        return lHttpHelper
+    }
+
+
+    fun displayonSessionOver(context: Activity) {
+        try {
+            val alertConfirm = AlertDialog.Builder(context)
+            alertConfirm.setTitle("Free Session Over")
+            alertConfirm.setMessage("You have exhausted all your free session for this month, To get unlimited session by buying our premium plan")
+            alertConfirm.setCancelable(true)
+            alertConfirm.setNegativeButton("Okay") { dialog, which ->
+                dialog.dismiss()
+            }
+            alertConfirm.setPositiveButton("Buy Premium") { dialog, which ->
+                FirebaseAnalyticsCoexcl().logFirebaseEvent(context, "", "Home", "Seesion_Premium_Screen")
+                dialog.dismiss()
+                context.startActivity(Intent(context, UpgradePlanActivity::class.java))
+                context.overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_left)
+            }
+            val dialog = alertConfirm.create()
+            dialog.show()
+        } catch (e: java.lang.Exception) {
+            e.printStackTrace()
+        }
+    }
+
+
+    fun updateSessionCount(context: Context) {
+        try {
+            var response = SignUpUtils().updateLimitedSession(context).response
+            CoexclLogs.errorLog("TAG", "get Session Response - $response")
+            if (!response.isNullOrEmpty()) {
+                var lMapper = ObjectMapper()
+                var lResponseObject = lMapper.readValue(response, HashMap::class.java)
+                if (lResponseObject.containsKey("response") && lResponseObject.get("response") as Boolean) {
+                    var data = lResponseObject.get("data") as HashMap<String, Any>
+                    if (data.containsKey("sessionCount")) {
+                        UserDetails.getInstance().sessionCount = data.get("sessionCount") as Int?;
+                        CoexclLogs.errorLog("TAG", "get Session count - $response")
+                    }
+                }
+            }
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
+    }
 
 
 }

@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.AdapterView.OnItemClickListener
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.home.coexcleducation.R
 import com.home.coexcleducation.jdo.UserDetails
@@ -16,6 +17,8 @@ import com.home.coexcleducation.utils.CoexclLogs
 import com.home.coexcleducation.utils.PreferenceHelper
 import com.home.coexcleducation.utils.ViewUtils
 import kotlinx.android.synthetic.main.note_listing.*
+import kotlinx.android.synthetic.main.note_listing.header_background
+import kotlinx.android.synthetic.main.signup_layout.*
 import java.io.StringWriter
 import java.io.Writer
 import java.util.*
@@ -34,6 +37,13 @@ class NoteListingActivity : AppCompatActivity(), NotesDeletionListner {
         setContentView(R.layout.note_listing)
         mProgressView = findViewById(R.id.progress_bar)
         mPreferences = PreferenceHelper.getSharedPreference(this)
+
+        if (applicationContext.packageName == "com.home.coexcleducation") {
+            header_background.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.one))
+        } else {
+            header_background.alpha = 0.5f
+            header_background.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.cofi_header_back))
+        }
 
         back.setOnClickListener{
             ViewUtils().exitActivityToRight(this)

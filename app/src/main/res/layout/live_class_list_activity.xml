@@ -21,6 +21,7 @@
             android:src="@drawable/ic_chevron_left_grey700"/>
 
         <ImageView
+            android:id="@+id/header_background"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="center"
@@ -31,9 +32,9 @@
 
         <RelativeLayout
             style="@style/MatchLayout"
-            android:padding="20dp"
             android:gravity="center"
-            >
+            android:padding="20dp">
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -44,8 +45,8 @@
                     android:id="@+id/name"
                     style="@style/header_action_bar"
                     android:layout_width="match_parent"
-                    android:text="Live Classes"
                     android:gravity="center"
+                    android:text="Live Classes"
                     android:textColor="@color/white"
                     android:textSize="24sp" />
 
@@ -63,23 +64,29 @@
         android:orientation="vertical"
         android:layout_alignParentBottom="true"
         android:layout_marginTop="-30dp"
-        android:background="@drawable/top_cornor_radius"
+        android:background="@color/white"
         android:weightSum="9">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_marginTop="20dp"
             >
             <ListView
                 android:id="@+id/live_class"
                 android:scrollbars="none"
+                android:layout_margin="20dp"
+                android:clickable="true"
+                android:divider="@color/white"
+                android:dividerHeight="10dp"
                 style="@style/MatchLayout"/>
 
 
         </LinearLayout>
-        <include android:id="@+id/progress_bar" layout="@layout/progress_bar_layout"/>
+
+        <include
+            android:id="@+id/progress_bar"
+            layout="@layout/progress_bar_layout" />
 
 
         <LinearLayout

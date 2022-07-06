@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.AdapterView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.home.coexcleducation.R
 import com.home.coexcleducation.ui.adaptar.ActivityAdaptar
@@ -26,7 +27,15 @@ class SchoolActivity : AppCompatActivity() {
         ViewUtils().setWindowBackground(this)
         mProgressView = findViewById(R.id.progress_bar)
 
-        back_button.setOnClickListener{
+
+        if (applicationContext.packageName == "com.home.coexcleducation") {
+            header_background.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.one))
+        } else {
+            header_background.alpha = 0.5f
+            header_background.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.cofi_back_two))
+        }
+
+        back.setOnClickListener{
             ViewUtils().exitActivityToRight(this)
         }
 

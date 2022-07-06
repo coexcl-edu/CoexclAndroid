@@ -28,6 +28,8 @@ import androidx.core.content.ContextCompat;
 
 import com.bumptech.glide.Glide;
 import com.home.coexcleducation.R;
+import com.home.coexcleducation.premium.UpgradePlanActivity;
+import com.home.coexcleducation.ui.settings.ContactUs;
 
 import java.util.Timer;
 import java.util.TimerTask;
@@ -254,6 +256,49 @@ public class ViewUtils {
         } else {
             activity.startActivity(new Intent(Intent.ACTION_VIEW, uri));
         }
+    }
+
+
+
+    public Dialog displayStrongScreenForPremium(Activity activity) {
+        final Dialog dialog = new Dialog(activity , R.style.DialogCustomTheme);
+        try {
+            dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+            dialog.setContentView(R.layout.dialog_plan_change);
+            dialog.setCanceledOnTouchOutside(true);
+            dialog.setCancelable(true);
+
+            Window window = dialog.getWindow();
+
+            window.setGravity(Gravity.CENTER);
+            window.setLayout((int)(activity.getWindow().peekDecorView().getWidth() * 0.9), LinearLayout.LayoutParams.WRAP_CONTENT);
+
+            TextView lPremium = dialog.findViewById(R.id.edit_staff_list_btn);
+            TextView lContactSupport = dialog.findViewById(R.id.contact_support);
+
+            lPremium.setVisibility(View.VISIBLE);
+
+
+            lPremium.setOnClickListener(v -> {
+                Intent lIntent = new Intent(activity, UpgradePlanActivity.class);
+                activity.startActivity(lIntent);
+                activity.overridePendingTransition(R.anim.slide_out_top, R.anim.fixed_position);
+                dialog.dismiss();
+            });
+
+            lContactSupport.setOnClickListener(v -> {
+                Intent lIntent = new Intent(activity, ContactUs.class);
+                activity.startActivity(lIntent);
+                activity.overridePendingTransition(R.anim.slide_out_top, R.anim.fixed_position);
+                dialog.dismiss();
+            });
+
+
+            dialog.show();
+        } catch (Exception e) {
+            CoexclLogs.printException(e);
+        }
+        return dialog;
     }
 
 }

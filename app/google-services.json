@@ -33,6 +33,35 @@
           ]
         }
       }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:736512491792:android:0491bac33992e29e192595",
+        "android_client_info": {
+          "package_name": "com.home.cofi"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "736512491792-i594rs2l0uusq8un17m2shuqadl7e7ct.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDjIpoDJhDg8r1R-tYIlMNUyXT7JFCkMxM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "736512491792-i594rs2l0uusq8un17m2shuqadl7e7ct.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
     }
   ],
   "configuration_version": "1"

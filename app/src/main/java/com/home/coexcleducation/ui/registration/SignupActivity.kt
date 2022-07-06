@@ -4,29 +4,30 @@ import android.app.Dialog
 import android.content.Intent
 import android.os.AsyncTask
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.JobIntentService
 import androidx.core.content.ContextCompat
 import com.fasterxml.jackson.databind.ObjectMapper
+import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.home.coexcleducation.MainActivity
 import com.home.coexcleducation.R
 import com.home.coexcleducation.fcm.RegistrationIntentService
 import com.home.coexcleducation.httphelper.HttpHelper
-import kotlinx.android.synthetic.main.signup_layout.*
-import java.io.StringWriter
-import java.io.Writer
-import java.util.HashMap
-import com.google.android.material.bottomsheet.BottomSheetDialog
-import com.home.coexcleducation.jdo.UserDetails
 import com.home.coexcleducation.utils.*
+import io.intercom.android.sdk.Intercom
 import kotlinx.android.synthetic.main.bottom_sheet_signup.view.*
 import kotlinx.android.synthetic.main.profile_update_view.*
+import kotlinx.android.synthetic.main.signup_layout.*
 import kotlinx.android.synthetic.main.signup_layout.class_spinner
 import kotlinx.android.synthetic.main.signup_layout.name
+import java.io.StringWriter
+import java.io.Writer
 
 
 class SignupActivity : AppCompatActivity() {
@@ -57,6 +58,17 @@ class SignupActivity : AppCompatActivity() {
 
         mSchoolDetailsTV = findViewById(R.id.school_details)
         mSchoolErrorTV = mDialogView.findViewById(R.id.school_error)
+
+        if (applicationContext.packageName == "com.home.coexcleducation") {
+            header_background.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.coexcl_header_one))
+            header_background.alpha = 0.5f
+        } else {
+            welcome.visibility = View.GONE
+            header_background.alpha = 0.5f
+            header_background.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.cofi_header_back))
+        }
+
+
 
         mobile.setText(intent.getStringExtra("mobile"))
 
@@ -156,11 +168,13 @@ class SignupActivity : AppCompatActivity() {
                 mSchoolsMap["schoolCode"] = mSchoolID
                 mSchoolsMap["city"] = mCity
                 mSchoolsMap["state"] = mState
+                mReqMap["subscribed"] = true
             } else {
                 mSchoolsMap["schoolName"] = "Coexcl"
                 mSchoolsMap["schoolCode"] = "COX2021001"
                 mSchoolsMap["city"] = "Bihar"
                 mSchoolsMap["state"] = "India"
+                mReqMap["subscribed"] = false
             }
 
             mReqMap["schoolInfo"] = mSchoolsMap

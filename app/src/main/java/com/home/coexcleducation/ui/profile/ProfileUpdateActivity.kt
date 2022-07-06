@@ -366,17 +366,31 @@ class ProfileUpdateActivity : AppCompatActivity() {
 
                 val mSchoolsMap: HashMap<String, Any> = hashMapOf()
 
-                if(!mSchoolID.isNullOrEmpty()) {
-                    mSchoolsMap["schoolName"] = mSchoolName
-                    mSchoolsMap["schoolCode"] = mSchoolID
-                    mSchoolsMap["city"] = mCity
-                    mSchoolsMap["state"] = mState
-                } else {
-                    mSchoolsMap["schoolName"] = "Coexcl"
-                    mSchoolsMap["schoolCode"] = "COX2021001"
-                    mSchoolsMap["city"] = "Bihar"
-                    mSchoolsMap["state"] = "India"
-                }
+//                if(!mSchoolID.isNullOrEmpty()) {
+//                    mSchoolsMap["schoolName"] = mSchoolName
+//                    mSchoolsMap["schoolCode"] = mSchoolID
+//                    mSchoolsMap["city"] = mCity
+//                    mSchoolsMap["state"] = mState
+//                } else {
+//                    mSchoolsMap["schoolName"] = "Coexcl"
+//                    mSchoolsMap["schoolCode"] = "COX2021001"
+//                    mSchoolsMap["city"] = "Bihar"
+//                    mSchoolsMap["state"] = "India"
+//                }
+
+            if(!mSchoolID.isNullOrEmpty()) {
+                mSchoolsMap["schoolName"] = mSchoolName
+                mSchoolsMap["schoolCode"] = mSchoolID
+                mSchoolsMap["city"] = mCity
+                mSchoolsMap["state"] = mState
+                mReqMap["subscribed"] = true
+            } else {
+                mSchoolsMap["schoolName"] = "Coexcl"
+                mSchoolsMap["schoolCode"] = "COX2021001"
+                mSchoolsMap["city"] = "Bihar"
+                mSchoolsMap["state"] = "India"
+                mReqMap["subscribed"] = false
+            }
             
             mReqMap["schoolInfo"] = mSchoolsMap
             mReqMap["personalInfo"] = mPersonalMap
@@ -422,10 +436,9 @@ class ProfileUpdateActivity : AppCompatActivity() {
             try {
                 var lHttpHelper = HttpHelper()
                 lHttpHelper.payload = constructParams()
-                CoexclLogs.errorLog(TAG, "Req from Signup - " + lHttpHelper.payload)
+                CoexclLogs.errorLog(TAG, "Req from Profile Update - " + lHttpHelper.payload)
                 lHttpHelper = SignUpUtils().updateProfile(this@ProfileUpdateActivity, lHttpHelper)
-                CoexclLogs.errorLog(TAG, "Req from Signup - " + lHttpHelper.payload)
-                CoexclLogs.errorLog(TAG, "Response from Signup - " + lHttpHelper.response)
+                CoexclLogs.errorLog(TAG, "Response Profile Update - " + lHttpHelper.response)
                 return lHttpHelper.response
             } catch (e: Exception) {
                 e.printStackTrace()
