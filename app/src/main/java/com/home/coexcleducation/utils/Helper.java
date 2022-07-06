@@ -14,6 +14,9 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.io.StringWriter;
 import java.io.Writer;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -79,5 +82,11 @@ public class Helper {
         CoexclLogs.errorLog("VideoPlayer", "vId - "+vId);
         return vId;
     }
+
+    public String getCurrentMonth(){
+        SimpleDateFormat lParse = new SimpleDateFormat("MMM");
+        return lParse.format(new Date());
+    }
+
 
 }

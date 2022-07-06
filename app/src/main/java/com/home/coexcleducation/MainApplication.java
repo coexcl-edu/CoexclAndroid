@@ -6,6 +6,7 @@ import androidx.multidex.MultiDexApplication;
 
 import com.home.coexcleducation.intercom.IntercomHelper;
 import com.home.coexcleducation.jdo.UserDetails;
+import com.home.coexcleducation.premium.InAppBillingUtil;
 import com.home.coexcleducation.utils.ApiConstant;
 import com.onesignal.OSNotificationReceivedEvent;
 import com.onesignal.OneSignal;
@@ -36,7 +37,7 @@ public class MainApplication extends MultiDexApplication {
             }
         });
 
-
+        new InAppBillingUtil(this);
 
 //        IntentFilter lFilter = new IntentFilter(Freshchat.FRESHCHAT_EVENTS);
 //        LocalBroadcastManager.getInstance(CONTEXT).registerReceiver(lReceiver, lFilter);

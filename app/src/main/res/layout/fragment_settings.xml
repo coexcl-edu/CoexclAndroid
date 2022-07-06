@@ -87,21 +87,22 @@
 
 
                         <TextView
-                            style="@style/edit_text_value_style"
                             android:id="@+id/upgrade_premum"
+                            style="@style/edit_text_value_style"
+                            android:layout_centerVertical="true"
                             android:layout_marginLeft="26dp"
                             android:layout_toRightOf="@+id/upgrade_premum_ic"
-                            android:text="@string/subscribe"
-                            android:layout_centerVertical="true"/>
+                            android:text="@string/subscribe" />
 
                         <ImageView
+                            android:id="@+id/premium_badge"
                             style="@style/WrapLayout"
                             android:layout_alignParentRight="true"
                             android:layout_centerVertical="true"
-                            android:layout_marginStart="5dp"
-                            android:visibility="visible"
-                            app:srcCompat="@drawable/ic_chevron_right_grey400"
-                            android:layout_marginLeft="5dp" />
+                            android:visibility="invisible"
+                            app:srcCompat="@drawable/success_tick"
+                            android:layout_marginRight="10dp"
+                            />
                     </RelativeLayout>
 
 

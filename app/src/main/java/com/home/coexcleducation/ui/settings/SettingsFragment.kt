@@ -15,6 +15,7 @@ import com.freshchat.consumer.sdk.Freshchat
 import com.home.coexcleducation.R
 import com.home.coexcleducation.database.NotificationTable
 import com.home.coexcleducation.jdo.UserDetails
+import com.home.coexcleducation.premium.PremiumDetailView
 import com.home.coexcleducation.premium.UpgradePlanActivity
 import com.home.coexcleducation.ui.ComingSoonActivty
 import com.home.coexcleducation.ui.registration.LoginActivity
@@ -22,6 +23,7 @@ import com.home.coexcleducation.utils.CoexclLogs
 import com.home.coexcleducation.utils.FirebaseAnalyticsCoexcl
 import com.home.coexcleducation.utils.PreferenceHelper
 import com.home.coexcleducation.utils.ViewUtils
+import kotlinx.android.synthetic.main.fragment_settings.*
 import kotlinx.android.synthetic.main.fragment_settings.view.*
 
 class SettingsFragment : Fragment() {
@@ -34,9 +36,27 @@ class SettingsFragment : Fragment() {
         val root = inflater.inflate(R.layout.fragment_settings, container, false)
         requireActivity().window.setStatusBarColor(ContextCompat.getColor(requireContext(), R.color.colorAccent))
 
+        if(UserDetails.getInstance().schoolCode == "COX2100001") {
+            root.upgrade_premum_layout.visibility = View.VISIBLE
+            root.premium_divider.visibility = View.VISIBLE
+            if (UserDetails.getInstance().subscribed) {
+                root.upgrade_premum.text = "Premium Member"
+                root.premium_badge.visibility = View.VISIBLE
+            } else {
+                root.upgrade_premum.text = "Upgrade Now"
+                root.premium_badge.visibility = View.INVISIBLE
+            }
+        } else {
+            root.upgrade_premum_layout.visibility = View.GONE
+            root.premium_divider.visibility = View.GONE
+        }
 
-        root.upgrade_premum_layout.setOnClickListener{
-            startActivity(Intent(requireActivity(), UpgradePlanActivity::class.java))
+        root.upgrade_premum_layout.setOnClickListener {
+//            if (UserDetails.getInstance().subscribed) {
+//                startActivity(Intent(requireActivity(), PremiumDetailView::class.java))
+//            } else {
+                startActivity(Intent(requireActivity(), UpgradePlanActivity::class.java))
+//            }
             requireActivity().overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_left)
         }
 
@@ -99,30 +119,30 @@ class SettingsFragment : Fragment() {
 
 
     fun displayAlertDialogOnSignOut() {
-        try {
-            val alertConfirm = AlertDialog.Builder(requireContext())
-            alertConfirm.setTitle("Log Out")
-            alertConfirm.setMessage("Are your sure you want to log out?")
-            alertConfirm.setCancelable(true)
-            alertConfirm.setNegativeButton("No") { dialog, which ->
-                dialog.dismiss()
+            try {
+                val alertConfirm = AlertDialog.Builder(requireContext())
+                alertConfirm.setTitle("Log Out")
+                alertConfirm.setMessage("Are your sure you want to log out?")
+                alertConfirm.setCancelable(true)
+                alertConfirm.setNegativeButton("No") { dialog, which ->
+                    dialog.dismiss()
+                }
+                alertConfirm.setPositiveButton("Logout") { dialog, which ->
+                    FirebaseAnalyticsCoexcl().logFirebaseEvent(requireContext(), "", "Home", "Signout")
+                    dialog.dismiss()
+                    UserDetails.getInstance().isLoggedIn = false
+                    Freshchat.resetUser(context);
+                    PreferenceHelper(requireContext()).clearAllPreferenceData()
+                    NotificationTable(requireContext()).deleteAllRecord()
+                    startActivity(Intent(requireActivity(), LoginActivity::class.java))
+                    requireActivity().overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_left)
+                    requireActivity().finishAffinity()
+                }
+                val dialog = alertConfirm.create()
+                dialog.show()
+            } catch (e : java.lang.Exception) {
+                e.printStackTrace()
             }
-            alertConfirm.setPositiveButton("Logout") { dialog, which ->
-                FirebaseAnalyticsCoexcl().logFirebaseEvent(requireContext(), "", "Home", "Signout")
-                dialog.dismiss()
-                UserDetails.getInstance().isLoggedIn = false
-                Freshchat.resetUser(context);
-                PreferenceHelper(requireContext()).clearAllPreferenceData()
-                NotificationTable(requireContext()).deleteAllRecord()
-                startActivity(Intent(requireActivity(), LoginActivity::class.java))
-                requireActivity().overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_left)
-                requireActivity().finishAffinity()
-            }
-            val dialog = alertConfirm.create()
-            dialog.show()
-        } catch (e : java.lang.Exception) {
-            e.printStackTrace()
-        }
 
 //        try {
 //            val dialog = Dialog(requireActivity(), R.style.DialogCustomTheme)

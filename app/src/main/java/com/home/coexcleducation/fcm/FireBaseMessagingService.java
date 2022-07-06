@@ -10,6 +10,7 @@ import com.google.firebase.messaging.RemoteMessage;
 import com.home.coexcleducation.jdo.UserDetails;
 import com.home.coexcleducation.utils.CoexclLogs;
 import com.home.coexcleducation.utils.PreferenceHelper;
+import com.home.coexcleducation.utils.Utilty;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -43,6 +44,7 @@ public class FireBaseMessagingService extends FirebaseMessagingService {
                 }
                 if (intercomPushClient.isIntercomPush(message)) {
                     intercomPushClient.handlePush(getApplication(), message);
+                    CoexclLogs.errorLog("TAG", "Msg from Intercom");
                 }
             }
         } catch (Exception e) {
@@ -53,11 +55,15 @@ public class FireBaseMessagingService extends FirebaseMessagingService {
 
     @Override
     public void onNewToken(String token) {
-//        FirebaseMessaging.getInstance().subscribeToTopic("PUSH_RC");
         CoexclLogs.infoLog(TAG, "new fcm token: " + token);
-//        if (UserDetails.getInstance().isLoggedIn()) {
-//            Freshchat.getInstance(this).setPushRegistrationToken(token);
-//        }
+        if (UserDetails.getInstance().isLoggedIn()) {
+            new IntercomPushClient().sendTokenToIntercom(getApplication(), token);
+            try{
+                new Utilty().updateToken(this ,token);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
     }
 
 

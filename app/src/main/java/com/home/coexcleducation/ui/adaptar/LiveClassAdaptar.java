@@ -6,9 +6,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import androidx.cardview.widget.CardView;
+import androidx.core.content.ContextCompat;
+
 import com.home.coexcleducation.R;
+import com.home.coexcleducation.utils.Constants;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -21,7 +26,7 @@ public class LiveClassAdaptar extends BaseAdapter {
     private LayoutInflater mInflater;
     Context mContext;
     List<HashMap<String, Object>> mLabelList;
-    SimpleDateFormat lDateformat = new SimpleDateFormat("dd MMM", Locale.ENGLISH);
+    SimpleDateFormat lDateformat = new SimpleDateFormat("dd MMM yyyy", Locale.ENGLISH);
     SimpleDateFormat lTimeFormat = new SimpleDateFormat("hh:mm a", Locale.ENGLISH);
 
 
@@ -42,12 +47,19 @@ public class LiveClassAdaptar extends BaseAdapter {
             lViewholder.mSubHeader = convertView.findViewById(R.id.note_sub);
             lViewholder.mTime = convertView.findViewById(R.id.time);
             lViewholder.mDate = convertView.findViewById(R.id.date);
+            lViewholder.mLayout= convertView.findViewById(R.id.base_view);
             convertView.setTag(lViewholder);
         } else {
             lViewholder = (ViewHolder) convertView.getTag();
         }
 
         try {
+            try {
+                lViewholder.mLayout.setBackgroundTintList(ContextCompat.getColorStateList(mContext, new Constants().getColourList().get(position)));
+            } catch (Exception e) {
+                e.printStackTrace();
+                lViewholder.mLayout.setBackgroundTintList(ContextCompat.getColorStateList(mContext, new Constants().getRandomColour()));
+            }
             Long lLongValue = Long.parseLong( mLabelList.get(position).get("startTime").toString());
             String lDate = lDateformat.format(new Date(lLongValue));
             String lTime = lTimeFormat.format(new Date(lLongValue));
@@ -78,6 +90,7 @@ public class LiveClassAdaptar extends BaseAdapter {
 
     class ViewHolder {
         TextView mLabel, mSubHeader, mTime, mDate;
+        CardView mLayout;
 
     }
 }

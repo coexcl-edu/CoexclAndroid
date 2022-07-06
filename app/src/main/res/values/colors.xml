@@ -109,15 +109,15 @@
     <color name="premium_blue">#00adef</color>
     <color name="default_green">#52ad77</color>
 
-    <!--<color name="service_color1">#ff6e6e</color>-->
-    <!--<color name="service_color2">#ff9e5c</color>-->
-    <!--<color name="service_color3">#ffd45c</color>-->
-    <!--<color name="service_color4">#d3d342</color>-->
-    <!--<color name="service_color5">#65d77c</color>-->
-    <!--<color name="service_color6">#49c449</color>-->
-    <!--<color name="service_color7">#00beb9</color>-->
-    <!--<color name="service_color8">#628AFF</color>-->
-    <!--<color name="service_color9">#4842EA</color>-->
+    <color name="service_color1">#ff6e6e</color>
+    <color name="service_color2">#ff9e5c</color>
+    <color name="service_color3">#ffd45c</color>
+    <color name="service_color4">#d3d342</color>
+    <color name="service_color5">#65d77c</color>
+    <color name="service_color6">#49c449</color>
+    <color name="service_color7">#00beb9</color>
+    <color name="service_color8">#628AFF</color>
+    <color name="service_color9">#4842EA</color>
     <color name="service_color10">#997FF2</color>
     <color name="service_color11">#993C99</color>
     <color name="service_color12">#D32A6B</color>
@@ -125,6 +125,43 @@
     <color name="service_color14">#9B8579</color>
 
     <color name="icon_color">#139EEC</color>
+
+
+<!--    <color name="list_color1">#C8E6C9</color>-->
+<!--    <color name="list_color2">#E57373</color>-->
+<!--    <color name="list_color3">#FF7043</color>-->
+<!--    <color name="list_color4">#00B0FF</color>-->
+<!--    <color name="list_color5">#7986CB</color>-->
+<!--    <color name="list_color6">#FFB74D</color>-->
+<!--    <color name="list_color7">#4DD0E1</color>-->
+<!--    <color name="list_color8">#4FC3F7</color>-->
+<!--    <color name="list_color9">#DCE775</color>-->
+<!--    <color name="list_color10">#9575CD</color>-->
+<!--    <color name="list_color11">#FFF176</color>-->
+<!--    <color name="list_color12">#BA68C8</color>-->
+<!--    <color name="list_color13">#A1887F</color>-->
+<!--    <color name="list_color14">#FFD54F</color>-->
+<!--    <color name="list_color15">#4DB6AC</color>-->
+<!--    <color name="list_color16">#64B5F6</color>-->
+<!--    <color name="list_color17">#AED581</color>-->
+
+    <color name="list_color1">#FF1744</color>
+    <color name="list_color2">#2979FF</color>
+    <color name="list_color3">#FF7043</color>
+    <color name="list_color4">#F50057</color>
+    <color name="list_color5">#7986CB</color>
+    <color name="list_color6">#D500F9</color>
+    <color name="list_color7">#651FFF</color>
+    <color name="list_color8">#1DE9B6</color>
+    <color name="list_color9">#00E5FF</color>
+    <color name="list_color10">#00B0FF</color>
+    <color name="list_color11">#00E676</color>
+    <color name="list_color12">#FF9100</color>
+    <color name="list_color13">#FF3D00</color>
+    <color name="list_color14">#8D6E63</color>
+    <color name="list_color15">#4DB6AC</color>
+    <color name="list_color16">#64B5F6</color>
+    <color name="list_color17">#AED581</color>
 
 
 

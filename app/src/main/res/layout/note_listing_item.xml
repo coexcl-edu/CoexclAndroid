@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/note_layout">
+    android:id="@+id/note_layout"
+    android:background="@drawable/curve_shapr_login"
+    app:cardElevation="3dp"
+    android:backgroundTint="@color/list_color3"
+    app:cardCornerRadius="15dp">
     <LinearLayout
         android:id="@+id/maths"
         android:layout_width="match_parent"
@@ -16,7 +20,7 @@
         <ImageView
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:src="@drawable/ic_make_notes"/>
+            android:src="@drawable/make_notes"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -33,6 +37,9 @@
             android:lines="1"
             android:gravity="center|left"
             android:paddingLeft="20dp"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:textColor="@color/white"
             android:layout_marginRight="30dp"/>
 
         <TextView
@@ -44,6 +51,8 @@
             android:gravity="center|left"
             android:ellipsize="end"
             android:lines="1"
+            android:textSize="14sp"
+            android:textColor="@color/white"
             android:layout_marginRight="30dp"
             android:paddingLeft="20dp"/>
 
@@ -80,4 +89,4 @@
         </FrameLayout>
     </RelativeLayout>
 
-</RelativeLayout>
+</androidx.cardview.widget.CardView>

@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.AdapterView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.home.coexcleducation.R
 import com.home.coexcleducation.jdo.UserDetails
@@ -16,7 +17,6 @@ import com.home.coexcleducation.utils.FirebaseAnalyticsCoexcl
 import com.home.coexcleducation.utils.ViewUtils
 import kotlinx.android.synthetic.main.live_class_activity.*
 import kotlinx.android.synthetic.main.live_class_list_activity.*
-import kotlinx.android.synthetic.main.school_activity.*
 import kotlinx.android.synthetic.main.video_listing_activity.*
 import kotlinx.android.synthetic.main.video_listing_activity.activity_error
 import kotlinx.android.synthetic.main.video_listing_activity.back
@@ -35,6 +35,14 @@ class LiveClassListActivity : AppCompatActivity() {
         setContentView(R.layout.live_class_list_activity)
         mProgressView = findViewById(R.id.progress_bar)
         ViewUtils().setWindowBackground(this)
+
+        if (applicationContext.packageName == "com.home.coexcleducation") {
+            header_background.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.one))
+        } else {
+            header_background.alpha = 0.5f
+            header_background.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.cofi_back_three))
+        }
+
 
         back.setOnClickListener{
             ViewUtils().exitActivityToRight(this)

@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="10"
+    android:background="@drawable/app_background_gradient"
+    >
+
+    <RelativeLayout
+        style="@style/MatchLayout"
+        android:layout_weight="8"
+
+        >
+        <ImageView
+            android:id="@+id/back"
+            style="@style/WrapLayout"
+            android:padding="20dp"
+            android:src="@drawable/ic_chevron_left_grey700"/>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:scaleType="fitXY"
+            android:alpha="0.1"
+            android:visibility="visible"
+            android:src="@drawable/one"/>
+
+        <RelativeLayout
+            style="@style/MatchLayout"
+            android:gravity="center"
+            android:padding="20dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <TextView
+                    android:id="@+id/name"
+                    style="@style/header_action_bar"
+                    android:layout_width="match_parent"
+                    android:gravity="center"
+                    android:text="Premium"
+                    android:textColor="@color/white"
+                    android:textSize="24sp" />
+
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="2"
+        android:orientation="vertical"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="-30dp"
+        android:background="@drawable/top_corner_white"
+        android:weightSum="9"
+
+        >
+
+        <LinearLayout
+            style="@style/match_parent_layout"
+            android:orientation="vertical"
+            android:layout_marginTop="40dp"
+            android:layout_height="300dp"
+            >
+
+            <LinearLayout
+                style="@style/WrapLayout"
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:paddingTop="15dp">
+
+                <ImageView
+                    style="@style/WrapLayout"
+                    android:layout_width="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_height="150dp"
+                    android:src="@drawable/premium_banner_image_1"
+                    />
+
+            </LinearLayout>
+
+            <TextView
+                style="@style/header_action_bar"
+                android:layout_gravity="center"
+                android:text="You are a premium member"
+                android:paddingTop="28dp"
+                />
+
+            <TextView
+                style="@style/sub_header_18"
+                android:layout_gravity="center"
+                android:text="24*7 doubt solving session"
+                android:paddingLeft="80dp"
+                android:paddingRight="80dp"
+                android:gravity="center"
+                android:paddingTop="8dp"
+                />
+            <TextView
+                style="@style/sub_header_18"
+                android:layout_gravity="center"
+                android:text="Unlimited session"
+                android:paddingLeft="80dp"
+                android:paddingRight="80dp"
+                android:gravity="center"
+                android:paddingTop="8dp"
+                />
+
+        </LinearLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/downgrade"
+            style="@style/place_holder_subheading"
+            android:layout_gravity="center"
+            android:text="Manage your plan"
+            android:paddingLeft="40dp"
+            android:paddingRight="40dp"
+            android:layout_height="wrap_content"
+            android:gravity="bottom"
+            android:background="@drawable/roundable"
+            android:layout_alignParentBottom="true"
+            android:layout_centerInParent="true"
+            android:layout_marginBottom="20dp"
+            />
+
+        </RelativeLayout>
+    </LinearLayout>
+
+</LinearLayout>

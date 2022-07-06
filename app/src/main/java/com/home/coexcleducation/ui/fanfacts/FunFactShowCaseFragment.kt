@@ -6,10 +6,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.LinearLayout
+import android.widget.RelativeLayout
 import android.widget.TextView
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
 import com.home.coexcleducation.R
+import com.home.coexcleducation.utils.Constants
+import java.util.*
 
 
 class FunFactShowCaseFragment(map: HashMap<String, String>) : Fragment() {
@@ -21,6 +26,7 @@ class FunFactShowCaseFragment(map: HashMap<String, String>) : Fragment() {
         lFeatureView = inflater.inflate(R.layout.funfactshowcase, container, false);
         var lFeatureDesc = lFeatureView.findViewById<TextView>(R.id.feature_desc)
         var lFeatureLogo = lFeatureView.findViewById<ImageView>(R.id.feature_logo)
+        var lBack = lFeatureView.findViewById<LinearLayout>(R.id.background)
 
         lFeatureDesc.text = mMap.get("description")
         lFeatureDesc.movementMethod = ScrollingMovementMethod()
@@ -32,6 +38,8 @@ class FunFactShowCaseFragment(map: HashMap<String, String>) : Fragment() {
                     .placeholder(R.drawable.loader_image)
                     .into(lFeatureLogo)
         }
+
+        lBack.backgroundTintList  = ContextCompat.getColorStateList(requireContext(), Constants().randomColour)
 
         return lFeatureView
     }

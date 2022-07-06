@@ -4,6 +4,7 @@ import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
+import android.os.AsyncTask
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
@@ -11,16 +12,12 @@ import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
-import com.freshchat.consumer.sdk.ConversationOptions
-import com.freshchat.consumer.sdk.Freshchat
-import com.freshchat.consumer.sdk.FreshchatConfig
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.firebase.iid.FirebaseInstanceId
 import com.home.coexcleducation.intercom.IntercomHelper
 import com.home.coexcleducation.jdo.UserDetails
-import com.home.coexcleducation.utils.CoexclLogs
-import com.home.coexcleducation.utils.PreferenceHelper
-import com.home.coexcleducation.utils.Utilty
-import io.intercom.android.sdk.Intercom
+import com.home.coexcleducation.ui.registration.SignUpUtils
+import com.home.coexcleducation.utils.*
 import kotlinx.android.synthetic.main.activity_main.*
 
 
@@ -53,43 +50,25 @@ class MainActivity : AppCompatActivity() {
 
         })
 
-//        val config = FreshchatConfig(resources.getString(R.string.chat_app_id), resources.getString(R.string.chat_app_key))
-//        config.domain = "msdk.in.freshchat.com"
-//        config.isCameraCaptureEnabled = true;
-//        config.isGallerySelectionEnabled = true;
-//        config.isResponseExpectationEnabled = true;
-//        Freshchat.getInstance(applicationContext).init(config)
-//
-//
-//        val freshchatUser = Freshchat.getInstance(applicationContext).user
-//        var lUserDetails = UserDetails.getInstance()
-//        freshchatUser.firstName = lUserDetails.name
-//        freshchatUser.email = lUserDetails.email
-//        freshchatUser.setPhone("+91", lUserDetails.mobile)
-//
-//        Freshchat.getInstance(applicationContext).user = freshchatUser
-//
-//        val userMeta: MutableMap<String, String> = HashMap()
-//        userMeta["schoolName"] = lUserDetails.schoolName
-//        userMeta["schoolCode"] = lUserDetails.schoolCode
-//        userMeta["city"] = lUserDetails.city
-//        userMeta["class"] = lUserDetails.className
-//        userMeta["userType"] = if (lUserDetails.subscribed) "Premium" else "Free"
-//        userMeta["fatherName"] = lUserDetails.fatherName
-//
-//        Freshchat.getInstance(applicationContext).setUserProperties(userMeta)
-//
-//
-//        val tags: MutableList<String> = ArrayList()
-//        tags.add("order_queries")
-//        val options = ConversationOptions()
-//                .filterByTags(tags, "Order Queries")
 
         chatIcon.setOnClickListener{
-//            Freshchat.showConversations(applicationContext, options);
-            IntercomHelper().startIntercomChat(this);
+            if (!UserDetails.getInstance().subscribed) {
+                if (UserDetails.getInstance().sessionCount == 0) {
+                    ViewUtils().displayStrongScreenForPremium(this)
+                } else {
+                    IntercomHelper().startIntercomChat(this);
+                    UpdateSession().execute()
+                }
+            }
+
         }
 
+        if(UserDetails.getInstance().fcmToken == "") {
+            FCMTokenUpdate().execute(this)
+        }
+
+//        if(!UserDetails.getInstance().subscribed)
+            GetProfile().execute()
         updateNotificationCount()
         LocalBroadcastManager.getInstance(applicationContext).registerReceiver(broadCastReceiver, IntentFilter("com.coexcl.notification"))
     }
@@ -113,4 +92,47 @@ class MainActivity : AppCompatActivity() {
             updateNotificationCount()
         }
     }
+
+    inner class FCMTokenUpdate : AsyncTask<Context, String, String>() {
+
+        override fun doInBackground(vararg params: Context): String {
+            return try {
+                Utilty().updateToken(params[0], FirebaseInstanceId.getInstance().getToken(Constants.FCM_REGISTRATION_KEY, "FCM")!!).payload
+            } catch (e: Exception) {
+                e.printStackTrace()
+                ""
+            }
+        }
+    }
+
+    inner class GetProfile : AsyncTask<Context, String, String>() {
+
+        override fun doInBackground(vararg params: Context): String {
+            try {
+                var response = SignUpUtils().getProfile(this@MainActivity, UserDetails.getInstance().id).response
+                CoexclLogs.errorLog("TAG", "get Profile Response - $response")
+                Utilty().insertLoginData(response)
+            } catch (e: Exception) {
+                e.printStackTrace()
+            }
+            return ""
+        }
+
+    }
+
+    inner class UpdateSession : AsyncTask<Context, String, String>() {
+
+        override fun doInBackground(vararg params: Context): String {
+            Utilty().updateSessionCount(this@MainActivity)
+            return ""
+        }
+
+        override fun onPostExecute(result: String?) {
+            super.onPostExecute(result)
+
+        }
+    }
+
+
+
 }

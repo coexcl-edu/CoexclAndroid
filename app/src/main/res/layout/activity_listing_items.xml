@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/curve_shapr_login"
+    android:id="@+id/base_view"
+    app:cardElevation="3dp"
+    android:backgroundTint="@color/list_color2"
+    app:cardCornerRadius="15dp">
     <LinearLayout
         android:id="@+id/maths"
         android:layout_width="match_parent"
@@ -15,12 +21,13 @@
             android:id="@+id/logo"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:src="@drawable/ic_school_activity"/>
+            android:src="@drawable/school_activity_item"/>
 
         <LinearLayout
             style="@style/MatchLayout"
             android:gravity="center"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:layout_marginRight="30dp">
             <TextView
                 android:id="@+id/label"
                 style="@style/sub_header_eleven"
@@ -30,7 +37,10 @@
                 android:gravity="center|left"
                 android:singleLine="true"
                 android:lines="1"
-                android:paddingLeft="20dp"/>
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:textColor="@color/white"
+                android:paddingLeft="15dp"/>
 
             <TextView
                 android:id="@+id/date"
@@ -41,10 +51,20 @@
                 android:gravity="center|left"
                 android:lines="1"
                 android:ellipsize="end"
-                android:paddingLeft="20dp"/>
+                android:textSize="14sp"
+                android:textColor="@color/white"
+                android:paddingLeft="15dp"/>
 
         </LinearLayout>
 
+
     </LinearLayout>
 
-</RelativeLayout>
+    <ImageView
+        style="@style/WrapLayout"
+        android:layout_width="wrap_content"
+        android:layout_gravity="center_vertical|right"
+        android:padding="20dp"
+        android:src="@drawable/ic_chevron_right_grey400" />
+
+</androidx.cardview.widget.CardView>

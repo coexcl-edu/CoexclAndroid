@@ -19,6 +19,7 @@ android {
 
     }
 
+    flavorDimensions 'coexcl'
     compileSdkVersion 31
     buildToolsVersion "30.0.3"
 
@@ -26,10 +27,12 @@ android {
         applicationId "com.home.coexcleducation"
         minSdkVersion 21
         targetSdkVersion 30
-        versionCode 12
-        versionName "1.0.1.20220501"
+        versionCode 17
+        versionName "2.0.4.20220706"
+        signingConfig signingConfigs.config
         android.defaultConfig.vectorDrawables.useSupportLibrary = true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
         multiDexEnabled true
     }
 
@@ -39,6 +42,26 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
+    productFlavors {
+        coexcl {
+            dimension 'coexcl'
+            applicationId 'com.home.coexcleducation'
+            versionCode 17
+            resValue "string", "app_name", "Coexcl"
+            versionName '2.0.4.20220706'
+            matchingFallbacks = ['production']
+        }
+        COFI {
+            dimension 'coexcl'
+            applicationId 'com.home.cofi'
+            versionCode 1
+            resValue "string", "app_name", "COFI"
+            versionName '1.0.0.20220631'
+            matchingFallbacks = ['production']
+        }
+    }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_11
         targetCompatibility JavaVersion.VERSION_11

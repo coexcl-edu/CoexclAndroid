@@ -1,10 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:id="@+id/base_view"
+    android:background="@drawable/curve_shapr_login"
+    android:backgroundTint="@color/list_color1"
+    app:cardElevation="3dp"
+    app:cardCornerRadius="15dp"
+    >
 
 
     <RelativeLayout
@@ -12,77 +18,96 @@
         android:layout_height="wrap_content"
         >
 
-
         <LinearLayout
             android:id="@+id/maths"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
             android:background="?attr/selectableItemBackground"
-            android:padding="20dp"
-            >
+            android:orientation="horizontal"
+            android:padding="20dp">
 
             <ImageView
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:src="@drawable/live_class"/>
+                android:src="@drawable/live_class_scheduled" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_marginRight="60dp"
-                android:layout_gravity="center">
+                android:layout_gravity="center"
+                android:layout_marginRight="30dp"
+                android:orientation="vertical">
+
                 <TextView
                     android:id="@+id/note_label"
                     style="@style/sub_header_eleven"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:ellipsize="end"
-                    android:text="Chemical Energy"
-                    android:maxLines="1"
                     android:gravity="center|left"
-                    android:paddingLeft="15dp"/>
+                    android:maxLines="1"
+                    android:paddingLeft="15dp"
+                    android:text="Chemical Energy"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/note_sub"
                     style="@style/sub_header_18"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="By Naresh sir for 30 mins"
-                    android:gravity="center|left"
                     android:ellipsize="end"
+                    android:gravity="center|left"
                     android:maxLines="1"
-                    android:paddingLeft="15dp"/>
+                    android:paddingLeft="15dp"
+                    android:text="By Naresh sir for 30 mins"
+                    android:textColor="@color/white"
+                    android:textSize="13sp" />
+
+                <LinearLayout
+                    android:id="@+id/relativeLayout2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginRight="17dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/time"
+                        style="@style/appt_details_text_style"
+                        android:text="9:00 am"
+                        android:textColor="@color/white"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/date"
+                        style="@style/item_sub_header"
+                        android:layout_marginLeft="20dp"
+                        android:text="24th May"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"
+
+                        />
+
+                </LinearLayout>
+
 
             </LinearLayout>
 
         </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/relativeLayout2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+        <ImageView
+            android:id="@+id/back"
+            style="@style/WrapLayout"
+            android:padding="20dp"
             android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:orientation="vertical"
-            android:layout_marginRight="17dp" >
+            android:layout_centerInParent="true"
+            android:src="@drawable/ic_chevron_right_grey400"/>
 
-            <TextView
-                android:id="@+id/time"
-                style="@style/appt_details_text_style"
-                android:textSize="14sp"
-                android:text="9:00 am"
-                />
-
-            <TextView
-                android:id="@+id/date"
-                style="@style/item_sub_header"
-                android:textSize="14sp"
-                android:text="24th May"
-                />
-        </LinearLayout>
 
     </RelativeLayout>
 
-</LinearLayout>
+</androidx.cardview.widget.CardView>

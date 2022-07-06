@@ -13,14 +13,19 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.appcompat.widget.PopupMenu;
+import androidx.cardview.widget.CardView;
+import androidx.core.content.ContextCompat;
 
 import com.home.coexcleducation.R;
 import com.home.coexcleducation.listner.NotesDeletionListner;
 import com.home.coexcleducation.ui.notes.EditNotesActivity;
 import com.home.coexcleducation.ui.notes.NoteListingActivity;
+import com.home.coexcleducation.utils.Constants;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Random;
 
 public class NotesAdaptar extends BaseAdapter {
 
@@ -53,6 +58,12 @@ public class NotesAdaptar extends BaseAdapter {
         }
 
         try {
+            try {
+                lViewholder.mLayout.setBackgroundTintList(ContextCompat.getColorStateList(mContext, new Constants().getColourList().get(position)));
+            } catch (Exception e) {
+                e.printStackTrace();
+                lViewholder.mLayout.setBackgroundTintList(ContextCompat.getColorStateList(mContext, new Constants().getRandomColour()));
+            }
             lViewholder.mLabel.setText(mNotesList.get(position).get("title"));
             lViewholder.mSubHeader.setText(mNotesList.get(position).get("description"));
             lViewholder.mPopUpLayout.setOnClickListener(new View.OnClickListener() {
@@ -97,8 +108,9 @@ public class NotesAdaptar extends BaseAdapter {
 
     class ViewHolder {
         TextView mLabel, mSubHeader;
-        RelativeLayout mLayout, mPopUpLayout;
+        RelativeLayout mPopUpLayout;
         View mMenuImportPlace;
+        CardView mLayout;
     }
 
     public void setOnclickListner(NotesDeletionListner onclickListner){

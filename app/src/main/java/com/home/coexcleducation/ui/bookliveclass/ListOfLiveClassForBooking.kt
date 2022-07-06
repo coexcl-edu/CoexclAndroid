@@ -30,10 +30,10 @@ class ListOfLiveClassForBooking : AppCompatActivity() {
             meeting30 = ApiConstant.MATHS_30mins
             meeting15 = ApiConstant.MATHS_15mins
 //            name.text = "Choose Class Duration"
-            liveclas60.text = "Maths Session for 60min"
-            liveclas45.text = "Maths Session for 45min"
-            liveclas30.text = "Maths Session for 30min"
-            liveclas15.text = "Maths Session for 15min"
+            liveclas60.text = "Maths Session for 60 mins"
+            liveclas45.text = "Maths Session for 45 mins"
+            liveclas30.text = "Maths Session for 30 mins"
+            liveclas15.text = "Maths Session for 15 mins"
             class_60_image.setImageResource(R.drawable.ic_subject_maths)
             class_45_image.setImageResource(R.drawable.ic_subject_maths)
             class_30_image.setImageResource(R.drawable.ic_subject_maths)
@@ -44,10 +44,10 @@ class ListOfLiveClassForBooking : AppCompatActivity() {
             meeting60 = ApiConstant.PHYSICS_60mins
             meeting45 = ApiConstant.PHYSICS_45mins
             meeting15 = ApiConstant.PHYSICS_15mins
-            liveclas60.text = "Physics Session for 60min"
-            liveclas45.text = "Physics Session for 45min"
-            liveclas30.text = "Physics Session for 30min"
-            liveclas15.text = "Physics Session for 15min"
+            liveclas60.text = "Physics Session for 60 mins"
+            liveclas45.text = "Physics Session for 45 mins"
+            liveclas30.text = "Physics Session for 30 mins"
+            liveclas15.text = "Physics Session for 15 mins"
             class_60_image.setImageResource(R.drawable.ic_subject_physics)
             class_45_image.setImageResource(R.drawable.ic_subject_physics)
             class_30_image.setImageResource(R.drawable.ic_subject_physics)
@@ -58,10 +58,10 @@ class ListOfLiveClassForBooking : AppCompatActivity() {
             meeting45 = ApiConstant.CHEMISTRY_45mins
             meeting30 = ApiConstant.CHEMISTRY_30mins
             meeting15 = ApiConstant.CHEMISTRY_15mins
-            liveclas60.text = "Chemistry Session for 60min"
-            liveclas45.text = "Chemistry Session for 45min"
-            liveclas30.text = "Chemistry Session for 30min"
-            liveclas15.text = "Chemistry Session for 15min"
+            liveclas60.text = "Chemistry Session for 60 mins"
+            liveclas45.text = "Chemistry Session for 45 mins"
+            liveclas30.text = "Chemistry Session for 30 mins"
+            liveclas15.text = "Chemistry Session for 15 mins"
             class_60_image.setImageResource(R.drawable.ic_subject_chemistry)
             class_45_image.setImageResource(R.drawable.ic_subject_chemistry)
             class_30_image.setImageResource(R.drawable.ic_subject_chemistry)
@@ -72,10 +72,10 @@ class ListOfLiveClassForBooking : AppCompatActivity() {
             meeting45 = ApiConstant.BIOLOGY_45mins
             meeting60 = ApiConstant.BIOLOGY_60mins
             meeting15 = ApiConstant.BIOLOGY_15mins
-            liveclas60.text = "Biology Session for 60min"
-            liveclas45.text = "Biology Session for 45min"
-            liveclas30.text = "Biology Session for 30min"
-            liveclas15.text = "Biology Session for 15min"
+            liveclas60.text = "Biology Session for 60 mins"
+            liveclas45.text = "Biology Session for 45 mins"
+            liveclas30.text = "Biology Session for 30 mins"
+            liveclas15.text = "Biology Session for 15 mins"
             class_60_image.setImageResource(R.drawable.ic_subject_biology)
             class_45_image.setImageResource(R.drawable.ic_subject_biology)
             class_30_image.setImageResource(R.drawable.ic_subject_biology)

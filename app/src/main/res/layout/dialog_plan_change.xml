@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/layout_strong_screen"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:visibility="visible"
+    >
+
+    <ImageView
+        android:id="@+id/layer1"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_marginTop="-15dp"
+        android:paddingLeft="50dp"
+        android:paddingRight="50dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/inner_layout"
+        android:background="@color/transparent"
+        android:src="@drawable/blue_bg_width_14dp_r" />
+
+    <LinearLayout
+        android:id="@+id/inner_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:background="@drawable/whitebgwith_14dp_radius"
+        >
+
+
+
+        <TextView
+            android:id="@+id/plan_change_header"
+            style="@style/sub_header_19"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
+            android:text="Buy Premium"
+            />
+        <TextView
+            android:id="@+id/plan_change_desc"
+            style="@style/sub_header_three"
+            android:layout_below="@id/plan_change_header"
+            android:maxWidth="300dp"
+            android:gravity="center"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:text="You have exhausted all your free session for this month, Buy our Premium plan to get unlimited session"
+            />
+
+        <TextView
+            android:id="@+id/edit_staff_list_btn"
+            style="@style/label_button_style"
+            android:padding="10dp"
+            android:layout_marginTop="15dp"
+            android:layout_below="@+id/plan_change_desc"
+            android:layout_centerHorizontal="true"
+            android:textColor="@color/header3"
+            android:background="@drawable/round_corner_greylight_solid_white"
+            android:visibility="visible"
+            android:text="Buy Premium"
+            />
+
+        <TextView
+            android:id="@+id/contact_support"
+            style="@style/label_button_style"
+            android:padding="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="15dp"
+            android:layout_below="@+id/edit_staff_list_btn"
+            android:layout_centerHorizontal="true"
+            android:text="Contact Us"
+            />
+
+    </LinearLayout>
+
+
+</RelativeLayout>
+
