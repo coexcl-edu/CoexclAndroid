@@ -1,6 +1,5 @@
 <resources>
-    <string name="app_name">Coexcl</string>
-
+<!--    <string name="app_name">Coexcl</string>-->
 <!--    freshchat-->
     <string name="chat_app_id">204497eb-bf08-400c-b8a2-b540e825c56d</string>
     <string name="chat_app_key">4f547293-bc24-4378-b2ee-745b29e14b86</string>
@@ -71,6 +70,27 @@
         <item>Lamarts Academy</item>
         <item>New Era Academy</item>
         <item>Others</item>
+    </array>
+
+
+    <array name="colour_list">
+        <item>#C8E6C9</item>
+        <item>#F8BBD0</item>
+        <item>#C5CAE9</item>
+        <item>#BBDEFB</item>
+        <item>#B3E5FC</item>
+        <item>#CFD8DC</item>
+        <item>#B2DFDB</item>
+        <item>#DCEDC8</item>
+        <item>#FFF9C4</item>
+        <item>#D1C4E9</item>
+        <item>#FFECB3</item>
+        <item>#CE93D8</item>
+        <item>#FFE0B2</item>
+        <item>#FFCCBC</item>
+        <item>#D7CCC8</item>
+        <item>#E0E0E0</item>
+        <item>#F0F4C3</item>
     </array>
 
     <string name="feature1">Get 24x7 online tutor Facility for all your Science and Maths doubts and get it solved by IITians.</string>
@@ -207,6 +227,6 @@
     <string name="filter">Choose Subject</string>
 
 
-    <string name="quiz_benefit">Not only are quizzes fun for students, they are also a sneaky form of learning as they do not feel like a traditional activity. Quizzes can help your students practise existing knowledge while stimulating interest in learning about new subject matter.</string>
+    <string name="quiz_benefit">Not only are quizzes fun for students, they are also a sneaky form of learning.</string>
 
 </resources>

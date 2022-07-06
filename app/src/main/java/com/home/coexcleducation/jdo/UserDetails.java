@@ -5,6 +5,7 @@ import android.content.SharedPreferences;
 
 import com.home.coexcleducation.MainApplication;
 import com.home.coexcleducation.R;
+import com.home.coexcleducation.utils.Helper;
 import com.home.coexcleducation.utils.PreferenceHelper;
 
 public class UserDetails {
@@ -21,6 +22,7 @@ public class UserDetails {
     private String IMAGE_URL = "image_url";
     private String SUBSCRIBED = "subscribed";
     private String GENDER = "gender";
+    private String FCM_TOKEN = "fcmToken";
 
     private String CLASS = "class";
     private String ROLL_NO = "rollNo";
@@ -40,6 +42,10 @@ public class UserDetails {
 
     private String PROGRESS_REPORT_PERCENTAGE = "progress_report";
     private String QUIZ_LAST_ATTEMPT = "quiz_last_attempt";
+
+    private String SESSION_COUNT = "session_count";
+    private String SESSION_DATE = "session_date";
+    private String SESSION_OPEN = "session_open";
 
 
     private UserDetails(Context pContext) {
@@ -256,5 +262,37 @@ public class UserDetails {
 
     public void setGender(String gender) {
         mSharedpreference.edit().putString(GENDER , gender).apply();
+    }
+
+    public String getFcmToken() {
+        return mSharedpreference.getString(GENDER , "");
+    }
+
+    public void setFcmToken(String fcmToken) {
+        mSharedpreference.edit().putString(FCM_TOKEN , fcmToken).apply();
+    }
+
+    public Integer getSessionCount() {
+        return mSharedpreference.getInt(SESSION_COUNT , 15);
+    }
+
+    public void setSessionCount(Integer sessionCount) {
+        mSharedpreference.edit().putInt(SESSION_COUNT , sessionCount).apply();
+    }
+
+    public String getSessionDate() {
+        return mSharedpreference.getString(SESSION_DATE , new Helper().getCurrentMonth());
+    }
+
+    public void setSessionDate(String sessionDate) {
+        mSharedpreference.edit().putString(SESSION_DATE , sessionDate).apply();
+    }
+
+    public Boolean getSessionOpen() {
+        return mSharedpreference.getBoolean(SESSION_OPEN , false);
+    }
+
+    public void setSessionOpen(Boolean sessionOpen) {
+        mSharedpreference.edit().putBoolean(SESSION_OPEN , sessionOpen).apply();
     }
 }

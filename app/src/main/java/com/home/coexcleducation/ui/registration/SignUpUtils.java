@@ -9,6 +9,7 @@ import com.home.coexcleducation.httphelper.HttpMethod;
 import com.home.coexcleducation.jdo.UserDetails;
 import com.home.coexcleducation.utils.ApiConstant;
 import com.home.coexcleducation.utils.CoexclLogs;
+import com.home.coexcleducation.utils.Constants;
 
 public class SignUpUtils {
 
@@ -30,6 +31,32 @@ public class SignUpUtils {
             lHttpHelper.setRequestType(HttpMethod.PUT.name());
             lHttpHelper.setUrl(ApiConstant.SIGN_UP_API);
             CoexclLogs.errorLog("SignUpUtils", "Req url profile - "+lHttpHelper.getUrl());
+            return new HttpClient(context).executeHttpRequest(lHttpHelper);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    public HttpHelper updateToken(Context context, HttpHelper lHttpHelper) {
+        try {
+            lHttpHelper.setContentType(HttpContentType.HTTP_CONTENTTYPE_JSON);
+            lHttpHelper.setRequestType(HttpMethod.PUT.name());
+            lHttpHelper.setUrl(ApiConstant.FCM_TOKEN_UP_API);
+            CoexclLogs.errorLog("SignUpUtils", "Req url profile - "+lHttpHelper.getUrl());
+            return new HttpClient(context).executeHttpRequest(lHttpHelper);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    public HttpHelper updateLimitedSession(Context context) {
+        try {
+            HttpHelper lHttpHelper = new HttpHelper();
+            lHttpHelper.setRequestType(HttpMethod.GET.name());
+            lHttpHelper.setUrl(ApiConstant.UPDATE_LIMITED_SESSION+"/"+UserDetails.getInstance().getID());
+            CoexclLogs.errorLog("SignUpUtils", "Req updateLimitedSession - "+lHttpHelper.getUrl());
             return new HttpClient(context).executeHttpRequest(lHttpHelper);
         } catch (Exception e) {
             e.printStackTrace();
@@ -59,6 +86,20 @@ public class SignUpUtils {
             return null;
         }
     }
+
+    public HttpHelper getProfile(Context context, String userId) {
+        try {
+            HttpHelper lHttpHelper = new HttpHelper();
+            lHttpHelper.setUrl(ApiConstant.GET_PROFILE_API+userId);
+            lHttpHelper.setRequestType(HttpMethod.GET.name());
+            CoexclLogs.errorLog("TAG", "get Profile URL - "+lHttpHelper.getUrl());
+            return new HttpClient(context).executeHttpRequest(lHttpHelper);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
 
     public HttpHelper findSchool(Context context, String lSchoolCode) {
         try {

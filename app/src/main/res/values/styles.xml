@@ -34,7 +34,7 @@
 
     <style name="splash_screen" parent="AppTheme">
         <item name="android:statusBarColor">@color/white</item>
-        <item name="android:background">@drawable/coexcl_background</item>
+        <item name="android:background">@drawable/theme</item>
     </style>
 
     <style name="AppTheme.AppBarOverlay" parent="Base.ThemeOverlay.AppCompat.Dark" />
