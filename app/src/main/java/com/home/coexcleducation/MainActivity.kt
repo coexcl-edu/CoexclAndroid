@@ -59,6 +59,8 @@ class MainActivity : AppCompatActivity() {
                     IntercomHelper().startIntercomChat(this);
                     UpdateSession().execute()
                 }
+            } else {
+                IntercomHelper().startIntercomChat(this);
             }
 
         }

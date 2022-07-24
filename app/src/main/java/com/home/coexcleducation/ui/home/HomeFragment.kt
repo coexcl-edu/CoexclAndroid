@@ -139,6 +139,8 @@ class HomeFragment : Fragment() {
                     IntercomHelper().startIntercomChat(requireContext());
                     UpdateSession().execute()
                 }
+            } else {
+                IntercomHelper().startIntercomChat(requireContext());
             }
         }
 

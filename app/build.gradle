@@ -27,8 +27,8 @@ android {
         applicationId "com.home.coexcleducation"
         minSdkVersion 21
         targetSdkVersion 30
-        versionCode 17
-        versionName "2.0.4.20220706"
+        versionCode 18
+        versionName "2.0.5.20220723"
         signingConfig signingConfigs.config
         android.defaultConfig.vectorDrawables.useSupportLibrary = true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -47,9 +47,9 @@ android {
         coexcl {
             dimension 'coexcl'
             applicationId 'com.home.coexcleducation'
-            versionCode 17
+            versionCode 18
             resValue "string", "app_name", "Coexcl"
-            versionName '2.0.4.20220706'
+            versionName '2.0.5.20220723'
             matchingFallbacks = ['production']
         }
         COFI {
