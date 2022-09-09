@@ -21,23 +21,23 @@ public class Constants {
 
     public List<Integer> getColourList() {
         List<Integer> mColourList = new ArrayList<>();
-        mColourList.add(R.color.list_color6);
-        mColourList.add(R.color.list_color2);
-        mColourList.add(R.color.list_color1);
+//        mColourList.add(R.color.list_color6);
+//        mColourList.add(R.color.list_color2);
+//        mColourList.add(R.color.list_color1);
         mColourList.add(R.color.list_color10);
-        mColourList.add(R.color.list_color5);
-        mColourList.add(R.color.list_color7);
-        mColourList.add(R.color.list_color9);
-        mColourList.add(R.color.list_color3);
-        mColourList.add(R.color.list_color11);
-        mColourList.add(R.color.list_color4);
-        mColourList.add(R.color.list_color8);
-        mColourList.add(R.color.list_color13);
-        mColourList.add(R.color.list_color14);
-        mColourList.add(R.color.list_color15);
-        mColourList.add(R.color.list_color12);
-        mColourList.add(R.color.list_color16);
-        mColourList.add(R.color.list_color17);
+//        mColourList.add(R.color.list_color5);
+//        mColourList.add(R.color.list_color7);
+//        mColourList.add(R.color.list_color9);
+//        mColourList.add(R.color.list_color3);
+//        mColourList.add(R.color.list_color11);
+//        mColourList.add(R.color.list_color4);
+//        mColourList.add(R.color.list_color8);
+//        mColourList.add(R.color.list_color13);
+//        mColourList.add(R.color.list_color14);
+//        mColourList.add(R.color.list_color15);
+//        mColourList.add(R.color.list_color12);
+//        mColourList.add(R.color.list_color16);
+//        mColourList.add(R.color.list_color17);
 
 //        Integer count = new Random().nextInt(mColourList.size());
         return mColourList;
@@ -45,23 +45,23 @@ public class Constants {
 
     public Integer getRandomColour() {
         List<Integer> mColourList = new ArrayList<>();
-        mColourList.add(R.color.list_color1);
-        mColourList.add(R.color.list_color2);
-        mColourList.add(R.color.list_color3);
-        mColourList.add(R.color.list_color4);
-        mColourList.add(R.color.list_color5);
-        mColourList.add(R.color.list_color6);
-        mColourList.add(R.color.list_color7);
-        mColourList.add(R.color.list_color8);
-        mColourList.add(R.color.list_color9);
+//        mColourList.add(R.color.list_color1);
+//        mColourList.add(R.color.list_color2);
+//        mColourList.add(R.color.list_color3);
+//        mColourList.add(R.color.list_color4);
+//        mColourList.add(R.color.list_color5);
+//        mColourList.add(R.color.list_color6);
+//        mColourList.add(R.color.list_color7);
+//        mColourList.add(R.color.list_color8);
+//        mColourList.add(R.color.list_color9);
         mColourList.add(R.color.list_color10);
-        mColourList.add(R.color.list_color11);
-        mColourList.add(R.color.list_color12);
-        mColourList.add(R.color.list_color13);
-        mColourList.add(R.color.list_color14);
-        mColourList.add(R.color.list_color15);
-        mColourList.add(R.color.list_color16);
-        mColourList.add(R.color.list_color17);
+//        mColourList.add(R.color.list_color11);
+//        mColourList.add(R.color.list_color12);
+//        mColourList.add(R.color.list_color13);
+//        mColourList.add(R.color.list_color14);
+//        mColourList.add(R.color.list_color15);
+//        mColourList.add(R.color.list_color16);
+//        mColourList.add(R.color.list_color17);
 
         Integer count = new Random().nextInt(mColourList.size());
         return mColourList.get(count);

@@ -20,13 +20,13 @@ class AboutLayout : AppCompatActivity() {
         stringbuilder.append("Version: 2.0.2.20220508").append("\n")
         stringbuilder.append("Released Year: 2021").append("\n")
         stringbuilder.append("All Rights Reserved © COEXCL SERVICES PVT LTD.").append("\n").append("\n")
-        stringbuilder.append("In Association with").append("")
+//        stringbuilder.append("In Association with").append("")
 
-        if (applicationContext.packageName === "com.home.coexcleducation") {
+//        if (applicationContext.packageName == "com.home.coexcleducation") {
             association_brand.visibility = View.GONE
-        } else {
-            association_brand.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.cofi_association))
-        }
+//        } else {
+//            association_brand.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.cofi_association))
+//        }
 
 
         sub_header.text = stringbuilder.toString()
