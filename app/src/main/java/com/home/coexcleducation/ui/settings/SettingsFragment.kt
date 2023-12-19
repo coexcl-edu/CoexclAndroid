@@ -11,9 +11,9 @@ import androidx.appcompat.app.AlertDialog
 import androidx.browser.customtabs.CustomTabsIntent
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
-import com.freshchat.consumer.sdk.Freshchat
 import com.home.coexcleducation.R
 import com.home.coexcleducation.database.NotificationTable
+import com.home.coexcleducation.intercom.IntercomHelper
 import com.home.coexcleducation.jdo.UserDetails
 import com.home.coexcleducation.premium.PremiumDetailView
 import com.home.coexcleducation.premium.UpgradePlanActivity
@@ -23,6 +23,7 @@ import com.home.coexcleducation.utils.CoexclLogs
 import com.home.coexcleducation.utils.FirebaseAnalyticsCoexcl
 import com.home.coexcleducation.utils.PreferenceHelper
 import com.home.coexcleducation.utils.ViewUtils
+import io.intercom.android.sdk.Intercom
 import kotlinx.android.synthetic.main.fragment_settings.*
 import kotlinx.android.synthetic.main.fragment_settings.view.*
 
@@ -131,7 +132,8 @@ class SettingsFragment : Fragment() {
                     FirebaseAnalyticsCoexcl().logFirebaseEvent(requireContext(), "", "Home", "Signout")
                     dialog.dismiss()
                     UserDetails.getInstance().isLoggedIn = false
-                    Freshchat.resetUser(context);
+//                    Freshchat.resetUser(context);
+                    IntercomHelper().unRegsisterIntercomUser()
                     PreferenceHelper(requireContext()).clearAllPreferenceData()
                     NotificationTable(requireContext()).deleteAllRecord()
                     startActivity(Intent(requireActivity(), LoginActivity::class.java))

@@ -12,6 +12,8 @@ import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
+import com.freshchat.consumer.sdk.ConversationOptions
+import com.freshchat.consumer.sdk.Freshchat
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.iid.FirebaseInstanceId
 import com.home.coexcleducation.intercom.IntercomHelper
@@ -57,10 +59,22 @@ class MainActivity : AppCompatActivity() {
                     ViewUtils().displayStrongScreenForPremium(this)
                 } else {
                     IntercomHelper().startIntercomChat(this);
+//                    val tags: MutableList<String> = ArrayList()
+//                    tags.add("order_queries")
+//                    val options = ConversationOptions().filterByTags(tags, "Order Queries")
+//                    Freshchat.showConversations(this, options);
+//                    FirebaseAnalyticsCoexcl().logFirebaseEvent(this, "", "Home", "AskDoubts")
+
                     UpdateSession().execute()
                 }
             } else {
                 IntercomHelper().startIntercomChat(this);
+//                val tags: MutableList<String> = ArrayList()
+//                tags.add("order_queries")
+//                val options = ConversationOptions().filterByTags(tags, "Order Queries")
+//                Freshchat.showConversations(this, options);
+//                FirebaseAnalyticsCoexcl().logFirebaseEvent(this, "", "Home", "AskDoubts")
+
             }
 
         }

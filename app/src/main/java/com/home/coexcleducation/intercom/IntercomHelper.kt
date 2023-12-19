@@ -30,6 +30,10 @@ class IntercomHelper {
         Intercom.client().registerIdentifiedUser(Registration().withUserId(pUserID))
     }
 
+    fun unRegsisterIntercomUser() {
+        Intercom.client().logout()
+    }
+
      fun updateUser(pContext : Context) {
 
          var lUserDetail = UserDetails.getInstance()

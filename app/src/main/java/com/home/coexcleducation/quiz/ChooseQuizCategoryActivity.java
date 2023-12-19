@@ -17,7 +17,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatImageView;
 import androidx.core.content.ContextCompat;
 
-import com.freshchat.consumer.sdk.activity.CategoryListActivity;
 import com.home.coexcleducation.R;
 import com.home.coexcleducation.ui.adaptar.ChooseCategoryAdaptar;
 import com.home.coexcleducation.utils.PreferenceHelper;

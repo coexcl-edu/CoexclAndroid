@@ -16,9 +16,6 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.freshchat.consumer.sdk.Freshchat;
-import com.freshchat.consumer.sdk.FreshchatActionListener;
-import com.freshchat.consumer.sdk.FreshchatMessage;
 import com.home.coexcleducation.R;
 import com.home.coexcleducation.jdo.UserDetails;
 import com.home.coexcleducation.ui.adaptar.LeaderBoardAdaptar;

@@ -15,7 +15,7 @@ import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
-import com.fasterxml.jackson.databind.ObjectMapper
+import com.freshchat.consumer.sdk.ConversationOptions
 import com.freshchat.consumer.sdk.Freshchat
 import com.google.firebase.crashlytics.FirebaseCrashlytics
 import com.home.coexcleducation.R
@@ -53,7 +53,7 @@ class HomeFragment : Fragment() {
 
         sessionText = root.session_count
 
-        requireActivity().window.statusBarColor = ContextCompat.getColor(requireContext(), R.color.status_bar)
+        requireActivity().window.statusBarColor = ContextCompat.getColor(requireContext(), R.color.colorAccent)
 
         FirebaseCrashlytics.getInstance().setUserId(UserDetails.getInstance().id)
 
@@ -126,22 +126,28 @@ class HomeFragment : Fragment() {
 
 
         root.ask_doubt.setOnClickListener {
-//            val tags: MutableList<String> = ArrayList()
-//            tags.add("order_queries")
-//            val options = ConversationOptions().filterByTags(tags, "Order Queries")
-//            Freshchat.showConversations(requireContext(), options);
-//            FirebaseAnalyticsCoexcl().logFirebaseEvent(requireActivity(), "", "Home", "AskDoubts")
 
-            if (!UserDetails.getInstance().subscribed) {
-                if (UserDetails.getInstance().sessionCount == 0) {
-                    ViewUtils().displayStrongScreenForPremium(requireActivity())
-                } else {
-                    IntercomHelper().startIntercomChat(requireContext());
-                    UpdateSession().execute()
-                }
-            } else {
+//            if (!UserDetails.getInstance().subscribed) {
+//                if (UserDetails.getInstance().sessionCount == 0) {
+//                    ViewUtils().displayStrongScreenForPremium(requireActivity())
+//                } else {
+////                    IntercomHelper().startIntercomChat(requireContext());
+//                    val tags: MutableList<String> = ArrayList()
+//                    tags.add("order_queries")
+//                    val options = ConversationOptions().filterByTags(tags, "Order Queries")
+//                    Freshchat.showConversations(requireContext(), options);
+//                    FirebaseAnalyticsCoexcl().logFirebaseEvent(requireActivity(), "", "Home", "AskDoubts")
+//                    UpdateSession().execute()
+//                }
+//            } else {
                 IntercomHelper().startIntercomChat(requireContext());
-            }
+//                val tags: MutableList<String> = ArrayList()
+//                tags.add("order_queries")
+//                val options = ConversationOptions().filterByTags(tags, "Order Queries")
+//                Freshchat.showConversations(requireContext(), options);
+                FirebaseAnalyticsCoexcl().logFirebaseEvent(requireActivity(), "", "Home", "AskDoubts")
+
+//            }
         }
 
         root.fun_fact.setOnClickListener{
@@ -156,7 +162,7 @@ class HomeFragment : Fragment() {
             FirebaseAnalyticsCoexcl().logFirebaseEvent(requireActivity(), "", "Home", "LiveClass")
         }
 
-        showSessionCount()
+//        showSessionCount()
         return root
     }
 
@@ -189,7 +195,7 @@ class HomeFragment : Fragment() {
 
         override fun onPostExecute(result: String?) {
             super.onPostExecute(result)
-            showSessionCount()
+//            showSessionCount()
         }
     }
 

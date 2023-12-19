@@ -83,7 +83,7 @@
                     android:layout_height="wrap_content"
                     style="@style/header_action_bar"
                     android:paddingTop="20dp"
-                    android:text="COEXCL LEARNING APP"/>
+                    android:text="DOUBT-PRO LEARNING APP"/>
 
                 <TextView
                     android:id="@+id/sub_header"

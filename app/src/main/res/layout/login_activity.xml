@@ -32,7 +32,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="4"
-        android:background="@drawable/top_cornor_blue"
+        android:background="@drawable/top_corner_gray"
         android:orientation="vertical"
         android:layout_alignParentBottom="true"
         android:weightSum="9">
@@ -54,8 +54,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Mobile"
-                    android:textColorHint="@color/white"
-
+                    android:textColorHint="@color/premium_blue"
                     >
 
                     <com.google.android.material.textfield.TextInputEditText
@@ -65,15 +64,15 @@
                         android:background="@color/transparent"
                         android:inputType="phone"
                         android:maxLength="10"
-                        android:textColor="@color/white"
-                        android:textColorHint="@color/white" />
+                        android:textColor="@color/premium_blue"
+                        android:textColorHint="@color/premium_blue" />
 
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textColorHint="@color/white"
+                    android:textColorHint="@color/premium_blue"
                     android:layout_marginTop="15dp"
                     android:hint="Password">
 
@@ -84,7 +83,7 @@
                         android:inputType="textPassword"
                         android:textColor="@color/white"
                         android:maxLength="50"
-                        android:textColorHint="@color/white"
+                        android:textColorHint="@color/premium_blue"
                         android:background="@color/transparent"/>
 
                 </com.google.android.material.textfield.TextInputLayout>
@@ -96,7 +95,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="right"
-                    android:textColor="@color/white"
+                    android:textColor="@color/coexcl_orange"
                     android:padding="10dp"
                     android:textSize="15sp"
                     android:text="forgot password?"/>
@@ -155,7 +154,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:textColor="@color/white"
+                android:textColor="@color/coexcl_orange"
                 android:layout_marginTop="30dp"
                 android:textSize="20sp"
                 android:text="Create new account"/>

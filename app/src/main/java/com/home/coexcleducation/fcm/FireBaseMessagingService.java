@@ -16,7 +16,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-import io.intercom.android.sdk.push.IntercomPushClient;
+//import io.intercom.android.sdk.push.IntercomPushClient;
 
 
 /**
@@ -27,7 +27,7 @@ public class FireBaseMessagingService extends FirebaseMessagingService {
 
     private static final String TAG = "FireBaseMessagingService";
     SharedPreferences mPreference;
-    private final IntercomPushClient intercomPushClient = new IntercomPushClient();
+//    private final IntercomPushClient intercomPushClient = new IntercomPushClient();
 
     @Override
     public void onMessageReceived(RemoteMessage remoteMessage) {
@@ -42,10 +42,10 @@ public class FireBaseMessagingService extends FirebaseMessagingService {
                 if (Freshchat.isFreshchatNotification(remoteMessage)) {
                     Freshchat.handleFcmMessage(this, remoteMessage);
                 }
-                if (intercomPushClient.isIntercomPush(message)) {
-                    intercomPushClient.handlePush(getApplication(), message);
-                    CoexclLogs.errorLog("TAG", "Msg from Intercom");
-                }
+//                if (intercomPushClient.isIntercomPush(message)) {
+//                    intercomPushClient.handlePush(getApplication(), message);
+//                    CoexclLogs.errorLog("TAG", "Msg from Intercom");
+//                }
             }
         } catch (Exception e) {
             CoexclLogs.printException(e);
@@ -57,7 +57,8 @@ public class FireBaseMessagingService extends FirebaseMessagingService {
     public void onNewToken(String token) {
         CoexclLogs.infoLog(TAG, "new fcm token: " + token);
         if (UserDetails.getInstance().isLoggedIn()) {
-            new IntercomPushClient().sendTokenToIntercom(getApplication(), token);
+
+//            new IntercomPushClient().sendTokenToIntercom(getApplication(), token);
             try{
                 new Utilty().updateToken(this ,token);
             } catch (Exception e) {

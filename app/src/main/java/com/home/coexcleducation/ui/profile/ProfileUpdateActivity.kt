@@ -22,11 +22,11 @@ import androidx.core.content.ContextCompat
 import androidx.core.content.FileProvider
 import com.bumptech.glide.Glide
 import com.fasterxml.jackson.databind.ObjectMapper
-import com.freshchat.consumer.sdk.Freshchat
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.home.coexcleducation.R
 import com.home.coexcleducation.database.NotificationTable
 import com.home.coexcleducation.httphelper.HttpHelper
+import com.home.coexcleducation.intercom.IntercomHelper
 import com.home.coexcleducation.jdo.UserDetails
 import com.home.coexcleducation.ui.image.ImagePicker
 import com.home.coexcleducation.ui.image.OnImagePickerListener
@@ -457,15 +457,16 @@ class ProfileUpdateActivity : AppCompatActivity() {
                     var lResponseObject = lMapper.readValue(result, HashMap::class.java)
                     if (lResponseObject.containsKey("response") && lResponseObject.get("response") as Boolean) {
                         Utilty().insertLoginData(result)
-                        try {
-                            val freshchatUser = Freshchat.getInstance(applicationContext).user
-                            var lUserDetails = UserDetails.getInstance()
-                            freshchatUser.firstName = lUserDetails.name
-                            freshchatUser.email = lUserDetails.email
-                            freshchatUser.setPhone("+91", lUserDetails.mobile)
-                        } catch (e :Exception) {
-                            e.printStackTrace()
-                        }
+//                        try {
+//                            val freshchatUser = Freshchat.getInstance(applicationContext).user
+//                            var lUserDetails = UserDetails.getInstance()
+//                            freshchatUser.firstName = lUserDetails.name
+//                            freshchatUser.email = lUserDetails.email
+//                            freshchatUser.setPhone("+91", lUserDetails.mobile)
+//                        } catch (e :Exception) {
+//                            e.printStackTrace()
+//                        }
+                        IntercomHelper().updateUser(mContext)
                         exit()
                         FirebaseAnalyticsCoexcl().logFirebaseEvent(this@ProfileUpdateActivity, "", "Home", "ProfileUpdate Success")
                     } else {

@@ -16,21 +16,22 @@
     <application
         android:name=".MainApplication"
         android:allowBackup="true"
-        android:icon="@mipmap/coexcl_app_icon"
+        android:icon="@drawable/coexcl_app_icon"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/coexcl_app_icon"
+        android:roundIcon="@drawable/coexcl_app_icon"
         android:supportsRtl="true"
         android:requestLegacyExternalStorage="true"
         android:theme="@style/Theme.CoexclEducation">
 
 
         <meta-data android:name="com.onesignal.NotificationServiceExtension"
-            android:value="com.home.coexcleducation.ui.notification.NotificationReciever" />
+            android:value="com.home.coexcleducatvion.ui.notification.NotificationReciever" />
 
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
+            android:exported="true"
             android:theme="@style/Theme.CoexclEducation">
         </activity>
 
@@ -38,17 +39,20 @@
             android:name=".ui.registration.SignupActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
+            android:exported="true"
             android:theme="@style/Theme.CoexclEducation">
         </activity>
         <activity
             android:name=".quiz.QuizActivity"
             android:label="@string/app_name"
+            android:exported="true"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.CoexclEducation">
         </activity>
         <activity
             android:name=".quiz.SolutionActivity"
             android:label="@string/app_name"
+            android:exported="true"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.CoexclEducation">
         </activity>
@@ -56,6 +60,7 @@
         <activity
             android:name=".ui.VideoPlayerView"
             android:label="@string/app_name"
+            android:exported="true"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.CoexclEducation">
         </activity>
@@ -63,6 +68,7 @@
         <activity
             android:name=".ui.registration.LoginActivity"
             android:label="@string/app_name"
+            android:exported="true"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.CoexclEducation">
         </activity>
@@ -70,6 +76,7 @@
         <activity
             android:name=".ui.lession.SubjectDetailActivtiy"
             android:label="@string/app_name"
+            android:exported="true"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.CoexclEducation">
         </activity>
@@ -77,12 +84,14 @@
         <activity
             android:name=".ui.settings.AboutLayout"
             android:label="@string/app_name"
+            android:exported="true"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.CoexclEducation">
         </activity>
         <activity
             android:name=".ui.settings.ProgressLayout"
             android:label="@string/app_name"
+            android:exported="true"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.CoexclEducation">
         </activity>
@@ -90,6 +99,7 @@
         <activity
             android:name=".ui.quiz.QuizActivityOld"
             android:label="@string/app_name"
+            android:exported="true"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.CoexclEducation">
         </activity>
@@ -98,106 +108,124 @@
             android:name=".ui.onboarding.OnBoardingActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
+            android:exported="true"
             android:theme="@style/Theme.CoexclEducation">
         </activity>
         <activity
             android:name=".ui.notes.NoteListingActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
+            android:exported="true"
             android:theme="@style/Theme.CoexclEducation">
         </activity>
         <activity
             android:name=".ui.notes.EditNotesActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
+            android:exported="true"
             android:theme="@style/Theme.CoexclEducation">
         </activity>
         <activity
             android:name=".ui.school.SchoolActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
+            android:exported="true"
             android:theme="@style/Theme.CoexclEducation">
         </activity>
         <activity
             android:name=".ui.school.SchoolNoticeDetails"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
+            android:exported="true"
             android:theme="@style/Theme.CoexclEducation">
         </activity>
         <activity
             android:name=".ui.registration.OTPVerification"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
+            android:exported="true"
             android:theme="@style/Theme.CoexclEducation">
         </activity>
         <activity
             android:name=".ui.profile.ProfileUpdateActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
+            android:exported="true"
             android:theme="@style/Theme.CoexclEducation">
         </activity>
         <activity
             android:name=".ui.settings.FAQaActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
+            android:exported="true"
             android:theme="@style/Theme.CoexclEducation">
         </activity>
         <activity
             android:name=".ui.settings.FaqDetailsActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
+            android:exported="true"
             android:theme="@style/Theme.CoexclEducation">
         </activity>
         <activity
             android:name=".ui.videos.VideoListingActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
+            android:exported="true"
             android:theme="@style/Theme.CoexclEducation">
         </activity>
         <activity
             android:name=".ui.videos.VideoPlayerYoutube"
             android:label="@string/app_name"
+            android:exported="true"
             android:theme="@style/Theme.CoexclEducation">
         </activity>
         <activity
             android:name=".ui.fanfacts.FunFactsActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
+            android:exported="true"
             android:theme="@style/Theme.CoexclEducation">
         </activity>
         <activity
             android:name=".ui.summary.SummaryDetailActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
+            android:exported="true"
             android:theme="@style/Theme.CoexclEducation">
         </activity>
         <activity
             android:name=".ui.liveclass.LiveClassesActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
+            android:exported="true"
             android:theme="@style/Theme.CoexclEducation">
         </activity>
         <activity
             android:name=".ui.summary.SummaryListingActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
+            android:exported="true"
             android:theme="@style/Theme.CoexclEducation">
         </activity>
         <activity
             android:name=".ui.ComingSoonActivty"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
+            android:exported="true"
             android:theme="@style/Theme.CoexclEducation">
         </activity>
         <activity
             android:name=".ui.liveclass.LiveClassListActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
+            android:exported="true"
             android:theme="@style/Theme.CoexclEducation">
         </activity>
         <activity
             android:name=".ui.registration.ResetPassword"
             android:label="@string/app_name"
+            android:exported="true"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.CoexclEducation">
         </activity>
@@ -205,36 +233,42 @@
             android:name=".ui.registration.ChangePasswordActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
+            android:exported="true"
             android:theme="@style/Theme.CoexclEducation">
         </activity>
         <activity
             android:name=".ui.notes.NotesDetailViewActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
+            android:exported="true"
             android:theme="@style/Theme.CoexclEducation">
         </activity>
         <activity
             android:name=".ui.registration.OTPAuth"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
+            android:exported="true"
             android:theme="@style/Theme.CoexclEducation">
         </activity>
         <activity
             android:name=".ui.settings.ContactUs"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
+            android:exported="true"
             android:theme="@style/Theme.CoexclEducation">
         </activity>
         <activity
             android:name=".premium.UpgradePlanActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
+            android:exported="true"
             android:theme="@style/Theme.CoexclEducation">
         </activity>
         <activity
             android:name=".premium.PremiumDetailView"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
+            android:exported="true"
             android:theme="@style/Theme.CoexclEducation">
         </activity>
 
@@ -242,7 +276,8 @@
             android:name=".ui.registration.LaunchActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
-            android:theme="@style/splash_screen">
+            android:theme="@style/splash_screen"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -253,17 +288,20 @@
         <activity
             android:name="com.freshchat.consumer.sdk.activity.ChannelListActivity"
             android:theme="@style/ChatTheme"
+            android:exported="true"
             android:screenOrientation="portrait"
             tools:replace="android:theme" />
 
         <activity
             android:name="com.freshchat.consumer.sdk.activity.ConversationDetailActivity"
             android:theme="@style/ChatTheme"
+            android:exported="true"
             android:screenOrientation="portrait"
             tools:replace="android:theme" />
         <activity
             android:name=".ui.bookliveclass.ListOfLiveClassForBooking"
             android:label="@string/app_name"
+            android:exported="true"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.CoexclEducation" />
 
@@ -271,15 +309,18 @@
             android:name=".ui.bookliveclass.ListOfSubjectForBooking"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
+            android:exported="true"
             android:theme="@style/Theme.CoexclEducation"/>
 
         <activity
             android:name=".quiz.QuizHomeActivity"
             android:screenOrientation="portrait"
+            android:exported="true"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
         <activity android:name=".quiz.ChooseQuizCategoryActivity"
             android:label="Filter"
+            android:exported="true"
             android:screenOrientation="portrait">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -287,25 +328,26 @@
         </activity>
 
 
-<!--        <provider-->
-<!--            android:name="androidx.core.content.FileProvider"-->
-<!--            android:authorities="com.home.coexcleducation.provider"-->
-<!--            android:exported="false"-->
-<!--            android:grantUriPermissions="true">-->
-<!--            <meta-data-->
-<!--                android:name="android.support.FILE_PROVIDER_PATHS"-->
-<!--                android:resource="@xml/freshchat_file_provider_paths" />-->
-<!--        </provider>-->
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.home.coexcleducation.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/freshchat_file_provider_paths" />
+        </provider>
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
 
         <service
             android:name=".fcm.RegistrationIntentService"
-            android:exported="false"
+            android:exported="true"
             android:permission="android.permission.BIND_JOB_SERVICE" />
 
-        <service android:name=".fcm.FireBaseMessagingService">
+        <service android:name=".fcm.FireBaseMessagingService"
+            android:exported="true">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>

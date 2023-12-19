@@ -19,7 +19,7 @@ class AboutLayout : AppCompatActivity() {
         var stringbuilder =  StringBuilder()
         stringbuilder.append("Version: 2.0.2.20220508").append("\n")
         stringbuilder.append("Released Year: 2021").append("\n")
-        stringbuilder.append("All Rights Reserved © COEXCL SERVICES PVT LTD.").append("\n").append("\n")
+        stringbuilder.append("All Rights Reserved © DoubtPro Service Pvt Ltd.").append("\n").append("\n")
 //        stringbuilder.append("In Association with").append("")
 
 //        if (applicationContext.packageName == "com.home.coexcleducation") {
